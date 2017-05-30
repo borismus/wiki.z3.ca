@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+  <title>GeoGames | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>GeoGames</h1>
+    </header>
+
+    <section id="articles">
+      <p>GeoGames is an idea that involves using positioning technology such as GPS to implement games. Here I outline my plan of action.  </p>
+
+<p>While working at RIM, getting my hands on a BlackBerry 7520 (with integrated GPS receiver) proved to be more difficult than I had anticipated. I have since decided to switch gears and start with a small prototype/proof of concept that would simulate the GPS receiver instead of dealing with actual GPS devices.</p>
+
+<p>= Proof of Concept - version 0.1 =</p>
+
+<p>''Target: Python twisted server handling HTTP requests from AJAX or Comet enabled clients with rich graphical user interfaces.''</p>
+
+<p>Here, the GPS receiver is simulated by a web client, which is able to move around in some arbitrary space. The location of the client is pushed to the server via AJAX (continuous polling) or Comet (persistent HTTP connection) communications with the central server. The server then records the updated client state and sends back the overall picture to the client.</p>
+
+<p>== Components ==</p>
+
+<ul>
+<li>Authentication: the server needs to be able to recognize and distinguish clients that connect to it</li>
+<li>State: a collection of information about all known entities.</li>
+<li>Entity: the state of an client/object/whatever in the world</li>
+<li>Location: the location of an entity in the world. items in the world are keyed by this attribute. it must be possible to determine efficiently which objects are nearby.</li>
+</ul>
+
+<p>== Plan ==</p>
+
+<p>=== 0.1.0 ===</p>
+
+<p>Unit tests for twisted server-side implementation. The expected functionality is simple:
+ * Register new users
+ * Authenticate existing users
+ * Get state (locations, data)
+ * Send state (location)</p>
+
+<p>=== 0.1.1 ===</p>
+
+<p>Synchronous twisted server-side implementation.</p>
+
+<p>=== 0.1.2 ===</p>
+
+<p>Simple text-based web client. Here, no unit tests are needed since this is just a mockup. Will need to choose between AJAX and Comet and will need to choose some JavaScript library to help.</p>
+
+<p>=== 0.1.3 ===</p>
+
+<p>Asynchronous twisted server-side implementation.</p>
+
+<p>=== 0.1.4 ===</p>
+
+<p>Enhanced graphical web client which renders state. Here, it will be necessary to determine the best technology to use. SVG for drawing the map? </p>
+
+<p>=== 0.1.5 ===</p>
+
+<p>More client enhancements to allows user to graphically control direction of movement. Also add more features to more accurately simulate how a GPS client would work (low position accuracies, delayed data, etc)</p>
+
+<p>= Optimization - version 0.2 =</p>
+
+<p>''Target: A mock environment (as in 0.1), but one that is geographically intelligent, and can scale to support many users.'' </p>
+
+<p>The following things need to be answered before this stage completes.
+ * Can a reasonable (small) number of users coexist on one server?
+ * Is the latency acceptable? What does acceptable mean?
+ * What can be done to make this more scalable other than splitting clients geographically over multiple regional servers? 
+ * Is there some p2p technology for wireless clients that could alleviate so much stress on a single central server?</p>
+
+<hr />
+
+<p>CategoryProject</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-07-14 14:11:39<br/>
+      Modified on 2006-07-27 16:37:35<br/>
+      Generated on 2017-05-30 16:20:37.558178<br/>
+    </footer>
+
+  </div>
+</body>

@@ -1,0 +1,7 @@
+I wonder if it's possible to generate good-enough instructions from a crease pattern, and if some crease patterns exist for which no instruction set can be devised...
+
+= Continuous Origami =
+
+Origami is discrete. Folds are independant and finite in number. What if we look at the limit as the number of creases goes to infinity? 
+
+Perhaps origami folds can be applied in a way analogous to 3D meshes in computer graphics. A CG mesh with an infinite number of faces/edges/polygons/vertices/etc would tend to resemble exactly the original object. If it was possible to take an object and somehow discretize it in terms of origami folds, specifying the level of detail (perhaps as number of folds), it would be awesome.

@@ -1,0 +1,90 @@
+<!doctype html>
+<head>
+  <title>Network | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>Network</h1>
+    </header>
+
+    <section id="articles">
+      <p>The z3 network consists of zayin, the machine directly connected to the internet, and a number of workstations.</p>
+
+<p>= Workstations =</p>
+
+<p>||''Aleph''|| Gentoo gateway. Zayin's predecessor. ||
+||Bet|| Gentoo athlon-xp 1700+ tower. ||
+||''Gimel''|| Gentoo laptop. Horribly broken. ||
+||''Daled''|| Gentoo laptop. Horribly broken. ||
+||Hey|| Xbox! ||
+||Vav || Dad's windows laptop. ||
+||Zayin || Gentoo amd64 server. ||
+||Chet|| Gentoo amd64 workstation/print server. ||
+||Tet || Former Mac Mini I used for development. ||
+||Yud || Linksys WRT54gs router. ||
+||Kaf || Mac Book Pro laptop. ||</p>
+
+<p>= Firewall =</p>
+
+<p>Zayin is a firewall (shorewall on iptables). It only allows ftp, ssh, smtp, imap, dns and http traffic inside.</p>
+
+<p>= File server =</p>
+
+<p>Zayin is also a file server. It hosts all of the home directories and exports them via NFS and Samba. It also hosts a lot of movies, music and other data.  </p>
+
+<p>The existing hard drives are sda: 320 GB, sdb: 320 GB, sdc: 250 GB, sdd: 200 GB. From these, sda/sdb are mirrored in md1, and 200 GB of sdc is mirrored with sdd in md2. In turn, md1 and md2 are physical volumes in an LVM2 stripe. </p>
+
+<p>=== Partitions ===</p>
+
+<p>||320G||raid 1||
+||md0||/boot||
+||md1||/||
+||md2||vg||</p>
+
+<p>||200G||raid 1||
+||md3||vg||</p>
+
+<p>||50G||ordinary||
+||sdx1||swap||
+||sdx2||/tmp||
+||sdx3||/var/tmp||
+||sdx4||/usr/portage||</p>
+
+<p>=== Mounts ===</p>
+
+<p>||/||1G||
+||/boot||100M||</p>
+
+<p>||swap||1G||
+||/tmp||15G||
+||/var/tmp||14G||
+||/usr/portage||20G||</p>
+
+<p>||/home||20G||
+||/usr||10G||
+||/var||10G||
+||/opt||2G||
+||/media||400G||</p>
+
+    </section>
+
+    <footer>
+      Created on 2006-08-11 14:07:12<br/>
+      Modified on 2007-07-11 17:43:40<br/>
+      Generated on 2017-05-30 16:20:38.203780<br/>
+    </footer>
+
+  </div>
+</body>

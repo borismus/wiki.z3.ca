@@ -1,0 +1,142 @@
+<!doctype html>
+<head>
+  <title>DealerProgram | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>DealerProgram</h1>
+    </header>
+
+    <section id="articles">
+      <p>Here's a very sloppy piece of code. It certainly does the job, though :)</p>
+
+<p>{{{
+// dealer.nqc -- deals cards!</p>
+
+<p>// motors</p>
+
+<h1>define DEALER OUT_A</h1>
+
+<h1>define FILTER OUT_B</h1>
+
+<h1>define ROTATOR OUT_C</h1>
+
+<p>// sensors</p>
+
+<h1>define CCOUNT SENSOR_1 // card count</h1>
+
+<h1>define RCOUNT SENSOR_3 // rotation count (6 positions)</h1>
+
+<p>// constants</p>
+
+<h1>define PLAYERS 4</h1>
+
+<h1>define CARDS 6</h1>
+
+<h1>define DEALINGMODE 0 // 0 for dealing in sequence, 1 for dealing all at once</h1>
+
+<h1>define FREQ 440</h1>
+
+<p>int pos;
+int position = 1;
+int cards = 0;
+int quit = 0;</p>
+
+<p>task main() {
+    // sensor/motor initialization
+    SetSensor(CCOUNT, SENSOR<em>TOUCH);
+    SetSensorMode(RCOUNT, SENSOR</em>TOUCH);
+    SetPower(FILTER, OUT_HALF);</p>
+
+<pre><code>// task initialization
+start update_position;
+start update_cards;
+start rotate;
+start dealt;
+
+// exit!
+if (quit) {
+    StopAllTasks();
+    return;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>task dealt() {
+    // are all the cards dealt?
+    while (true) {
+        if (cards == PLAYERS*CARDS)
+            quit = 1;
+        else
+            quit = 0;
+    }
+}</p>
+
+<p>void deal(const int &amp;n) {
+    int i;
+    for (i = 1; i &lt;= n; i++) {
+        until (CCOUNT == 1) {
+            On(DEALER);
+            On(FILTER);
+        }
+        Off(FILTER);
+        Wait(50);
+        Off(DEALER);
+    }
+}</p>
+
+<p>task rotate() {
+    while (true) {
+        int cpos = pos;
+        while (cpos + 1 != pos) {
+            On(ROTATOR);
+        }
+        if (cpos + 1 == pos &amp;&amp; position &lt;= PLAYERS) {
+            Off(ROTATOR);
+            deal(1);
+            On(ROTATOR);
+            Wait(50);
+        }
+    }
+}        </p>
+
+<p>task update_position() {
+    while (true) {
+        if (RCOUNT == 0) {
+            Wait(30);
+            if (RCOUNT == 0) {
+                pos++;
+                if (position + 1 &lt;= 6)
+                    position++;
+                else
+                    position = 1;
+            }
+        }
+    }
+}</p>
+
+<p>}}}</p>
+
+    </section>
+
+    <footer>
+      Created on 2004-12-29 10:40:08<br/>
+      Modified on 2005-03-06 11:52:33<br/>
+      Generated on 2017-05-30 16:20:37.389147<br/>
+    </footer>
+
+  </div>
+</body>

@@ -1,0 +1,37 @@
+= GPS MMORPG =
+
+An interesting project that I may undertake is this: to take concepts from existing multiplayer games and apply them to create a WorldOverlay. This would create a new genre of game - a hybridization between a computer game and the real world.
+
+== Implementation ==
+
+The actual game would work like this: there is be a community of players hauling their Unit around. As a player moves, the software on his Unit reacts and informs the regional server. Meanwhile, the regional server also keeps busy, reporting status changes to it's clients. There is also a master server, which determines which regional server the player belongs to. It will be necessary to formalize how exactly the master server distributes players to regional servers (when will this happen? what happens at a region boundary?)
+
+== Sample Session ==
+
+You turn on your Unit and launch the game client. You authenticate with the master server, and it distributes you to your regional server. Now you go somewhere. Your new GPS position is sent to the server. The server sends you back whatever state corresponds to your position. That's it! The skeleton is now in place :)
+
+= Comparison with Existing Games =
+
+Today's massively multiplayer role playing games are a well-established genre. Of course, modern, graphically stunning MMORPGs borrow heavily from old MUDs, MUSHes, MUCKs and MOOs, which are completely text-based. The text-based path is a more appropriate choice for the mobile platform, since the real world has super realistic graphics already.
+
+Computer games are purely virtual. This new game would involve a mix of physical (players, physical constraints found on the planet) and virtual (monsters, items, whatever else) entities. In this game, you would play your physical self, except you might have virtual items and ''special powers''. The beauty of this setup is that '''we retain the limitlessness of the virtual medium, while capitalizing on the social aspects of reality.'''
+
+Another good thing is that this game type requires almost no world-building (creating the environment) since that part is already done for us :)
+
+== Changes to Combat ==
+
+In a typical massively multiplayer role playing game, combat is turn based. The player can flee at any time by running away. This idea could be extended and made much more interesting. In the proposed hybrid, combat could still be virtual and turn based, but fleeing would be physical: the player would have to escape by outrunning a virtual monster (monsters have speed?) or another physical player.
+
+== Changes to Death ==
+
+In existing multiplayer games, the player dies only to respawn at another location. Since we do not yet have teleportation, it is not possible to move your physical body to some arbitrary spot! It is possible, however, to teleport your virtual body, so that it can be rejoined with the physical body when the physical body reaches it. 
+
+This idea is similar to the death system in Ultima Online: upon death, the character you control becomes a ghost, which must find its way to the temple(?) to rejoin the physical body.
+
+= Social Issues =
+
+The game world is not localized to some specific place. This means that players would be in the same environment as non-players. Imagine a group of adventurers weaving through a group of respectable business-men while fleeing from an virtual grue!
+
+Given it's physical nature, there may be incidents of physical violence, for example, players getting beaten up, and their Units stolen by other players. This would not surprise me, as MMORPGs are typically very competitive. On the other hand, such a risk would provide self-regulating ethical practices. For example, someone is camping a virtual monster spawn, but they might think twice if someone is looking at them threateningly. 
+
+Which reminds me of another problem. Imagine you are a strong 6 foot, 300 lb wrestler that decided to try this new game out. Next thing you know, some dinky, high level dweeb comes up to you and PKs you. Umm, yeah right :) Anyway, I'm not sure how significant a problem this is. But this issue might provide an interesting twist.

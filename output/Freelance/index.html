@@ -1,0 +1,99 @@
+<!doctype html>
+<head>
+  <title>Freelance | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>Freelance</h1>
+    </header>
+
+    <section id="articles">
+      <p>Web-based space trade/exploration/combat game written in Python/Django</p>
+
+<p>TODO:</p>
+
+<ul>
+<li>Get database of stellar objects.</li>
+<li>Decide game-related parameters like planet distribution based on db.</li>
+<li>Plot game world as SVG.</li>
+</ul>
+
+<p>= World =</p>
+
+<p>The freelance universe takes place in our galaxy. The world is simplified drastically: no concept of star, star system, etc. The only relevant objects are planets, which are characterized primarily by their coordinates in R^3. Euclidian distance is used to determine distance between planets, and used to compute transit time for space ships.</p>
+
+<p>== Planets ==</p>
+
+<p>Planets themselves, in addition to coordinates, have various other properties useful in other contexts. These properties are determined by a combination of so-called planetary attributes and planet size. </p>
+
+<p>Planetary attributes include things like ''habitable'', ''scientific'', ''industrial'', ''gaseous'', and influence various aspects of planetary life. For example, a gaseous planet gets +1 supply of fuel and +1 demand for metal. A planet's size determines how to distribute the planet's attributes. For instance, if a planet has attributes A, B and C, and size S, the supply and demand of the planet would be determined by computing S*(A+B+C).</p>
+
+<p>=== Interface ===</p>
+
+<p>Planets' attributes are displayed in this screen.</p>
+
+<p>= Travel =</p>
+
+<p>Travel from planet to planet consumes fuel. It also involves a certain amount of real-time waiting. How much fuel and waiting is required is a function of distance travelled, ship mass and engine type. Typically, a player who decides to fly from planet A to planet B will be notified of how long and expensive (in terms of fuel) such a transit will take. Upon agreeing, the player's ship will begin it's route. After the allotted amount of time, the ship will reach its destination, and the fuel will have been spent.</p>
+
+<p>== Transit ==</p>
+
+<p>In between planets, certain interesting things can occur. A ship can be attacked by another ship, or there can be ordinary NPC encounters.</p>
+
+<p>== Interface ==</p>
+
+<p>The player is presented a list of nearby planets, and:</p>
+
+<ul>
+<li>distances to other planets. </li>
+<li>summaries of what each nearby planet supplies and demands. </li>
+</ul>
+
+<p>For more detailed planet information, the player must look in the particular planet's detail screen.</p>
+
+<p>Difficulties: 2D nearest neighbours problem. Also, how to present succinctly without using graphics? Inclined to use SVG maps.</p>
+
+<p>= Ships =</p>
+
+<p>Every player controls a state-of-the-art interplanetary vehicle. The vehicle can be upgraded piece by piece to do its various tasks better and faster.</p>
+
+<p>== Upgrades ==</p>
+
+<ul>
+<li>Chassis - to specify ship configuration (number of weapon slots, etc)</li>
+<li>Hull - to carry cargo (max weight)</li>
+<li>Engine - to get places faster and more efficiently (speed)</li>
+<li>Shield - to provide ship defense (hp)</li>
+<li>Weapon - to be more effective in destroying other objects (damage)</li>
+</ul>
+
+<p>= Trade =</p>
+
+<p>I would like to create a trade system with no actual distinction between good and currency. This would hopefully cause a natural balance of emergence in the Freelance economy. Also, I would like to have an economic model that is as simple as possible, yet fair and challenging for players.</p>
+
+<p>The mechanics of trading is simple. Ships travel from planet to planet, trying to maximize profit by buying low and selling high. Some planets are happy to load you up with goods very cheaply, or even freely. Some planets really want your goods, while others will grudgingly take it for a very steep price.</p>
+
+<p>How much a planet is willing to buy and pay for a good is determined by its attributes, as discussed earlier.</p>
+
+    </section>
+
+    <footer>
+      Created on 2006-03-21 01:02:53<br/>
+      Modified on 2007-04-23 19:11:31<br/>
+      Generated on 2017-05-30 16:20:37.540286<br/>
+    </footer>
+
+  </div>
+</body>

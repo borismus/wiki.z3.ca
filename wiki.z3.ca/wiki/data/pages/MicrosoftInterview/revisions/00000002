@@ -1,0 +1,35 @@
+I recently had an interview at Microsoft. Before the ordeal, I spent a considerable amount of time in a medidative trance, trying to cleanse my subconsciousness of a jeopardizing anti-microsoft mentality. I don't think it worked, because minutes after it, I found myself gleefully reading away at a [http://www.wired.com/wired/archive/13.02/microsoft_pr.html humorous article] linked to from slashdot, regarding "Microsoft WinX (pronounced winks)".
+
+Anyway, the interview itself was divided into two parts:
+
+ 1. Human Resources - I was asked general questions, such as
+
+  * Describe your first encounter with a computer
+  * What Microsoft product excites you the most?
+  * What is the largest piece of software you have written: ballpark estimate of KLOC?
+  * Why do you want to work for Microsoft?
+
+Then she switched gears a little bit and presented me with a riddle: Given 9 containers full of 1g balls, and 1 container full of 1.1g balls, determine which container contains the heavier balls by taking only one measurement on a digital scale. Interesting question! It took me some time to figure out, but I got it eventually.
+
+ 2. Technical - I was greeted by a lady that could've been my grandmother.
+
+She asked me to write a function that, given an integer and an array of integers would determine whether the integer exists in the array. What was the value of this exersise? How can one determine the quality of the candidate from this sort of question? My guess is that before setting out to write the function, I was supposed to ask any number of clarifying questions, such as:
+
+  * How big is the array?
+  * Why are we here?
+  * Can I go now?
+
+I failed to ask anything. I just sat down wrote linear search in C# and C++. Then I was asked a bunch more trivialities, such as 
+
+  * What happens if the array is too big?
+  * Why did the chicken cross the road?
+  * How would you test this function without knowing how it's implemented?
+  * How would you go about finding a memory leak caused by this function?
+
+She also asked me what technology I see taking off in the next 3 years. I said something about XAML, and accidentally spilled the beans in the process. Oh, XAML's just like XUL and SVG, isn't that nice. And wouldn't it be great if GUIs finally stopped sucking? Maybe XAML will help?
+
+Then I was dismissed. I had a chance to ask my HR interviewer some banal questions about how it all works at Microsoft, to try to simulate some enthusiasm. Got her business card, yadda yadda. 
+
+Of course I didn't get an offer!
+----
+CategoryRant (i suppose)

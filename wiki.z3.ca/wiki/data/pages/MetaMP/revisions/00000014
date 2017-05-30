@@ -1,0 +1,83 @@
+## page was renamed from MetaPD
+MetaMP is a metadata client for MPD. It's a work in progress, but I would really appreciate it if you could try it and let me know what you think. Send bugs/suggestions/comments/hatemail to boris at this domain.
+
+Often I find myself liking very few of the new songs I hear in last.fm radio. I also have a large library of music that I like. I end up listening to the same songs via last.fm as in my library!
+
+'''Update''': Please also check out LastGenre, a last.fm-based genre tagger.
+
+[[TableOfContents]]
+
+= Todo =
+
+Playing:
+ * Allow filtering based on multiple tags {{{metamp play -t punk,pop}}}
+
+= 0.1.1 =
+
+I've released version 0.1.1, attachment:MetaMP-0.1.1.tar.gz. It mostly consists of bugfixes, but here is a partial list of stuff changed:
+
+Last.fm:
+ * Optimize database updating (don't re-update already tagged files from last.fm)
+ * If song tag is not found, fall back to artist tag
+
+Tagging:
+ * Use {{{metamp autotag -p /}}} to tag the entire music database.
+
+Bugs:
+ * makii's issue with localization
+
+= Configuration =
+
+MetaMP stores configuration files in ~/.metamp or /etc/metamp.conf. This configuration file specifies where metamp should store it's database.
+
+{{{
+[conf]
+# where to store the metadata
+db: /media/music/.mpdmeta
+# automatically start playing
+auto_play: yes
+# log level
+log_level: ERROR
+# lastfm username
+username: foo
+
+}}}
+                            
+
+= Database =
+
+MetaMP stores it's database in a sqlite3 database.
+
+== Tables ==
+
+|| File || Rating || Tags ||
+|| some/path/in/mpddb || 0-10 || CSV list (in popularity order) ||
+
+= Usage =
+
+{{{
+ autotag:
+        automatically tag files using last.fm as tag database
+        %prog autotag --path="pop"
+ 
+ tag:   mark files with tag data
+        %prog tag --path='metallica/enter sandman.mp3' \
+                  --tags='metal,heavy metal,rock'
+ 
+ rate:  mark files with rating
+        %prog rate --path='metallica/enter sandman.mp3' \
+                   --rating=9
+ 
+ play:  playback based on metadata
+        %prog play --rating=">5" OR
+        %prog play --tags="indie,canadian" <-- playback canadian indie
+ 
+ recent:
+        play recently heard tracks (last.fm users only)
+        %prog recent
+
+}}}
+
+= Older Versions =
+
+ * attachment:MetaMP-0.1.tar.gz.

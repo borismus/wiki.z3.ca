@@ -1,0 +1,109 @@
+<!doctype html>
+<head>
+  <title>TxtToSite | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>TxtToSite</h1>
+    </header>
+
+    <section id="articles">
+      <p>After a day of hacking, I've come to realize how useless this is. Nothing beats a wiki.</p>
+
+<p>txt2site is an idea I got sometime in 2004. I was playing with [<a href="http://txt2tags.sourceforge.net/">http://txt2tags.sourceforge.net/</a> txt2tags], which converts plaintext that adheres to some simple rules into a variety of different formats such as WikiPedia:HTML, WikiPedia:LaTeX, etc. I thought it might be nice to write my personal page with the help of txt2tags. I wanted to automate this process as much as possible. </p>
+
+<p>= First Attempts =</p>
+
+<p>I started with an email to the t2t mailing list asking when the python API would be released (it was released shortly, with txt2tags-2.0). In the meantime, I began hacking some bash/make solution (without, as it turned out, a clear enough goal in mind). I eventually realized, however, that it txt2tags is not the ideal tool to use for my task. It was too general, which is good, but not for my rather specific task. My problem with txt2tags was the lack of support for WikiPedia:CSS friendly output in the HTML (as of mid-2004). I decided that I needed to something designed explicitly for creating HTML pages.</p>
+
+<p>= Idea =</p>
+
+<p>txt2site takes a directory structure (webdir) on a local file system and turns it into a web site. This structure is composed of three kinds of files: 
+ 1. Simple markup files (in some exceedingly simple format) containing actual textual data and simple directives (fonts, image references, links to local markup files, links to external uri, includes to other markup files, etc)
+ 2. Associated style file(s) in CSS format
+ 3. External files, such as images</p>
+
+<p>The output should be strictly valid XHTML code, specified entirely by {{{div}}} tags with CSS ids attached. </p>
+
+<p>== Markup ==</p>
+
+<p>The markup txt2site uses should be as simple and natural as possible:</p>
+
+<p>{{{
+<code>include("/share/header")</code></p>
+
+<p>=intro=
+Here is some <em>bold</em>, /italicized/ and <em>underlined</em> text.</p>
+
+<p>Here is another paragraph illustrating [internal /about] and [external <a href="http://www.google.com]">http://www.google.com]</a> hyperlinks.</p>
+
+<p>And another one illustrating an easy way to add new features: <code>acronym(TLA="Three Letter Acronym")</code></p>
+
+<p>=misc=
+Compiled on <code>ymd()</code>.</p>
+
+<p><code>include("/share/footer")</code>
+}}}</p>
+
+<p>In this example, we use `<code>to indicate python code. The txt2site framework will define helper methods such as {{{</code>include("/path/to/markup")<code>}}} which inserts a header into the page. Or perhaps, {{{</code>ymd()<code>}}} actually calls</code>import date; print time.strftime("%B %d, %Y")`. In general, the stdout of the python code in backquotes will be inserted into the current page during compilation.</p>
+
+<p>The above code compiled to XHTML might look like:</p>
+
+<p>{{{
+<!-- compiled header goes here --></p>
+
+<div id="intro">
+<p>Here is some <b>bold</b>, <em>italicized</em> and <ul>underlined</ul> text.</p>
+<p>Here is another paragraph illustrating <a href="/path/to/root/or/something/about>internal</a> and <a href="<a href="http://www.google.com/">http://www.google.com/</a>">external</a> hyperlinks</p>
+<p>And another one illustrating an easy way to add new features: <acronym title="Three Letter Acronym">TLA</acronym></p>
+</div>
+
+<div id="misc">
+<p>Compiled on June 6th, 2006.</p>
+</div>
+
+<p><!-- compiled footer goes here -->
+}}}
+= Benefits =</p>
+
+<p>It is now very easy to update the content of a webpage. To do this, one only needs to change the marked up text. And since we're dealing with plaintext, this could be done either by hand, or quite easily with a script.</p>
+
+<p>The look of the webpage is completely separated from the content. also, the look of the webpage is '''very''' flexible, since it is defined completely by CSS. For an example of what I mean, take a look at the [<a href="http://csszengarden.com/">http://csszengarden.com/</a> css Zen Garden]. </p>
+
+<p>The resulting webpage does not need to be touched up by hand. The run-through is completely automated, and there is no need for human intervention.</p>
+
+<p>= Implementation =</p>
+
+<p>The run-thru is divided into several phases:</p>
+
+<ol>
+<li>Preprocessing - python code in `` gets interpreted (by python) and inserted into the processed markup</li>
+<li>Compilation - the processed markup gets interpreted: {{{<em>word</em> -> <b>word</b>}}}</li>
+</ol>
+
+<h2>And we end up with the result: a wonderful HTML page!</h2>
+
+<p>CategoryProject</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-07-28 16:51:27<br/>
+      Modified on 2006-07-10 15:58:49<br/>
+      Generated on 2017-05-30 16:20:38.373202<br/>
+    </footer>
+
+  </div>
+</body>

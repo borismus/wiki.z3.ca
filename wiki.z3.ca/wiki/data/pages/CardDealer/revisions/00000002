@@ -1,0 +1,36 @@
+= Card Dealer =
+
+My first full LEGO mindstorms project was an automated card dealer. I created it in Summer, 2002. This robot deals up to 8 players any number of cards. I was out of touch sensors for user input, so the number of players and cards was hard-coded in the NQC program.
+
+The dealer consists of 3 components, the base (heavily inspired by Dave Baum's Definitive Guide to LEGO Mindstorms), the rotating body, and the dealing tower itself. The dealing mechanism uses two components: a standard 10-point technic axle to throttle card distribution as well as a wheel to provide the card feeding force. This construction works quite well, especially with plastic cards, in which case the robot never deals out more than one card at once. 
+
+== Media ==
+
+You can download the model in LeoCAD format:
+
+[http://z3.ca/files/CardDealer/top.lc http://z3.ca/files/CardDealer/top.png]
+
+[http://z3.ca/files/CardDealer/mid.lc http://z3.ca/files/CardDealer/mid.png]
+
+[http://z3.ca/files/CardDealer/bot.lc http://z3.ca/files/CardDealer/bot.png]
+
+== Program ==
+
+{{{
+// dealer.nqc -- deals cards!
+
+// motors
+#define DEALER OUT_A
+#define FILTER OUT_B
+#define ROTATOR OUT_C
+
+// sensors
+#define CCOUNT SENSOR_1 // card count
+#define RCOUNT SENSOR_3 // rotation count (6 positions)
+
+// constants
+#define PLAYERS 4
+#define CARDS 6
+#define DEALINGMODE 0 // 0 for dealing in sequence, 1 for dealing all at once
+#define FREQ 440
+}}}

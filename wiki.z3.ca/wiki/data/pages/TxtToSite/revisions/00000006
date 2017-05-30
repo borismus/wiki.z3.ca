@@ -1,0 +1,55 @@
+txt2site is an idea I got sometime in 2004. I was playing with [http://txt2tags.sourceforge.net/ txt2tags], which converts plaintext that adheres to some simple rules into a variety of different formats such as WikiPedia:HTML, WikiPedia:LaTeX, etc. I thought it might be nice to write my personal page with the help of txt2tags. I wanted to automate this process as much as possible. 
+
+= First Attempts =
+
+I started with an email to the t2t mailing list asking when the python API would be released (it was released shortly, with txt2tags-2.0). In the meantime, I began hacking some bash/make solution (without, as it turned out, a clear enough goal in mind). I eventually realized, however, that it txt2tags is not the ideal tool to use for my task. It was too general, which is good, but not for my rather specific task. My problem with txt2tags was the lack of support for WikiPedia:CSS friendly output in the HTML (as of mid-2004). I decided that I needed to something designed explicitly for creating HTML pages.
+
+= Idea =
+
+txt2site takes a directory structure (webdir) on a local file system and turns it into a web site. This structure is composed of three kinds of files: 
+ 1. Simple markup files (in some exceedingly simple format) containing actual textual data and simple directives (fonts, image references, links to local markup files, links to external uri, includes to other markup files, etc)
+ 2. Associated style file(s) in CSS format
+ 3. External files, such as images
+
+The output should be strictly valid XHTML code, specified entirely by {{{div}}} tags with CSS ids attached. 
+
+== Markup ==
+
+The markup txt2site uses should be as simple and natural as possible:
+
+{{{
+`include("/share/header")`
+
+=intro=
+Here is some *bold*, /italicized/ and _underlined_ text.
+
+=misc=
+Compiled on `import date(); time.strftime("%F")`.
+
+`include("/share/footer")`
+}}}
+
+In this example, we use `` to indicate python code. The txt2site framework will define helper methods such as {{{`include("/path/to/markup")`}}} which inserts a header into the page. In general, the stdout of the python code in backquotes will be inserted into the current page during compilation.
+
+The above code compiled to XHTML might look like:
+
+{{{
+<!-- compiled header goes here -->
+
+<div id="t
+
+<!-- compiled footer goes here -->
+}}}
+= Benefits =
+
+It is now very easy to update the content of a webpage. To do this, one only needs to change the marked up text. And since we're dealing with plaintext, this could be done either by hand, or quite easily with a script.
+
+The look of the webpage is completely separated from the content. also, the look of the webpage is '''very''' flexible, since it is defined completely by CSS. For an example of what I mean, take a look at the [http://csszengarden.com/ css Zen Garden]. 
+
+The resulting webpage should not need to be touched up by hand.
+
+more to be formulated.
+
+= Implementation =
+----
+CategoryProject

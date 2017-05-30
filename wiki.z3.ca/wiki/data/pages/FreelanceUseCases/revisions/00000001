@@ -1,0 +1,48 @@
+Entities in the world: Player controller Ships and Planets (can be owned by players). Also the world.
+
+= Ship - World interactions =
+
+== Travel ==
+
+A ship can transport itself from planet to planet. Travel takes time, computed by the following formula:
+
+{{{
+(Travel Time) = k * (Distance) * (Ship Mass)/(Ship Engine)
+}}}
+
+Once a ship arrives at a planet, it can:
+
+ * Land on the planet.
+ * Interact with ships in orbit around the planet.
+ * Attempt to conquer the planet by force.
+
+The following can happen if the player lands:
+
+ 1. If the planet is neutral, the ship lands safely. There may be an encounter waiting for the player.
+ 2. If the planet is friendly, the ship lands safely and gets safe harbor from the planet, strengthening it's defenses whilst stationed there.
+ 3. If the planet is not friendly, the ship crash-lands and is faced with an encounter. It's defenses are weakened while stationed there.
+
+''Implementation: need some kind of encounter queue for each ship!''
+
+UI: Player is presented with a map of nearby stars and planets. Player can click on any star or planet to see information about it. When the player clicks on a planet, he sees how long of a journey it will be to travel there. If his ship has goods in its hull, he sees the supply and demand values for that good too.
+
+''Restriction: only one type of good in the hull!''
+
+''Note: supply and demand is a function of planet size, multiplied by the planet's modifier for the goody (set randomly). Planet size is determined by the following:''
+
+{{{
+(Planet Size) = [Sum over all levels of buildings on the planet]
+}}}
+
+
+== Encounters ==
+
+Encounters are events that occur to ships. Some are positive, involving a resource find or upgrade. Others involve being attacked by NPCs while in transit. 
+
+Sometimes, when a ship does something (like travel or a trade transaction), there is a random encounter.
+
+= Ship - Ship interactions =
+
+== Combat ==
+
+A ship can attack another ship in orbit around a planet.

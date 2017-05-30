@@ -1,0 +1,19 @@
+= Active Projects =
+
+  * PalmWikiSync aims to synchronize MoinMoin instances with Treo running Palm OS 5, via a [http://www.coldsync.org coldsync] conduit.
+  * GeoGames is a pseudo-startup for research about using new GPS and Internet-enabled mobile technology for gaming.
+  * MachineBackup is an attempt to streamline DVD backups of a small local network.
+  * AudioConvert is a python script that allows converting to/from arbitrary audio formats.
+  * ["Freelance"] is not yet a web-based space trading game.
+
+= Finished Projects =
+
+  * ["ArcadeTank"] was my first game ever. I keep it here for nostalgic purposes only.
+  * ["Sponge"] is a wacky and very experimental pong variant played in a wireframe sphere. 
+  * TankHerding is a toy that simulates the behavior of armies of tanks, loosely based on [http://www.red3d.com/cwr/boids/ flocking].
+  * ["Alienation"] was a most ambitious role playing game that was played in the browser. I lost all the source code in a series of fatal keystrokes.
+  * SongBook is an attempt to aggregate guitar chords and lyrics stored on this wiki and publish them into a LaTeX book, for camping.
+
+= Index =
+
+[[FullSearch(regex:\bCategoryProject\b -title:regex:^Category)]]

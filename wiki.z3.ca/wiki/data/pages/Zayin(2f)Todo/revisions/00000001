@@ -1,0 +1,7 @@
+= Ldap =
+ * Ensure samba and PAM authentication works without problems
+ * Restrict read access to directory to only some priveledged users
+ * Populate address book
+
+= Printing =
+ * Get cups working over the network

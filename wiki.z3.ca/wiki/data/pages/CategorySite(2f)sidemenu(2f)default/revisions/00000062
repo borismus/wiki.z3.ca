@@ -1,0 +1,20 @@
+## page was renamed from site/sidemenu/default
+## page was renamed from site/sidemenu/CategoryDefault
+## page was renamed from site/sidemenu/default
+## page was renamed from sitex/sidemenu/default
+
+{{{
+<ul>
+ <li><a href="/Boris">About</a></li>
+ <li><a href="/GuestBook">Comment</a></li>
+ <li><hr/></li>
+ <li><a href="/CategoryProject">Projects</a></li>
+ <li><a href="/CategoryMusic">Music</a></li>
+ <li><a href="/CategorySport">Athletics</a></li>
+ <li><a href="/CategoryFood">Cooking</a></li>
+ <li><a href="/CategoryMisc">Misc</a></li>
+ <li><hr/></li>
+ <li><a href="http://gallery.z3.ca">Gallery</a></li>
+ <li><a href="http://stats.z3.ca/awstats/awstats.pl?config=z3.ca">Stats</a></li>
+</ul>
+}}}

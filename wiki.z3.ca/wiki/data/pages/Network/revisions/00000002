@@ -1,0 +1,28 @@
+The z3 network consists of zayin, the machine directly connected to the internet, and a number of workstations. All workstations run Gentoo Linux. 
+
+= Firewall =
+
+Zayin is a firewall (shorewall on iptables). It only allows ftp, ssh, dns and http traffic inside.
+
+= File server =
+
+Zayin is a file server. It hosts all of the home directories and exports them via NFS. It also hosts a lot of movies, music and other data.  
+
+The existing hard drives are hdc: 120G, sda: 200G and sdb: 250G. Currently, a striped LVM virtual group exists on top of all three drives. 
+
+== Improvements ==
+
+Zayin's striped vg is very volatile, since the failure of one drive would cause the loss of '''all''' data! Ideally, zayin would have a different setup.
+
+=== Raid ===
+
+Four 250G SATA drives could form a hardware RAID 5 array. That's three extra hard drives ($400) and a RAID controller ($400). Resulting array size would be roughly 750G. This is too pricey.
+
+Instead, I would rather use the existing 200G and 250G drive too! So instead, I'll buy two 320G drives ($250), mirror them and begin using the resulting partition as a pv for a new LVM vg2. Then, I'll start to migrate the existing lvs into the new vg2. Once that's done, I'll be able to remove the original vg, and create and mirror two 200G partitions on each old drive. The remaining 50G on the larger old drive will be used for /opt, /tmp, /var/tmp, swap, /usr/portage. Ultimately this gives 520G for just $250. This can eventually be expanded with two more mirrored drives.
+
+= Workstations =
+
+||Bet|| athlon-xp 1700+ ||
+||Daled|| pentium3 600 ||
+||Hey|| xbox ||
+||Chet|| amd64 3200+ ||

@@ -1,0 +1,24 @@
+I store my digital music library in a command-line friendly way. Which means that I use the song file names and their parent directories to compliment the metadata found inside the music files themselves. I'm not a fan of keeping entire albums, so the structure that I use is slighly flattened compared to most. I realize, however, that these days its much easier to download albums, so I download them and store them temporarily.
+
+{{{
+/music
+    /artist 1
+        /song 1
+        /song 2
+    /artist 2
+    ...
+/unsorted
+    song a
+    song b
+    ...
+/albums
+    /album 1
+    /album 2
+    ...
+}}}
+
+My workflow consists of downloading albums, picking songs I like, and copying them into `/unsorted`. Cron scripts then grab these songs and, according to ID3 (or equivalent) tags, place them into the appropriate place in `/music` directory. Alternatively, falsely tagged song files can be placed directly into the music structure and they will automatically be tagged.
+
+I will make public these cron scripts eventually.
+----
+CategoryProject

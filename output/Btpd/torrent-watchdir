@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Torrent Dir Watcher, by Boris Smus <boris@z3.ca>
+# A simple script to watch the TORRENT_DIR for changes to 
+# of torrent files. When a torrent file is added, it's registered with
+# btpd. 
+#
+# Dependancies: btpd, inotify-tools
+
+WAIT_UNTIL="inotifywait"
+
+ADD="-e moved_to -e create"
+TORRENT_DIR="/media/downloads"
+
+function watchAddedTorrents
+{
+    $WAIT_UNTIL $ADD $TORRENT_DIR | while read line
+    do
+	array=($line)
+	# Get everything after the second word (the name of the torrent
+	# file)
+	torrent="${array[@]:2}";
+	extension=${torrent##*.};
+	if [[ ! "$extension" = "torrent" ]]
+	then
+	    break;
+	fi
+	torrentPath="$TORRENT_DIR/$torrent";
+	echo $torrentPath
+	sleep 0.1 && torrent-add "$torrentPath" &
+    done
+    watchAddedTorrents;
+}
+
+watchAddedTorrents 

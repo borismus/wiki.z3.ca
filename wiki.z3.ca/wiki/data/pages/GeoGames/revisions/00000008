@@ -1,0 +1,59 @@
+GeoGames is an idea that involves using positioning technology such as GPS to implement games. Here I outline my plan of action.  
+
+While working at RIM, getting my hands on a BlackBerry 7520 (with integrated GPS receiver) proved to be more difficult than I had anticipated. I have since decided to switch gears and start with a small prototype/proof of concept that would simulate the GPS receiver instead of dealing with actual GPS devices.
+
+= Proof of Concept - version 0.1 =
+
+''Target: Python twisted server handling HTTP requests from AJAX or Comet enabled clients with rich graphical user interfaces.''
+
+Here, the GPS receiver is simulated by a web client, which is able to move around in some arbitrary space. The location of the client is pushed to the server via AJAX (continuous polling) or Comet (persistent HTTP connection) communications with the central server. The server then records the updated client state and sends back the overall picture to the client.
+
+== Components ==
+
+ * Authentication: the server needs to be able to recognize and distinguish clients that connect to it
+ * State: a collection of information about all known entities.
+ * Entity: the state of an client/object/whatever in the world
+ * Location: the location of an entity in the world. items in the world are keyed by this attribute. it must be possible to determine efficiently which objects are nearby.
+
+== Plan ==
+
+=== 0.1.0 ===
+
+Unit tests for twisted server-side implementation. The expected functionality is simple:
+ * Register new users
+ * Authenticate existing users
+ * Get state (locations, data)
+ * Send state (location)
+
+=== 0.1.1 ===
+
+Synchronous twisted server-side implementation.
+
+=== 0.1.2 ===
+
+Simple text-based web client. Here, no unit tests are needed since this is just a mockup. Will need to choose between AJAX and Comet and will need to choose some JavaScript library to help.
+
+=== 0.1.3 ===
+
+Asynchronous twisted server-side implementation.
+
+=== 0.1.4 ===
+
+Enhanced graphical web client which renders state. Here, it will be necessary to determine the best technology to use. SVG for drawing the map? 
+
+=== 0.1.5 ===
+ 
+More client enhancements to allows user to graphically control direction of movement. Also add more features to more accurately simulate how a GPS client would work (low position accuracies, delayed data, etc)
+
+= Optimization - version 0.2 =
+
+''Target: A mock environment (as in 0.1), but one that is geographically intelligent, and can scale to support many users.'' 
+
+The following things need to be answered before this stage completes.
+ * Can a reasonable (small) number of users coexist on one server?
+ * Is the latency acceptable? What does acceptable mean?
+ * What can be done to make this more scalable other than splitting clients geographically over multiple regional servers? 
+ * Is there some p2p technology for wireless clients that could alleviate so much stress on a single central server?
+
+----
+CategoryProject

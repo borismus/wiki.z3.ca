@@ -1,0 +1,17 @@
+= Status Quo =
+
+ * torrent.z3.ca - runs clutch, the web interface to transmission
+ * z3.ca - runs my personal wiki/blog, currently MoinMoin
+ * gallery.z3.ca - runs a gallery instance
+ * stats.z3.ca - runs an awstats instance
+ * runubc.com - a custom django site for the fun run club
+
+= Desired =
+
+ * torrent.z3.ca - still runs clutch
+ * z3.ca - the home of Z3 Media
+ * borismus.com / borissmus.com - personal wiki/blog, not sure what hosting yet
+ * runubc.com - runs some kind of CMS easily editable by club members
+ * istherewind.com - wind notification service on GAE
+
+Also need to move as much DNS information to non-z3 servers as possible!

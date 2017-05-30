@@ -1,0 +1,14 @@
+A powerful system for leaving yourself memos. Basically an integrated personal wiki.
+
+Here's how it works:
+
+ * Hit an OS-wide key combination to bring up Jot prompt
+ * Start typing the note. 
+ * Jot completes things based on its idea of what you are trying to type.
+  * EXAMPLE: You type someone's name, it will cross reference a contact in your contacts repository
+  * EXAMPLE: You start typing a url, and Jot will x-ref something from your bookmarks
+  * EXAMPLE: You type a location and Jot will create a link to google maps
+  * EXAMPLE: You write TODO: and Jot will make a TODO out of what you write.
+
+  * ISSUE: make x-refs explicit, or just rely on the system being smart enough?
+ * You can organize what you 

@@ -1,0 +1,18 @@
+This is the home of a script generates playlists based on user's desires using last.fm metadata. 
+
+Often I find myself liking very few of the new songs I hear in last.fm radio. I also have a large library of music that I like. I end up listening to the same songs via last.fm as in my library!
+
+Also mpd doesn't currently store meta-data in the database and of course id3 genre data is much less detailed than last.fm tags.
+
+= Features =
+
+ * Listen to recently heard music.
+ * Listen to music of a certain genre - implementation may be tricky since mpd only knows how to find tag data based on song/artist.
+ * Listen to music similar to a song or artist.
+
+= Usage =
+{{{
+./metapd -recent <user>
+./metapd -genre <genre>
+./metapd -similar <artist>-<track>
+}}}

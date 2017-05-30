@@ -1,0 +1,14 @@
+When creating a wiki page, the user has to decide not only the page title and content, but also how to fit the page inside the overall heirarchy of the wiki. 
+
+= How should a wiki be organized? =
+
+The looseness of the structure of a wiki is both a good and a bad thing. On one hand, the user can arrange his pages however he likes, but on the other, this freedom is often daunting and can lead to bad decisions, causing the wiki to be poorly navigable.
+
+There are two obvious ways of organizing a wiki. 
+
+The first is in a sprawl, which is held together by categories. You classify the topic of the page by specifying categories for it. This idea is reminiscent of the current tag fad. MoinMoin provides a powerful interface for this (see HelpOnCategories for more info).
+
+The other way is to emulate a file system heirarchy in a tree-like structure. For instance, things relating to guitar tuning would be named Guitar/Tuning. Then it is possible to use the Navigation macro to browse to parents and/or children.
+
+----
+CategoryMisc

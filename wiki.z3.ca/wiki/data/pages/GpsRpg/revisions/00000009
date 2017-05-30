@@ -1,0 +1,29 @@
+= GPS MMORPG =
+
+An interesting project that I may undertake is this: to take concepts from existing multiplayer games and apply them to create a WorldOverlay. This would create a new genre of game - a hybridization between a computer game and the real world.
+
+== Implementation ==
+
+The actual game would work like this: there is be a community of players hauling their Unit around. As a player moves, the software on his Unit reacts and informs the regional server. Meanwhile, the regional server also keeps busy, reporting status changes to it's clients. There is also a master server, which determines which regional server the player belongs to. It will be necessary to formalize how exactly the master server distributes players to regional servers (when will this happen? what happens at a region boundary?)
+
+== Sample Session ==
+
+You turn on your Unit and launch the game client. You authenticate with the master server, and it distributes you to your regional server. Now you go somewhere. Your new GPS position is sent to the server. The server sends you back whatever state corresponds to your position (Can we use a stateless protocol?). That's it! The skeleton is now in place :)
+
+= Comparison with Existing Games =
+
+Today's massively multiplayer role playing games are a well-established genre. Of course, modern, graphically stunning MMORPGs borrow heavily from old MUDs, MUSHes, MUCKs and MOOs, which are completely text-based. The text-based path is a more appropriate choice for the mobile platform.
+
+Typical computer games are purely virtual. This new game would involve a mix of physical (players, physical constraints found on the planet) and virtual (monsters, items, whatever else) entities. In this game, you would play your physical self, except you might have virtual items and ''special powers''. The beauty of this setup is that '''we retain the limitlessness of the virtual medium, while capitalizing on the social aspects of reality.'''
+
+== Changes to Combat ==
+
+In a typical massively multiplayer role playing game, combat is turn based. The player can flee at any time by running away. This idea could be extended and made much more interesting. In the proposed hybrid, combat could still be virtual and turn based, but fleeing would be physical: the player would have to escape by outrunning a virtual monster (monsters have speed?) or another physical player.
+
+== Changes to Death ==
+
+In existing multiplayer games, the player dies only to respawn at another location. Since we do not yet have teleportation, it is not possible to move your physical body to some arbitrary spot! It is possible, however, to teleport your virtual body, so that it can be rejoined with the physical body when the physical body reaches it. 
+
+This idea is similar to the death system in Ultima Online: upon death, the character you control becomes a ghost, which must find its way to the temple(?) to rejoin the physical body.
+
+= Social Issues =

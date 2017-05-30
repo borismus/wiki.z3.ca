@@ -1,0 +1,6 @@
+#acl BorisSmus:read,write,delete All:
+
+## page was renamed from FrontPage
+##language:en
+
+Z3 Frontpage

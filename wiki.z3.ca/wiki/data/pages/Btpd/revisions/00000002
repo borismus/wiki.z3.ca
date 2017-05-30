@@ -1,0 +1,9 @@
+[http://www.murmeldjur.se/btpd/ BTPD] is a pretty cool daemon. It sure beats running the script 'launchmany-console', bundled with bittorrent, in the background!
+
+Still, I wasn't happy with a few things in it. I posted about them to the mailing list. I've also attached some scripts that I wrote as temporary solutions to my perceived problems.
+
+ 1. Is it a daemon or not? I want to be able to communicate to btpd without the strange reliance on having a user-writeable sock in ~/.btpd. Ideally it would run on some port so that it would also be possible to communicate over a network (finding status, for example, would be nice). attachment:torrent-watchdir
+
+ 2. Watching a directory for torrent additions/removals. The one thing I miss about bittorrent's launchmany client is the ease of management of torrents. In it's absense, I wrote a bash script to monitor a directory for new torrents and auto-add them.
+
+ 3. Improved interface. Maybe it's just me, but I find some things in btcli inconvenient to use. My main gripe is having to specify a directory to download torrents to. It's pretty easy to infer which directory to download to. I wrote a wrapper around btcli add to do that. attachment:torrent-add

@@ -1,0 +1,9 @@
+## page was renamed from MoinSync
+## page was renamed from PalmMemosWiki
+The other day I was thinking.... Wouldn't it be cool if I could create offline articles on my PDA, as memos, and then when I synchronize, these articles would get published on my wiki? Yeah.... that would be cool.
+
+Also with this neat new MonthCalendar macro, maybe doing something with calendary things would be a good idea too. And maybe fit todo list in there somewhere... hmm this could be fun!
+
+So there may be other things that need to get synchronized. Maybe make a more general (Palm) -> (Intermediate) -> (Wiki) thing? Perhaps use iCal as the middle layer for calendar stuff, some simple text format for memo, something else for contacts... not sure how to define scope yet.
+----
+CategoryIdea

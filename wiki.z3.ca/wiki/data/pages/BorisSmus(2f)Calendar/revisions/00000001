@@ -1,0 +1,9 @@
+## Please edit system and help pages ONLY in the moinmaster wiki! For more
+## information, please see MoinMaster:MoinPagesEditorGroup.
+##master-page:HomepageReadPageTemplate
+##master-date:Unknown-Date
+#acl BorisSmus:read,write,delete,revert BorisSmus/ReadWriteGroup:read BorisSmus/ReadGroup:read
+#format wiki
+#language en
+
+[[MonthCalendar]]

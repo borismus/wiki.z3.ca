@@ -1,0 +1,12 @@
+After many years of Palm synchronization on Linux is still very flakey.
+
+= One-touch sync =
+
+To avoid having to press the sync button on your desktop sync tool {evolution, jpilot} or command linee util {pilot-link, coldsync} explicitly, configure udev to automatically do it. With >=jpilot-0.99.8, it is done by appending a `RUN` directive to the appropriate ttyUSB device:
+
+{{{
+KERNEL=="ttyUSB[0-9]*", NAME="%k", SYMLINK="tts/USB%n", GROUP="tty", MODE="0660"
+RUN="/bin/su - $USER -c '/usr/bin/jpilot -s'"
+}}}
+
+which executes `jpilot -s` as soon as the device is created.

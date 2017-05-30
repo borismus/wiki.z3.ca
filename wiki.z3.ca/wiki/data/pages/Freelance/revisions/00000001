@@ -1,0 +1,37 @@
+= Executive Summary =
+
+Web-based space trade/exploration/combat game written in Python/Django
+
+= World =
+
+The freelance universe takes place in our galaxy. The world is simplified drastically: no concept of star, star system, etc. The only relevant objects are planets, which are characterized primarily by their coordinates in R^3. Euclidian distance is used to determine distance between planets, and used to compute transit time for space ships.
+
+== Planets ==
+
+Planets themselves, in addition to coordinates, have various other properties useful in other contexts. These properties are determined by a combination of so-called planetary attributes and planet size. 
+
+Planetary attributes include things like ''habitable'', ''scientific'', ''industrial'', ''spiritual'', ''gaseous'', and influence various aspects of the planet's life. For example, a gaseous planet gets +1 supply of fuel and +1 demand for metal. A planet's size determines how to distribute the planet's attributes. For instance, if a planet has attributes A, B and C, and size S, the properties of the planet would be determined by computing S*(A+B+C).
+
+= Travel =
+
+Travel from planet to planet consumes fuel. It also involves a certain amount of real-time waiting. How much fuel and waiting is required is a function of distance travelled, ship mass and engine type. Typically, a player who decides to fly from planet A to planet B will be notified of how long and expensive (in terms of fuel) such a transit will take. Upon agreeing, the player's ship will begin it's route. After the allotted amount of time, the ship will reach its destination, and the fuel will have been spent.
+
+== Transit ==
+
+In between planets, certain interesting things can occur. A ship can be attacked by another ship, or there can be ordinary NPC encounters.
+
+= Ships =
+
+Every player controls a state-of-the-art interstellar vehicle. The vehicle can be upgraded piece by piece to do its various tasks better and faster.
+
+== Upgrades ==
+
+ * Chassis - to specify ship configuration (number of weapon slots, etc)
+ * Bay - to carry cargo (max weight)
+ * Engine - to get places faster and more efficiently (speed)
+ * Shield - to provide ship defense
+ * Weapon - to be more effective in destroying other objects
+
+= Trade =
+
+Every planet has a list of items and their corresponding supply and demand values. These values are multipliers used to determine for how much a planet is willing to respectively sell or buy a particular item. A planet's supply and demand values are computed as a function of time passed since the most recent planetary trade, and planet size. In other words, if a trade occurred very recently, supply and demand will be decreased. Also, the larger the planet, the more quickly it's demand is restored to high levels.

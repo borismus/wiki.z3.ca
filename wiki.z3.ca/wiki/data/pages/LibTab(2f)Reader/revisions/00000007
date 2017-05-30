@@ -1,0 +1,60 @@
+## page was renamed from TabLib/TabReader
+## page was renamed from GuitarTabParser
+
+= Algorithm =
+
+There is no fixed format for guitar tabs. This makes parsing more difficult, but also more interesting. Guitar tabs are typically written in multiple lines. The format is something like:
+
+{{{
+Notes
+
+Lyrics
+
+Fretboard
+Lyrics 
+
+Chords
+Lyrics
+
+Chords
+Lyrics
+
+Notes
+
+Chords
+Lyrics
+}}}
+
+{{{
+Fretboard 1
+Lyrics 1a
+Lyrics 1b
+...
+
+Fretboard 2
+Lyrics 2a
+Lyrics 2b
+...
+}}}
+
+Line wrapping is done out of convenience, to fit in a certain number of columns. To actually understand the tab, these line breaks need to essentially be ignored: 
+
+{{{
+Fretboard 1     Fretboard 2
+Lyrics 1a       Lyrics 2a
+Lyrics 1b       Lyrics 2b
+}}}
+
+== Parsing Frets ==
+
+Fretboards consist of strings. There are usually 6 strings for guitar tabs, and 4 for bass tabs, however, there is no reason to stipulate that this be the case. The base tuning of each string is sometimes specified as a prefix, as in `E---------`.
+
+=== Parsing Strings ===
+
+Each string consists of notes, specified by a number indicating the offset from the nut. The position of the note on the string is important, because it indicates which notes should be played before, during or after the note.
+
+In addition to notes, string contain other symbols. For instance, a slide up is typically denoted by a `/`, as in `5/9`. A hammer is denoted by `h`, a pull by `p`, and so on.
+
+== Parsing Lyrics ==
+
+The lyrics may be spaced out so as to lign up with the notes, or not.

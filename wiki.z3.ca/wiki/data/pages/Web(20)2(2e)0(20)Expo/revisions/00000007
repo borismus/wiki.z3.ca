@@ -1,0 +1,22 @@
+= Tuesday =
+
+== Web Development (9 - 12) ==
+
+Intro:
+
+ * Tons of love for Apple (long eulogies for the iPhone)
+ * All about context specific mobile sites
+ * Uses his own product (leaflets) as the example of how to develop for mobile
+
+Implementation:
+
+ * Split CSS into multiple files so that it can be reused (overhead of multiple CSS files is negligible?)
+ * Case study of using CSS3 to make small icons
+
+ * CSS3 iPhone transforms run natively, turned into probably CoreAnimation calls on the device. Much faster than writing Javascript.
+  * The idea is to set a CSS class or id on an element which has a -webkit-transition.
+ * Mentioned SproutCore... mischaracterized it by suggesting that you don't write JS, but instead Ruby (!?)
+ * Talked about Cappuccino too, no real judgement :)
+
+ * Multitouch on iPhone
+  * 2.0 allows to keep tab bar positioned in the bottom of iPhone apps (because of extra callbacks)

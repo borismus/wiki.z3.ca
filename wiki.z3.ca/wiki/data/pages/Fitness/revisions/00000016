@@ -1,0 +1,19 @@
+= Bulking =
+
+|| '''Variable''' || '''Formula''' || '''Value'''||
+||Body mass || || 65 kg ||
+||Fat composition || || 12%||
+||Fat free mass (FFM) || (Body weight) * (1 - Fat composition) || 57 kg||
+||Resting metabolic rate (RMR) || 500 + (22 * FFM) || 1800 cal/day||
+||Activity factor || Office work|| 1.6 ||
+||Metabolic equivalent (MET) || Intense free weight lifting || 5 ||
+||Exercise activity || Body mass * Duration * MET value || 500 ||
+||Thermic effect of food (TEF) || RMR * 0.1 || 180 ||
+
+Total metabolic rate = RMR * (Activity factor) + Exercise activity + TEF = 3500 cal/day
+
+= Cutting =
+
+
+----
+CategorySport

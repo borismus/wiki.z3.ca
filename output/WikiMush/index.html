@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+  <title>WikiMush | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>WikiMush</h1>
+    </header>
+
+    <section id="articles">
+      <p>= Idea =</p>
+
+<p>[<a href="http://en.wikipedia.org/wiki/Mush">http://en.wikipedia.org/wiki/Mush</a> Mush]es are cool because of
+"...the ability, by default, of any player to extend the world by creating new rooms or objects and specifying their behavior in the MUSH's internal scripting language."</p>
+
+<p>[<a href="http://en.wikipedia.org/wiki/Wiki">http://en.wikipedia.org/wiki/Wiki</a> Wiki]s are cool because
+"a wiki enables documents to be written collectively (co-authoring) in a simple markup language using a web browser. "</p>
+
+<p>So why not combine the two? Why not create a system where Mush-like objects are created through the web?</p>
+
+<p>= Implementation =</p>
+
+<p>The entire system should be written in python and deployed with Apache + mod_python. </p>
+
+<p>The game itself should be scripted using python (probably some sandboxed version thereof). A wiki url would map to a python class. This class would have the benefit of inheriting from a large number of predefined classes, such as one that defines an Exit, a Room, a Mob, etc.</p>
+
+<p>Inheritance is not the best way to go here - prefer to use pluggable classes, [<a href="http://www.twistedmatrix.com">http://www.twistedmatrix.com</a> twisted] style.</p>
+
+<p>= Interface =</p>
+
+<p>A uri maps to a class, whose source code is editable through either a web-based form, or some sort of an upload form (or maybe WebDAV? - i know nothing about this).</p>
+
+<p>= Links =</p>
+
+<p>Having done a bit of googling, I only found one similar project:</p>
+
+<h2><a href="http://abstract-productions.net/game/">http://abstract-productions.net/game/</a></h2>
+
+<p>CategoryGame</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-06-08 07:43:45<br/>
+      Modified on 2006-07-10 15:59:03<br/>
+      Generated on 2017-05-30 16:20:38.450703<br/>
+    </footer>
+
+  </div>
+</body>

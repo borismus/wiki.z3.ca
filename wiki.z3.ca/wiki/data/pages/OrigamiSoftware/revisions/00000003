@@ -1,0 +1,9 @@
+Origami is awesome, I've been doing it for many years. But now that I've sort of run out of models to make, and am a little weary of making my own (they usually end up sucking), I tried to find something decent on the interweb.
+
+I was expecting to find a nice central database of models in some beautiful, open format. From this open format, I could generate my own diagrams, and perhaps animations of the fold being created from one step to the next. I also expected a multitude of open source software that can be used to create these models and manipulate them at will.
+
+Ha! All I found was a bunch of smelly gifs! 
+
+So what's the deal? How hard is it to implement something of a standard model instruction file? Something like the latex system would be nice: .ori source, which can be converted to a nicely typeset set of instructions. Then, perhaps some sort of GUI to help in the creation of ori files (kinda like LyX). This system might also allow some sort of 3D output too. Just a thought, really... maybe something to do for the CS Honors thesis!
+----
+CategoryIdea CategoryRant

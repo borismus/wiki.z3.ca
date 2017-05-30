@@ -1,0 +1,3 @@
+#acl -All:read
+
+|| attachment:chair.jpg || 3.14 || 5.22 ||

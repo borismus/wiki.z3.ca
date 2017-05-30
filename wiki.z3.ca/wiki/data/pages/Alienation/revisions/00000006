@@ -1,0 +1,18 @@
+= In the Beginning... =
+
+Way back, maybe in 2000, I was screwing around with [http://www.python.org Python] and [http://www.zope.org Zope]. I was inspired by a web-based remake of an old BBS game, Legend of the Red Dragon, to make my own web-based game. Except I was ambitious.
+
+The first version of Alienation came as a surprise to me. I sat down with my shiny new installation of Zope 2.0 and Python 1.5.2, and started hacking up (in the worst sense of the word) some code. I used and misused Zope's Python Scripts, and built the entire game around it. I had a lot of fun. I got some of my friends involved, with their creative talent seeping out from every pore. Alienation ended up being something of a web-based MUD.
+
+We had a whole universe brewing, with unique creatures and fantastic planets. Then, as I was struggling with a particular feature (I think I was implementing a bartering system), I realised just how bad this code sprawl turned out. I realised that it was time to re-write everything from scratch. It was hard to leave the old game behind, especially the game world (locations, creatures, equipment). Plus, by this time, a small Alienation community had formed, of ''actual'' people playing this game. I think I even applied to [http://www.ga-rpg.com/ ga-rpg] (now defunct) for web-hosting. 
+
+Anyway, after a while I began to plan for Alienation II. I wanted things to be modular, and wonderful, and so on. And people sent me emails: and wouldn't it be nice if... and can't we please have...? By then, I discovered Zope Products, which is a very nice way of expanding zope itself to write web-based applications the ''Right Way'' (tm). I ended up not having enough time, and left the project altogether. 
+
+Since then, I have often had the urge to come back to the web, and to finally create something that I could be proud of. I kept re-designing the structure of Alienation, without actually implementing anything. I played with inheritance, multiple inheritance, metaclasses, components, and so on. Then one day, in #python on freenode, I threw around some ideas, and eventually came across an interesting, more mature project with similar ambitions: [http://twistedmatrix.com/products/reality Twisted Reality]. 
+
+= A Glimmer of Hope =
+
+Twisted Reality was the original reason why [http://twistedmatrix.com/ Twisted] was created. Now, Twisted is growing, but TR has been abandoned.
+
+----
+CategoryProject

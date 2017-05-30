@@ -1,0 +1,19 @@
+[http://modeemi.cs.tut.fi/~tuomov/ion/ Ion] is a keyboard-oriented window manager for X-windows. It was written by Tuomo Valkonen, creator of [http://modeemi.cs.tut.fi/~tuomov/pwm/ PWM], the first window manager to use tabs. Since PWM, many window managers have adopted tabs, most notably Fluxbox and Ion.
+
+I use Ion on every machine at home. In addition, I compiled it for solaris on the UBC undergraduate servers. It's definetely my preferred window manager. Ion can easily be extended using the powerful scripting language, [http://lua.org Lua]. All of it's config files are written in lua. 
+
+I have configured Ion to use vim-like key-bindings. My configuration consists of the following: 
+ * [http://z3.ca/files/Ion/alt_resize.lua alt_resize.lua] - alternative resizing (from [http://modeemi.fi/~tuomov/repos/ion-scripts-2/ ion2 darcs])
+ * [http://z3.ca/files/Ion/draw.lua draw.lua] - the theme
+ * [http://z3.ca/files/Ion/floatws.lua floatws.lua] - floating frame configuration and keybindings
+ * [http://z3.ca/files/Ion/histcompl.lua histcompl.lua] - history completion (from [http://modeemi.fi/~tuomov/repos/ion-scripts-2/ ion2 darcs])
+ * [http://z3.ca/files/Ion/ion-bindings.lua ion-bindings.lua] - general keybindings
+ * [http://z3.ca/files/Ion/ion.lua ion.lua] - main config file (mostly includes config files and loads modules)
+ * [http://z3.ca/files/Ion/ionws.lua ionws.lua] - ion frame configuration and keybindings
+ * [http://z3.ca/files/Ion/kludges.lua kludges.lua] - tweaks for particular applications that don't play well with ion.
+
+I once switched to ion3, but then realized that porting my configuration would be too much. Specifically, I got stuck porting ''ionws_move_current()'' to ion3.
+
+Obligatory screenshot:
+
+[http://z3.ca/files/Ion/ion.png http://z3.ca/files/Ion/ion-thumb.png]

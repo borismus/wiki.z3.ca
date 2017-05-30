@@ -1,0 +1,9 @@
+## page was renamed from BrickOsGentoo
+I'm playing with Mindstorms again. This time with BrickOS. 
+
+= Todo =
+
+  1. Fix up [http://www.wombatorium.com/archives/2004/03/gentoo_lego_ebuilds_01.php this guy's] ebuilds and add lnpd ebuild. Post to bugs.gentoo.org
+  2. Do a small project without lnpd (something with machine learning techniques?)
+  3. Do a simple lnpd test project (euler angles on a web cam? tea maker?)
+  4. Profit!

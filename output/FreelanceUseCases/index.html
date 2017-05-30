@@ -1,0 +1,120 @@
+<!doctype html>
+<head>
+  <title>FreelanceUseCases | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>FreelanceUseCases</h1>
+    </header>
+
+    <section id="articles">
+      <p>Entities in the world: Player controller Ships and Planets (can be owned by players). Also the world.</p>
+
+<p>= Ship - World interactions =</p>
+
+<p>== Travel ==</p>
+
+<p>A ship can transport itself from planet to planet. Travel takes time, computed by the following formula:</p>
+
+<p>{{{
+(Travel Time) = k * (Distance) * (Ship Mass)/(Ship Engine)
+}}}</p>
+
+<p>Once a ship arrives at a planet, it can:</p>
+
+<ul>
+<li>Land on the planet.</li>
+<li>Interact with ships in orbit around the planet.</li>
+<li>Attempt to conquer the planet by force.</li>
+</ul>
+
+<p>The following can happen if the player lands:</p>
+
+<ol>
+<li>If the planet is neutral, the ship lands safely. There may be an encounter waiting for the player.</li>
+<li>If the planet is friendly, the ship lands safely and gets safe harbor from the planet, strengthening it's defenses whilst stationed there.</li>
+<li>If the planet is not friendly, the ship crash-lands and is faced with an encounter. It's defenses are weakened while stationed there.</li>
+</ol>
+
+<p>''Implementation: need some kind of encounter queue for each ship!''</p>
+
+<p>UI: Player is presented with a map of nearby stars and planets. Player can click on any star or planet to see information about it. When the player clicks on a planet, he sees how long of a journey it will be to travel there. If his ship has goods in its hull, he sees the supply and demand values for that good too.</p>
+
+<p>''Restriction: only one type of good in the hull!''</p>
+
+<p>''Note: supply and demand is a function of planet size, multiplied by the planet's modifier for the goody (set randomly). Planet size is determined by the following:''</p>
+
+<p>{{{
+(Planet Size) = [Sum over all levels of buildings on the planet]
+}}}</p>
+
+<p>=== Acceleration ===</p>
+
+<p>Acceleration determines how much time a ship takes entering into orbit of a planet, and leaving orbit. This is very significant, since ships cannot be harmed while in transit between planets. Thus better acceleration means that ships will spend less time visible to other ships.</p>
+
+<p>Also, acceleration determines if a ship can flee from another ship.</p>
+
+<p>== Encounters ==</p>
+
+<p>Encounters are events that occur to ships. Some are positive, involving a resource find or upgrade. Others involve being attacked by NPCs while in transit. </p>
+
+<p>Sometimes, when a ship does something (like travel or a trade transaction), there is a random encounter.</p>
+
+<p>= Ship - Ship interactions =</p>
+
+<p>== Combat ==</p>
+
+<p>A ship can try to attack another ship on the same planet as it. This, however, is very risky, since it causes collateral damage to other ships and potentially structures as well.</p>
+
+<p>Combat is automated. The attacker attacks and the defender retaliates. When the HP of the defending ship is below the threshold, the defender attempts to flee. If the defender fails to flee, the attacker gets to salvage some of defender's stuff. The defender becomes in need of repair (which takes some time), and stops its activity. If the defender flees, the defender carries on with its activity and the attacker goes back into orbit.</p>
+
+<p>If the attacker loses, the defender carries on with what it was doing, and the attacker suffers a severe penalty.</p>
+
+<p>= Ship - Planet interactions =</p>
+
+<p>== Buy goods ==</p>
+
+<p>A ship in orbit can buy goods from the factory at the planet's supply rate. </p>
+
+<p>== Sell goods ==</p>
+
+<p>A ship in orbit can sell goods to the factory at the planet's demand rate.</p>
+
+<p>== Landing ==</p>
+
+<p>A ship can land in the planet's spaceport, giving it an extra defensive bonus. Players typically do this before signing out of the game. </p>
+
+<p>== Upgrading Ship ==</p>
+
+<p>A ship can upgrade its components at the construction yard.</p>
+
+<p>== Conquering ==</p>
+
+<p>A planet can be conquered by some means which is very difficult.</p>
+
+<p>== Building upgrade ==</p>
+
+<p>A ship in orbit can spend credits on upgrading a building on the planet. TODO: what benefit a player gains by doing this. Maybe a share-like system where players get back partial profit from their investment.</p>
+
+    </section>
+
+    <footer>
+      Created on 2007-10-10 17:21:55<br/>
+      Modified on 2007-10-12 10:05:38<br/>
+      Generated on 2017-05-30 16:20:37.546199<br/>
+    </footer>
+
+  </div>
+</body>

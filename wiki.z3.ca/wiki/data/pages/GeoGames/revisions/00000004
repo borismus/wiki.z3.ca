@@ -1,0 +1,28 @@
+While I'm at RIM, I have access to the BlackBerry 7520 handheld device, which has both GPS and GPRS! I can't miss this opportunity to implement a rudimentary system, described previously as WorldOverlay. 
+
+For the first implementation, I will keep things really simple. The only entities that exist are Clients. All that will exist in the first release is the network system (over GPRS), an authentication system, and a state passing system.
+
+= Languages =
+
+Since it's a BlackBerry, I'm pretty much forced to implement the client in Java. The server I'll write in python, using ZODB as the database backend. 
+
+= Communication =
+
+The server and client will communicate with one another using HTTP. Communication begins when the client sends the server its state, which includes authentication information. The server replies by first authenticating (if not already authenticated), and then by returning to the client an updated snapshot of the server's state. In other words, the server keeps track of the last state sent to each client, and only sends a ''diff'' between the last state and the current state.
+
+The client sends the server its state, which consists of just things that have changed on the client, including things like: 
+ * Client location
+ * Other data
+
+The server sends connected clients its state, but only the parts that are relevant. In other words, only the other entities that are close enough to the requesting client. 
+
+= Server =
+
+I'll write the server in python. It's basically a one-liner (BaseHTTPServer comes standard with any python distribution). For now, to make the data persist, I'll pickle things up occasionally. There should be no problems :)
+
+== Client User Interface ==
+
+The user interface will feature a top-down radar-like representation of the world. It's implemented using our very own media engine. Entities are SVG!
+
+----
+CategoryProject

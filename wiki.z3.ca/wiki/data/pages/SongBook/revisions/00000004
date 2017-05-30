@@ -1,0 +1,3 @@
+I've written a python [attachment:songbook.py script] to query this wiki for all of it's guitar tabs, convert them to latex and combine them in a nice song book. I use the gtx2tex utility, provided by the [http://guitartex.sourceforge.net/ guitartex] package, which converts chordpro files to latex. It also uses the gchord macro. After I have pdf, I print it as a two-sided booklet. It was a pleasure to use moinmoin's [MoinMoin:WikiRpc xmlrpc interface] to query this wiki.
+----
+CategoryProject

@@ -1,0 +1,8 @@
+On March 23rd, I got madly hacked by some Italian named Spike from #anime on irc.criten.net. He gained access to bash as the apache user and created an fserve {{{AnImE|XdCc|mtv_news}}} to distribute Italian anime in his channel. He used the exploit targetting {{{<awstats-6.3}}} installations as described in this [http://www.securityfocus.com/advisories/7920 GLSA] which, embarassingly, was now 2 months old. As far as I know, I wasn't rooted, so Zayin survived. 
+
+I found him in #anime. Spike was pretty nice, and one of his buddies recommended that I upgrade awstats (which, by this time, I had done anyway).
+Now I subscribe to the Gentoo Linux Security Advisories RSS feed (http://www.gentoo.org/rdf/en/glsa-index.rdf).
+
+This was the first time I have gotten hacked! Overall, very exciting - plus I got a good excuse to skip Operating Systems the next morning.
+----
+CategoryMachine

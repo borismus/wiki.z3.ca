@@ -1,0 +1,20 @@
+= GPS MMORPG =
+
+An interesting project that I may undertake is this: to take concepts from existing multiplayer games and apply them to create a WorldOverlay. This would create a new genre of game - a hybridization between a computer game and the real world.
+
+== Implementation ==
+
+For such a project to be realistic, we would need widespread access to portable devices with a sufficiently precise positioning system and Internet accessibility. Currently, there is no affordable device and wireless internet plan that would fulfill these requirements. However, I predict that within 5 years, such technology will be widespread, and wireless internet will be fully accessible in all major cities. Anyway, some local companies here in Canada, such as [http://fido.ca fido] have unlimited GPRS plans for just $50 CAD/month. The positioning system is already in place. The GPS service is free worldwide, and leading manufacturers of GPS recievers such as Garmin boast 3-5m accuracy.
+
+The actual game would work like this: there is be a community of players hauling their GPS/around
+
+== Social Issues ==
+
+
+= Comparison with Existing Games =
+
+Today's massively multiplayer role playing games are a well-established genre. Of all the MMORPGs out there, I have only played AsheronsCall and A Tale in the Desert.  But to my knowledge, these games are a very good sample of them. Of course, modern, graphically stunning MMORPGs borrow heavily from old MUDs, MUSHes, MUCKs and MOOs, which were text-based.
+
+== Changes to Combat ==
+
+In a typical massively multiplayer role playing game, combat is turn based. 

@@ -1,0 +1,19 @@
+I was reading my web stats, and I see this:
+{{{
+yuda.is.pregnant.do.not.p-a-n-i-c.com	1	1	16.73 KB	02 Mar 2005 - 02:57
+}}}
+
+It's actually a host too! Nmap says:
+
+{{{
+PORT      STATE  SERVICE
+21/tcp    open   ftp
+22/tcp    open   ssh
+25/tcp    closed smtp
+80/tcp    open   http
+5801/tcp  open   vnc-http-1
+5901/tcp  open   vnc-1
+10000/tcp open   snet-sensor-mgmt
+}}}
+
+Okay, so anything.p-a-n-i-c.com resolves to the same IP... but how the reverse DNS lookup for 66.252.14.67 resolves to p-a-n-i-c.com, not the above domain name. Still confused.

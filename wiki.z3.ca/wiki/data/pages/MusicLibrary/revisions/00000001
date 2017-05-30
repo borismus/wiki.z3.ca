@@ -1,0 +1,14 @@
+I store my digital music library in a command-line friendly way. Which means that I use the song file names and their parent directories to compliment the metadata found inside the music files themselves. I'm not a fan of having entire albums, so the structure that I use is slighly flattened compared to most.
+
+{{{
+/music root
+    /artist 1
+        /song 1
+        /song 2
+    /artist 2
+    ...
+/unsorted music
+    song a
+    song b
+    ...
+}}}

@@ -1,0 +1,58 @@
+## page was renamed from MetaPD
+MetaMP is a metadata client for MPD - a temporary measure that allows the user to store additional data.
+
+[[TableOfContents]]
+
+= Configuration =
+
+MetaMP stores configuration files in ~/.metamp or /etc/metamp.conf. This configuration file specifies where metamp should store it's database.
+
+= Database =
+
+MetaMP stores it's database in a sqlite3 database.
+
+== Tables ==
+
+|| File || Rating || Tags ||
+|| some/path/in/mpddb || 0-10 || CSV list (in popularity order) ||
+
+= Usage =
+
+== Tag Tracks ==
+
+Specify tag data manually,
+
+{{{
+./metamp tag <path to track> <tag1> [<tag2> ...]
+}}}
+
+or extract tag data from last.fm. If no path is specified, the entire database is populated from last.fm. Otherwise, only the contents of the directory is.
+
+{{{
+./metamp tag [<path>]
+}}}
+
+
+== Rate Tracks ==
+
+Assign a rating to a song:
+
+{{{
+./metamp rate <path to track> <rating>
+}}}
+
+== Play Songs Based on Metadata ==
+
+Listen to songs tagged with a given tag:
+
+{{{
+./metamp similar <tag>
+}}}
+
+or listen to songs that are rated a certain way
+
+{{{
+./metamp rated <expr>
+}}}
+
+where expr is a mathematical expression, for instance {{{=5}}} will list all songs rated 5. {{{>7}}} lists all songs rated more than 7.

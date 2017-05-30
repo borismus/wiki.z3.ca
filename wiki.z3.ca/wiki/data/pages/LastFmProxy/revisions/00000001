@@ -1,0 +1,5 @@
+Cheers to Vidar Madsen for implementing a great little application which allows ''you to use your regular old audio player to listen to the last.fm streams. It does this by acting as a player itself, connecting to the server on your behalf, but instead of playing the stream, it simply relays it to whichever other application connecting to it.''
+
+http://vidar.gimp.org/lastfmproxy/
+
+I'll make ebuilds and init scripts for it ASAP.

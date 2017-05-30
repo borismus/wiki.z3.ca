@@ -1,0 +1,26 @@
+On 9/11, a friend and I returned from the USA with a shiny 8gb iPhone each. The same day, the software-only unlock was released. Here's the procedure that I followed (from factory iPhone to updated, activated and jailbroken). This guide assumes the user runs OS X on the desktop.
+
+= Updating =
+
+ 1. Download [http://code.google.com/p/independence/ iNdependance], an easy-to-use interface for jailbreak, activation, and SSH installation.
+ 1. Read the README.txt for instructions!
+ 2. Activate
+ 3. Upgrade to the latest firmware (1.0.2) using iTunes
+ 4. This upgrade will deactivate the phone, so activate again!
+
+= Jailbreaking =
+
+Jailbreak gives write access to the iPhone. 
+
+ 1. Jailbreak using iNdependance
+ 2. Install SSH
+
+= Unlocking =
+
+Follow the guide at http://iphone.unlock.no
+
+Here's to the team of dedicated hackers at irc.osx86.hu who have finally come up with a working, '''FREE''' software unlock! Take that, Rogers Wireless!
+
+NB. When I first installed SummerBoard (the hack to allow SpringBoard, the iPhone's default launcher, to scroll), my iPhone became deactivated after a restart. I have no idea why, and I suspect YMMV. The solution to this is to just reactivate using iNdependance.
+
+Good luck!

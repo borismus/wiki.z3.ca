@@ -1,0 +1,126 @@
+<!doctype html>
+<head>
+  <title>MetaMP | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>MetaMP</h1>
+    </header>
+
+    <section id="articles">
+      <h2>page was renamed from MetaPD</h2>
+
+<p>MetaMP is a metadata client for MPD. It's a work in progress, but I would really appreciate it if you could try it and let me know what you think. Send bugs/suggestions/comments/hatemail to boris at this domain.</p>
+
+<p>Often I find myself liking very few of the new songs I hear in last.fm radio. I also have a large library of music that I like. I end up listening to the same songs via last.fm as in my library!</p>
+
+<p>'''Update''': Please also check out LastGenre, a last.fm-based genre tagger.</p>
+
+<p>[[TableOfContents]]</p>
+
+<p>= Todo =</p>
+
+<p>Playing:
+ * Allow filtering based on multiple tags {{{metamp play -t punk,pop}}}</p>
+
+<p>= 0.1.1 =</p>
+
+<p>I've released version 0.1.1, <img src="MetaMP"/>-0.1.1.tar.gz. It mostly consists of bugfixes, but here is a partial list of stuff changed:</p>
+
+<p>Last.fm:
+ * Optimize database updating (don't re-update already tagged files from last.fm)
+ * If song tag is not found, fall back to artist tag</p>
+
+<p>Tagging:
+ * Use {{{metamp autotag -p /}}} to tag the entire music database.</p>
+
+<p>Bugs:
+ * makii's issue with localization</p>
+
+<p>= Configuration =</p>
+
+<p>MetaMP stores configuration files in ~/.metamp or /etc/metamp.conf. This configuration file specifies where metamp should store it's database.</p>
+
+<p>{{{
+[conf]</p>
+
+<h1>where to store the metadata</h1>
+
+<p>db: /media/music/.mpdmeta</p>
+
+<h1>automatically start playing</h1>
+
+<p>auto_play: yes</p>
+
+<h1>log level</h1>
+
+<p>log_level: ERROR</p>
+
+<h1>lastfm username</h1>
+
+<p>username: foo</p>
+
+<p>}}}</p>
+
+<p>= Database =</p>
+
+<p>MetaMP stores it's database in a sqlite3 database.</p>
+
+<p>== Tables ==</p>
+
+<p>|| File || Rating || Tags ||
+|| some/path/in/mpddb || 0-10 || CSV list (in popularity order) ||</p>
+
+<p>= Usage =</p>
+
+<p>{{{
+ autotag:
+        automatically tag files using last.fm as tag database
+        %prog autotag --path="pop"</p>
+
+<p>tag:   mark files with tag data
+        %prog tag --path='metallica/enter sandman.mp3' \
+                  --tags='metal,heavy metal,rock'</p>
+
+<p>rate:  mark files with rating
+        %prog rate --path='metallica/enter sandman.mp3' \
+                   --rating=9</p>
+
+<p>play:  playback based on metadata
+        %prog play --rating=">5" OR
+        %prog play --tags="indie,canadian" &lt;-- playback canadian indie</p>
+
+<p>recent:
+        play recently heard tracks (last.fm users only)
+        %prog recent</p>
+
+<p>}}}</p>
+
+<p>= Older Versions =</p>
+
+<ul>
+<li><img src="MetaMP"/>-0.1.tar.gz.</li>
+</ul>
+
+    </section>
+
+    <footer>
+      Created on 2007-01-03 18:06:29<br/>
+      Modified on 2007-09-23 21:54:38<br/>
+      Generated on 2017-05-30 16:20:38.163335<br/>
+    </footer>
+
+  </div>
+</body>

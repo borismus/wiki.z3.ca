@@ -1,0 +1,32 @@
+## page was renamed from FrontPage
+##language:en
+
+Hey, I'm Boris Smus, an undergrad [http://cs.ubc.ca computer science] and [http://www.math.ubc.ca/ math] student at the [http://www.ubc.ca University of British Columbia]. Here is my academic [wiki:CourseSchedule schedule] for the current semester. A draft of courses that I have taken or am [wiki:CoursePlanning planning] to take is also available. Also, here is a [http://gallery.z3.ca/v/travel/qc/aai.jpg.html photo] of my brother and I. Finally, here are some of my many [wiki:CuteFans fans].
+
+Between academic terms, I'm a code mercenary. If you want to hire a sword, read my [attachment:resume.pdf resume].
+
+= Computing =
+
+I've been poking at computers for a long time. I mainly rely on free, open source software. At home, use [http://www.gentoo.org Gentoo] linux almost exclusively. contributing occasional [wiki:GentooEbuilds ebuilds] to gentoo's bugzilla. I also run the domain z3.ca which I depend on for most of my internet-related activity. I try to be as self-sufficient as possible, hosting smtp, http, ftp, ssh, rather than relying on external services (aka Google). I host a [http://gallery.z3.ca gallery] for friends and family, as well as [http://stats.z3.ca/awstats/awstats.pl?config=wiki.z3.ca wiki] and [http://stats.z3.ca/awstats/awstats.pl?config=gallery.z3.ca gallery] web statistics. 
+
+I can't miss out on the the social internet though, so I use del.icio.us for [http://del.icio.us/miraage online bookmarks] and [http://www.last.fm/user/miraage last.fm] for web radio. You can also find me lurking on the irc networks of freenode or efnet under the alias `miraage`. 
+
+== Projects ==
+
+I've made some cool stuff with a mindstorms set, including this [wiki:CardDealer card dealer] and this [wiki:DrinkMixer drink mixer]. I also started a ["Legopedia"] in an attempt to catalogue some common LEGO ''design patterns''. I often want to start programming projects, and have had many ideas for them. Before adopting MoinMoin as my website backend, I toyed around with implementing my own web framework, called [wiki:TxtToSite txt2site]. Location based technology is fascinating to me, and I am currently prototyping a [wiki:WorldRpg GPS-based game]. 
+
+I managed to write some games. My most ambitious project was a web-based rpg called ["Alienation"]. It's offline now, and I lost all the source code in a series of fatal keystroke. I also wrote a really simple arcade game with [wiki:Tank tanks], and an experimental [wiki:Sponge pong] variant played in a sphere. More recently, I wrote a pretty nifty [http://www.red3d.com/cwr/boids/ herding] tank battle [wiki:TankHerding simulator]. I want to continue these 3d projects and experiment with Conway's Life [wiki:3dAutomaton in 3D].
+
+== Gaming ==
+
+Occasionally I can catch a breath and play a game. My favorite game of all time is called [http://www.magicball.net Little Big Adventure], an action/adventure that, as a child, really captured my imagination. Since then, I have enjoyed Nethack, the Civilization series, Chrono Trigger, Zelda III, IV and Oracles, all Blizzard games, Asheron's Call, and a variety of newer RPGs. 
+
+= Sports =
+
+I'm also interested in ''normal'' things. Athletics, for example. Lately my focus has been on long distance running. You can find me training rain or shine on the west dyke in [http://www.richmond.ca/home.htm Richmond]. I participate in a variety of road races, mostly from the [http://www.bcathletics.org/RRSeries/ Timex BC] series.
+
+I discovered windsurfing two years ago, after taking an introductory lesson at Jericho beach. I just joined the [http://www.ubcsailing.org UBC sailing club] to gain access to their boards and the Jericho Sailing Center facility. Hopefully, Summer 2006 will be filled with windy weekends! In the winter, I hit BC's awesome ski resorts.
+
+= Music =
+
+My musical [http://www.last.fm/user/miraage tastes] {last.fm} are eclectic, ranging from Reggae to Rachmaninoff to Radiohead to Rhapsody. I learned piano as a child, and am hoping to return to it soon. While in Toronto, I started playing guitar. So lately I've been plucking away at some [wiki:Guitar guitar tabs]. 

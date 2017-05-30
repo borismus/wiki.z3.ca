@@ -1,0 +1,6 @@
+## page was renamed from FrontPage
+##language:en
+#acl -All:write
+#acl +All:read
+
+Welcome to Z3 Wiki. It was once a glorious bliki, but now remains, mostly for archiving, as a personal braindump.

@@ -1,0 +1,11 @@
+#acl All:
+{{{
+<ul>
+ <li><a href="/">Home</a></li>
+ <li><a href="/Robert">About me</a></li>
+ <li><a href="/WebHosting">Web hosting</a></li>
+ <li><a href="/Consulting">Consulting</a></li>
+ <li><a href="/Notes">Technical Notes</a></li>
+ <li><a href="/SiteNavigation">SiteNavigation</a></li>
+</ul>
+}}}

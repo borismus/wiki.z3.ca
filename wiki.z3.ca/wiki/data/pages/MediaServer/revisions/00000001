@@ -1,0 +1,9 @@
+I must now turn ["Aleph"] into a media server. The plan is to take the 120GB Seagate Barracuda from ["Bet"] and a new 120GB Samsung Spinpoint and put them into aleph. 
+
+= Partition Structure =
+
+I will try to use LVM2 to pool the 240GB into possibly one huge partition. Refer to [http://www.gentoo.org/doc/en/lvm2.xml]
+
+= Procedure =
+
+1. backup home directories to samsung

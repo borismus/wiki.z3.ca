@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+  <title>Btpd | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>Btpd</h1>
+    </header>
+
+    <section id="articles">
+      <p>[<a href="http://www.murmeldjur.se/btpd/">http://www.murmeldjur.se/btpd/</a> BTPD] is a pretty cool daemon. It sure beats running the script 'launchmany-console', bundled with bittorrent, in the background!</p>
+
+<p>Still, I wasn't happy with a few things in it. I posted about them to the mailing list. I've also attached some scripts that I wrote as temporary solutions to my perceived problems.</p>
+
+<ol>
+<li><p>Is it a daemon or not? I want to be able to communicate to btpd without the strange reliance on having a user-writeable sock in ~/.btpd. Ideally it would run on some port so that it would also be possible to communicate over a network (finding status, for example, would be nice). <img src="torrent"/>-watchdir</p></li>
+<li><p>Watching a directory for torrent additions/removals. The one thing I miss about bittorrent's launchmany client is the ease of management of torrents. In it's absense, I wrote a bash script to monitor a directory for new torrents and auto-add them.</p></li>
+<li><p>Improved interface. Maybe it's just me, but I find some things in btcli inconvenient to use. My main gripe is having to specify a directory to download torrents to. It's pretty easy to infer which directory to download to. I wrote a wrapper around btcli add to do that. <img src="torrent"/>-add</p></li>
+</ol>
+
+    </section>
+
+    <footer>
+      Created on 2007-08-17 12:09:02<br/>
+      Modified on 2007-08-17 12:13:24<br/>
+      Generated on 2017-05-30 16:20:37.248857<br/>
+    </footer>
+
+  </div>
+</body>

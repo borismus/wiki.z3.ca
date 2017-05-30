@@ -1,0 +1,159 @@
+<!doctype html>
+<head>
+  <title>Web(20)2(2e)0(20)Expo(2f)Moving(20)Pictures | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>Web(20)2(2e)0(20)Expo(2f)Moving(20)Pictures</h1>
+    </header>
+
+    <section id="articles">
+      <p>== Moving Pictures (10 - 11) ==</p>
+
+<p>Cal Henderson presents a talk about video on the web. Likes to cuss, make typos and speak really fast.</p>
+
+<p>Uploading:</p>
+
+<ul>
+<li>Upload forms don't really work since videos are big. Two parts:
+<ol>
+<li>Client side</li>
+<li>Forms: easy to implement, ubiquitous. hard to do upload progress, no batch upload, browsers are slow</li>
+<li>Upload progress is easy with AJAX query. Could have load balancing and multiple non-sticky machines</li>
+<li>But can still be done with PerlBal (load balancer)</li>
+<li>Flash: progress is easy, fast, batch upload supported. But hard to implement and not ubiquitous.</li>
+<li>Desktop App: lots of benefits but hard to develop and deploy. Drag &amp; Drop</li>
+<li>Server side</li>
+<li>Uploads are slow (slower than serving pages)</li>
+<li>Apache processes are heavy and a waste of resources</li>
+<li>Can instead use a poll based server (Jetty)</li>
+<li>Buffering layer: {{{ [Browser] - slow -> [Buffer (PerlBal? mod_proxy?)] - fast -> [Server] }}}</li>
+<li>Moving files around between servers are also slow - so should be done asynchronously (cf. GearMan)</li>
+</ol></li>
+</ul>
+
+<p>Transcoding:</p>
+
+<ul>
+<li>Transcoding puts all videos on equal footing</li>
+<li>Containers (mov, flv, avi) contain multiple streams in various codecs.</li>
+<li><p>Video {{{
+Header
+Video
+Audio
+Video
+Audio
+...
+}}}</p></li>
+<li><p>Raw video/audio rarely get used. 30fps of bitmaps or 44khz of sound is a lot</p></li>
+</ul>
+
+<p>Compression:
+ * Intraframe: treat each frame as picture and compress JPEG. Uses DCT (Discrete Cosine Transform)
+ * Interframe: missed it</p>
+
+<ul>
+<li>Intra coded pictures (key frames): full raw frame
+<ul>
+<li>Allows easy random seeking</li>
+<li>Online video usually has relatively few key frames</li>
+</ul></li>
+<li>Predicted pictures: based on single ref</li>
+<li><p>Bi-predictive pictures: based on two or more ref frames</p></li>
+<li><p>P &amp; B frames contain mix of image data and motion vectors</p></li>
+<li><p>|I| &gt; |P| &gt; |B|</p></li>
+<li><p>H.264 contains slices which split up the frame, more advanced</p></li>
+<li><p>Audio is mature enough. Syncing is the only issue.</p></li>
+</ul>
+
+<p>Format:</p>
+
+<ul>
+<li>Flash video? Pretty much everywhere and interactive. But no 3D/VR</li>
+<li>Some QT, WMV sites still exist.</li>
+<li>TrueMotion On2 is patented, and probably illegal for GPL (Flash 7)
+<ul>
+<li>YouTube uses it for lower quality and older streams.</li>
+</ul></li>
+<li>Lots of choices: video codec, resolution, bitrate, keyframes, audio codec</li>
+</ul>
+
+<p>Scaling:</p>
+
+<ul>
+<li>Easily parallelizable</li>
+<li>Amazon EC2-type services are good, but per-CPU software licensing.</li>
+</ul>
+
+<p>Free Tools:</p>
+
+<ul>
+<li>H.264 is an open MPEG standard (Flash 9)
+<ul>
+<li>YouTube uses it for high quality streams</li>
+<li>iPhone and AppleTV use it</li>
+</ul></li>
+<li>FFmpeg/MEncoder/VLC has libavcodec for VP6, but licensing issues
+<ul>
+<li>Can't encode H.264</li>
+</ul></li>
+<li>x264 can do H.264 but limited WRT commercial ones</li>
+</ul>
+
+<p>Non-free Tools:</p>
+
+<ul>
+<li>Flash Encoder: Not automatable</li>
+<li>On2 FlixEngine: Some support for H.264. Good for On2</li>
+<li>Rhozet Carbon Coder: Windows only. Good for H.264</li>
+</ul>
+
+<p>Storage:</p>
+
+<ul>
+<li>Files are huge so ops take time. Use checksums</li>
+</ul>
+
+<p>Serving:</p>
+
+<ul>
+<li><p>Streaming</p>
+
+<ul>
+<li>Live feeds</li>
+<li>Red5 is a Java FOSS implementation of RTMP used by Facebook</li>
+</ul></li>
+<li><p>Progressive download</p>
+
+<ul>
+<li>Used by a majority of large sites</li>
+<li>Easy to set up</li>
+<li>How to seek?</li>
+<li>Serve FLV starting at a different point</li>
+<li>Just add simple FLV preamble before seeking</li>
+<li>mod_flvx for Apache "just works"</li>
+</ul></li>
+</ul>
+
+    </section>
+
+    <footer>
+      Created on 2008-09-22 23:29:14<br/>
+      Modified on 2008-09-22 23:29:14<br/>
+      Generated on 2017-05-30 16:20:38.431209<br/>
+    </footer>
+
+  </div>
+</body>

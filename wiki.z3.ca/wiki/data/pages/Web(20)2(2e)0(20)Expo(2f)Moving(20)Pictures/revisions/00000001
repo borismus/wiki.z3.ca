@@ -1,0 +1,98 @@
+
+== Moving Pictures (10 - 11) ==
+
+Cal Henderson presents a talk about video on the web. Likes to cuss, make typos and speak really fast.
+
+Uploading:
+
+ * Upload forms don't really work since videos are big. Two parts:
+  1. Client side
+   * Forms: easy to implement, ubiquitous. hard to do upload progress, no batch upload, browsers are slow
+    * Upload progress is easy with AJAX query. Could have load balancing and multiple non-sticky machines
+    * But can still be done with PerlBal (load balancer)
+   * Flash: progress is easy, fast, batch upload supported. But hard to implement and not ubiquitous.
+   * Desktop App: lots of benefits but hard to develop and deploy. Drag & Drop
+  2. Server side
+   * Uploads are slow (slower than serving pages)
+   * Apache processes are heavy and a waste of resources
+   * Can instead use a poll based server (Jetty)
+   * Buffering layer: {{{ [Browser] - slow -> [Buffer (PerlBal? mod_proxy?)] - fast -> [Server] }}}
+   * Moving files around between servers are also slow - so should be done asynchronously (cf. GearMan)
+   
+Transcoding:
+
+ * Transcoding puts all videos on equal footing
+ * Containers (mov, flv, avi) contain multiple streams in various codecs.
+ * Video {{{
+Header
+Video
+Audio
+Video
+Audio
+...
+}}}
+
+ * Raw video/audio rarely get used. 30fps of bitmaps or 44khz of sound is a lot
+
+Compression:
+ * Intraframe: treat each frame as picture and compress JPEG. Uses DCT (Discrete Cosine Transform)
+ * Interframe: missed it
+
+ * Intra coded pictures (key frames): full raw frame
+  * Allows easy random seeking
+  * Online video usually has relatively few key frames
+ * Predicted pictures: based on single ref
+ * Bi-predictive pictures: based on two or more ref frames
+
+ * P & B frames contain mix of image data and motion vectors
+ * |I| > |P| > |B|
+
+ * H.264 contains slices which split up the frame, more advanced
+
+ * Audio is mature enough. Syncing is the only issue.
+
+Format:
+
+ * Flash video? Pretty much everywhere and interactive. But no 3D/VR
+ * Some QT, WMV sites still exist.
+ * TrueMotion On2 is patented, and probably illegal for GPL (Flash 7)
+  * YouTube uses it for lower quality and older streams.
+ * Lots of choices: video codec, resolution, bitrate, keyframes, audio codec
+
+Scaling:
+
+ * Easily parallelizable
+ * Amazon EC2-type services are good, but per-CPU software licensing.
+
+Free Tools:
+
+ * H.264 is an open MPEG standard (Flash 9)
+  * YouTube uses it for high quality streams
+  * iPhone and AppleTV use it
+ * FFmpeg/MEncoder/VLC has libavcodec for VP6, but licensing issues
+  * Can't encode H.264
+ * x264 can do H.264 but limited WRT commercial ones
+
+Non-free Tools:
+
+ * Flash Encoder: Not automatable
+ * On2 FlixEngine: Some support for H.264. Good for On2
+ * Rhozet Carbon Coder: Windows only. Good for H.264
+
+Storage:
+
+ * Files are huge so ops take time. Use checksums
+
+Serving:
+
+ * Streaming
+  * Live feeds
+  * Red5 is a Java FOSS implementation of RTMP used by Facebook
+
+ * Progressive download
+  * Used by a majority of large sites
+  * Easy to set up
+  * How to seek?
+   * Serve FLV starting at a different point
+   * Just add simple FLV preamble before seeking
+   * mod_flvx for Apache "just works"

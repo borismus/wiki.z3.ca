@@ -1,0 +1,11 @@
+= GNU Screen =
+
+GNU Screen is a very useful tool that multiplexes a physical terminal between several interactive shells. This is very convenient because only one ssh tunnel is required for multiple bash "windows". 
+
+Online screen resources are dispersed and disorganized:
+  * GNU Screen Homepage [http://www.gnu.org/software/screen/]
+  * Screen mailing list [http://lists.gnu.org/archive/html/screen-users/]
+  * Advanced Screen Faq: [http://www4.informatik.uni-erlangen.de/~jnweiger/screen-faq.html]
+
+
+While at my WorkPlace in CustomHouse, I always have a PuttySsh instance running, connected to AlephMachine. My screen session is constantly running there, containing running instances of MuttEmail, IrssiIrc (sometimes) and SnowNews. 

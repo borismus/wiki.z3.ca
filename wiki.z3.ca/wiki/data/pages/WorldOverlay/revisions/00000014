@@ -1,0 +1,18 @@
+## page was renamed from GpsOverlay
+= GPS Meets Internet =
+
+There is a lot of untapped potential in combining GPS and the Internet. Projects like [http://www.geocaching.com geocaching] have inspired me with an idea of a ''world overlay''. 
+
+This is a type of application where users carry with them devices that can determine their geographic coordinates, as well as provide internet connectivity. As users move around, the device would report its state (containing the new coordinates) to some central server. The device would also recieve the world's state from the central server, which might contain the coordinates of other users.
+
+This idea could be taken in many interesting directions, but I have one particular one in mind:
+ * WorldRpg - a world overlay MMORPG.
+
+= Technical Details =
+
+= Hardware Requirements =
+
+For such a project to be realistic, we would need widespread access to portable devices with a sufficiently precise positioning system, and also internet accessibility. Already some local companies in Canada, such as [http://fido.ca Fido] have unlimited GPRS plans for just $50/month. As far as the the positioning system is concerned, the GPS service is free worldwide, and leading manufacturers of GPS recievers boast 3-5m accuracy. 
+
+----
+CategoryIdea

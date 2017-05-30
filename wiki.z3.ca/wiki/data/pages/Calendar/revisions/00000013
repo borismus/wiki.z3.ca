@@ -1,0 +1,28 @@
+== Sample: MoinMoin 1.5 Release Schedule (From moinmoin) ==
+
+ [[EventCalendar]]
+----
+
+{{{#!eventcal
+2005-10-15  '''remove TODOs''' that are not being worked on in main branch 
+}}}
+
+{{{#!eventcal
+2005-11-01 '''FeatureFreeze''', beta1, notify translators (*.po mainly, wiki pages still unstable) 
+}}}
+
+{{{#!eventcal
+2005-11-15 '''more betas''', work on moinmaster docs 
+}}}
+
+{{{#!eventcal
+2005-12-01 '''CodeFreeze''', RC1, notify translators again (*.po + wiki pages) 
+}}}
+
+{{{#!eventcal
+2005-12-15 '''translators should have finished''' their stuff on MoinMaster 
+}}}
+
+{{{#!eventcal
+2005-12-23 more RCs, '''Release 1.5 '''
+}}}

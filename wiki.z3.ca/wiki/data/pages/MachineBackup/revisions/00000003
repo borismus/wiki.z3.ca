@@ -1,0 +1,18 @@
+Now I'm working on a backup solution. I plan to do regular backups to CD, since my ["Zayin"] has an unused CD burner!
+
+I need to back up the following items:
+
+  * Global config files on all machines (/etc)
+  * SVN repository on ["Zayin"]
+  * MoinMoin data on ["Zayin"]
+
+= Backing up SVN =
+
+The problem is that the SVN repository is big. Do I really need to backup old revisions? Maybe I should just checkout everything I need and back that up? Or maybe, I should do some reading about how one backs up SVN repositories!
+
+I sought help in #svn on freenode. Here's what I found:
+  * svnadmin dump is best for CD's. 
+  * You can even (if it doesn't fit on one CD) dump revision slices.  Say revisions 1-1000 on CD1, then 1001-2000 on CD2, etc.
+  * Don't forget the --deltas option
+----
+CategoryMachine

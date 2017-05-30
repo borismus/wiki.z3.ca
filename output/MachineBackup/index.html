@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+  <title>MachineBackup | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>MachineBackup</h1>
+    </header>
+
+    <section id="articles">
+      <p>After implementing a pretty crappy solution outlined in this page's history, I realized that svn is not a good way to manage my personal code and documents. Thus I'm looking for a better backup strategy.</p>
+
+<p>= What to backup =</p>
+
+<ul>
+<li>Config files on all machines (/etc directory)</li>
+<li>MoinMoin data (wiki.z3.ca)</li>
+<li>Gallery (gallery.z3.ca)</li>
+</ul>
+
+<p>= How to backup =</p>
+
+<p>What I want is some way to designate a file or directory as one that needs to be backed up. I also want an ability to designate certain files or directories as critical. Any change to these critical files (and directories, optionally recursively) would cause them to be backed up during the next iteration. The backup machine would run regular backups and back up the necessary data on DVD. </p>
+
+<h2>Plan: take a look at [<a href="http://dar.linux.free.fr/">http://dar.linux.free.fr/</a> dar]. </h2>
+
+<p>CategoryProject</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-02-12 17:32:03<br/>
+      Modified on 2006-07-10 16:04:41<br/>
+      Generated on 2017-05-30 16:20:38.142257<br/>
+    </footer>
+
+  </div>
+</body>

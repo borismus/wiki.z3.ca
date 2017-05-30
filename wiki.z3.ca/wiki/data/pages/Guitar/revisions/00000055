@@ -1,0 +1,10 @@
+## page was renamed from GuitarRepertoire
+
+I like to play guitar. But since all of my tabs are online, I'm forced to play near a computer, which sucks. So I decided to create a hard-copy [wiki:SongBook song book] that I can refer to.
+
+Now I'm trying to convert these tabs to chordpro format so that they can be integrated in my songbook. But wait, this seems like a good opportunity to use MoinMoin parsers! See MoinTab.
+
+[[Navigation(children)]]
+
+----
+CategoryMusic

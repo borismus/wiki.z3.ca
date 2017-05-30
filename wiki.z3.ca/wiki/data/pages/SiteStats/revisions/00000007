@@ -1,0 +1,6 @@
+Awstats statistics are available for the following virtual hosts:
+
+ * [http://stats.z3.ca/awstats/awstats.pl?config=z3.ca z3.ca]
+ * [http://stats.z3.ca/awstats/awstats.pl?config=gallery.z3.ca gallery.z3.ca]
+ * [http://stats.z3.ca/awstats/awstats.pl?config=stats.z3.ca stats.z3.ca]
+ * [http://stats.z3.ca/awstats/awstats.pl?config=auth.z3.ca auth.z3.ca]

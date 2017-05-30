@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+  <title>wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>wiki.z3.ca</h1>
+    </header>
+
+    <p>
+      This is an archive of wiki.z3.ca, which existed as a MoinMoin wiki while I
+      was a UBC undergraduate between 2002 and 2007. I now keep a blog on <a
+       href="http://smus.com">smus.com</a>.
+    </p>
+
+    <section id="articles">
+      <ul>
+      {% for article in articles %}
+      <li><a href="{{article.slug}}">{{article.slug}}</a></li>
+      {% endfor %}
+      </ul>
+    </section>
+
+    <footer>
+      Generated on {{date_now}}<br/>
+    </footer>
+  </div>
+</body>

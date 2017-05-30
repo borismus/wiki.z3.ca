@@ -1,0 +1,17 @@
+## page was renamed from FrontPage
+##language:en
+
+||<tablestyle="float: right; text-align: center; border:0px"> http://imagegen.last.fm/Geldropdown2/recenttracks/4/miraage.gif ||
+
+This is the personal web site of Boris Smus. If you want to know about me, see my [wiki:Boris about me] page.
+
+= Recent Changes =
+
+[[Z3RecentChanges]]
+
+= del.icio.us bookmarks =
+
+{{{#!raw
+<script type="text/javascript" src="http://del.icio.us/feeds/js/miraage?tags;count=5"></script>
+<noscript><a href="http://del.icio.us/miraage">my del.icio.us</a></noscript>
+}}}

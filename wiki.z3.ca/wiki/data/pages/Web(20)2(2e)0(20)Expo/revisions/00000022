@@ -1,0 +1,324 @@
+## page was renamed from Web2Expo
+
+Some notes from the sessions during the NY Web 2.0 Expo
+
+= Thursday =
+
+== The Sequel to SQL ==
+
+Pretty basic tech overview of the existing cloud solutions in the Cloud.
+
+Intro:
+ * RDBMS are ubiquitous, but annoying to deal with, since we deal with objects
+ * Object databases tend to be too slow and lacking in tools
+ * Key/Value data structures like berkeleyDB are very fast
+ * Object relational mapping is all over the place
+
+The Cloud:
+ * Cloud stack:
+  * Software as a Service (SalesForce)
+  * Platform as a Service (AppEngine)
+  * Tools as a Service (Amazon SimpleDB)
+  * Hardware as a Service (Amazon EC2)
+ * Unlocalized and anonymous computing service
+ * Benefits: cheaper, smaller barrier to entry, serve customs locally, "elastic" availability
+ 
+The problem?
+ * Need duplication and partitioning. So data needs to be partitioned and replicated across multiple nodes
+ * Sharding data: how to join tables?
+
+Google BigTable
+ * Large scale storage of Entities (sets of name/value pairs called properties)
+ * Indexes are required for all queries
+ * Immediately consistent :)
+ * But there are limitations
+
+Amazon SimpleDB
+ * Tabular store of Domains (like tables) with Items (set of attribute/value pairs)
+ * Auto indexing
+ * Eventually consistent :(
+ * Everything is a string :(
+
+10gen Mongo:
+ * Dynamic language ODBMS targeted for the cloud
+ * Lots more details which I don't really care about since it's completely unproven
+
+AppJet:
+ * Persistent JS-centric data store.
+
+== SEO for Web Developers ==
+
+Introduction:
+ * Up to 30% of page views originate from search engines
+ * Up to 87% for e-commerce
+ * Cloaking: showing one page to users and another to search engines.
+
+Book recommendation: Don't Make Me Think
+
+Use Semantic HTML:
+ * Proper use of common tags: <title>Most Specific - Less Specific - Least Specific</title>
+ * <meta name="description" content=""> - keep it short & sweet
+ * <a>Descriptive, Relevant Text</a>
+ * <h1> - only one per page
+ * <noscript> is useful for search engines and low-fi browsers
+
+Classing up your URLs:
+ * Use dashes to delimit URLs
+
+Status Codes:
+ * Use a real 404 if there's an error.
+ * Search engine indices get filled by "soft" errors
+ * Use redirects: 301 Moved Permanently/302 Moved Temporarily
+ * Return 304 Not Modified if the page is cached 
+
+URL Aliases:
+ * ex. www.z3.ca, z3.ca, wiki.z3.ca is confusing for the search engine
+ * Choose www-vs-not and redirect via 301
+ * Trim default filename off the end
+ * Internal links should connect via canonical form
+
+
+== Where 2.0 ==
+
+Not a very concise talk at all. Waste of time! Should have seen the Google Chrome session instead.
+
+Case study: Burning Man Earth 2008 projects
+
+ * Amateur remote sensing: pictearth.com, diydrones.ning.com, openaerialmap.org
+
+GeoDjango application:
+ * Rectify pdf into geodata: ESRI / wrp.geothings.net
+ * Tiling: TileCache
+ * OpenLayers is a JS geometry drawing library
+
+Dynamicness of data:
+ * Tiles and geotags should be time aware (ex. burning man moves every year)
+ * Convert kml using mkgmap
+
+Vehicle mapping
+ * APRS - positioning packets over ham radio talks to digipeaters, which then relay the data to the internet
+
+Hacking Google Street View
+ * Indexed points, scraped street data. But it's not long term.
+ * Panoramic camera: takes 360 degree photos and then unwarps it.
+
+GigaPan:
+ * Consumer-grade, NASA designed robotic panorama capture platform.
+ * Creates a grid of images (and stitching images)
+ * Creates really huge (>1 Gpix) cameras.
+
+Brooxes:
+ * Canon CHDK (Canon Hardware Dev Kit) - this lets you take photos every n seconds.
+
+Questions: how did you store geometric data in django? django-postgis bindings?
+
+== Building in the Clouds: Scaling Web 2.0 ==
+
+This is a panel session, most notably with a Google guy and an Amazon guy.
+
+Component (Custom) vs. Service (GAE):
+ * Distinguish between types of application and choose appropriately (long running => custom) -Google
+ * General purpose clouds are less flexible -Amazon
+ * How much to worry about scaling? Hard to generalize...... depends on the usecase. 
+  * Startup: scaling isn't usually a problem (except when you succeed :) so actually this is a very important problem to tackle.
+
+Centralized vs. Distributed computing:
+ * CDN (content delivery network) is distributed - use it for static data
+ * Dynamic data is hard to distribute. In this case, offload server work to the client.
+
+Edge locations - do they help?
+ * WTF. Bullshit artist from Joyent takes over again.
+
+Scalability metrics (how to measure the cloud):
+ * CPU and Bandwidth are precious commodities -Google
+ * On DB servers, disk IO needs to be controlled. Restrict to one transaction if necessary. -Doubleclick
+ * byte-hours, transactions-per-second. -Amazon
+ * Actually it's in dollars for common case web apps.
+
+== Keynotes ==
+
+TODO: transfer notes from paper... O'Rielly and Clay Shirkey ++
+
+= Wednesday =
+
+== Keynotes ==
+
+Pretty weak, I'd say! Very little notes to transfer even.
+
+== Lessons Learned from Scaling Social Applications ==
+
+Joshua Schachter describes his experiences... TODO: transfer notes from paper.
+
+== Go REST with Rails (11 - 12) ==
+
+DHH presents a talk on REST. Seems overly opinionated and dramatic.
+
+ * Designing APIs earlier was difficult and unclear...
+ * HTTP spec is overly theoretical. GET, POST, etc doesn't really matter
+ * Claim: REST and HTTP are intimately connected. REST is acquired taste, but really good
+
+<Insert way too much idle talk about Roy Fielding's academic dissertation.>
+
+ * WS-star is apparently bad (not really clear why though)
+
+<Half way into the talk, still nothing about what REST even is!>
+
+ * Goes into a demo of a rails app, which uses REST
+ * My question for DHH: Outside of CRUD, what if I want more specific actions? Do I have to fall back to the old RPC style API? For example: I want photo manipulation API. DHH pre-empted it but waved it as non-critical.
+ * RESTful way of creating API: multiple formatting for the same data.
+  * Demonstrated ATOM, JSON, XML, HTML versions of the same resource
+
+ * Argues very much about conventions being a good thing.
+ * Another question for DHH: What's the current state of REST support in browsers? PUT and DELETE supported?
+
+== Moving Pictures (10 - 11) ==
+
+Cal Henderson presents a talk about video on the web. Likes to cuss, make typos and speak really fast.
+
+Uploading:
+
+ * Upload forms don't really work since videos are big. Two parts:
+  1. Client side
+   * Forms: easy to implement, ubiquitous. hard to do upload progress, no batch upload, browsers are slow
+    * Upload progress is easy with AJAX query. Could have load balancing and multiple non-sticky machines
+    * But can still be done with PerlBal (load balancer)
+   * Flash: progress is easy, fast, batch upload supported. But hard to implement and not ubiquitous.
+   * Desktop App: lots of benefits but hard to develop and deploy. Drag & Drop
+  2. Server side
+   * Uploads are slow (slower than serving pages)
+   * Apache processes are heavy and a waste of resources
+   * Can instead use a poll based server (Jetty)
+   * Buffering layer: {{{ [Browser] - slow -> [Buffer (PerlBal? mod_proxy?)] - fast -> [Server] }}}
+   * Moving files around between servers are also slow - so should be done asynchronously (cf. GearMan)
+   
+Transcoding:
+
+ * Transcoding puts all videos on equal footing
+ * Containers (mov, flv, avi) contain multiple streams in various codecs.
+ * Video {{{
+Header
+Video
+Audio
+Video
+Audio
+...
+}}}
+
+ * Raw video/audio rarely get used. 30fps of bitmaps or 44khz of sound is a lot
+
+Compression:
+ * Intraframe: treat each frame as picture and compress JPEG. Uses DCT (Discrete Cosine Transform)
+ * Interframe: missed it
+
+ * Intra coded pictures (key frames): full raw frame
+  * Allows easy random seeking
+  * Online video usually has relatively few key frames
+ * Predicted pictures: based on single ref
+ * Bi-predictive pictures: based on two or more ref frames
+
+ * P & B frames contain mix of image data and motion vectors
+ * |I| > |P| > |B|
+
+ * H.264 contains slices which split up the frame, more advanced
+
+ * Audio is mature enough. Syncing is the only issue.
+
+Format:
+
+ * Flash video? Pretty much everywhere and interactive. But no 3D/VR
+ * Some QT, WMV sites still exist.
+ * TrueMotion On2 is patented, and probably illegal for GPL (Flash 7)
+  * YouTube uses it for lower quality and older streams.
+ * Lots of choices: video codec, resolution, bitrate, keyframes, audio codec
+
+Scaling:
+
+ * Easily parallelizable
+ * Amazon EC2-type services are good, but per-CPU software licensing.
+
+Free Tools:
+
+ * H.264 is an open MPEG standard (Flash 9)
+  * YouTube uses it for high quality streams
+  * iPhone and AppleTV use it
+ * FFmpeg/MEncoder/VLC has libavcodec for VP6, but licensing issues
+  * Can't encode H.264
+ * x264 can do H.264 but limited WRT commercial ones
+
+Non-free Tools:
+
+ * Flash Encoder: Not automatable
+ * On2 FlixEngine: Some support for H.264. Good for On2
+ * Rhozet Carbon Coder: Windows only. Good for H.264
+
+Storage:
+
+ * Files are huge so ops take time. Use checksums
+
+Serving:
+
+ * Streaming
+  * Live feeds
+  * Red5 is a Java FOSS implementation of RTMP used by Facebook
+
+ * Progressive download
+  * Used by a majority of large sites
+  * Easy to set up
+  * How to seek?
+   * Serve FLV starting at a different point
+   * Just add simple FLV preamble before seeking
+   * mod_flvx for Apache "just works"
+
+== Building a Visualization Language (9 - 10) ==
+
+John Resig (Firebug, jQuery) presents a talk on Processing.js, his port of Processing to Canvas.
+
+Canvas element:
+
+ * JR hasn't tried much in terms of overlaying multiple canvases on top of one another
+ * Review (just a raster, not scalable graphics)
+ * Canvases can consume other canvases, images and videos (FF 3.1)
+
+Processing:
+ 
+ * Visualization language in Java, for 2D and 3D. Built by people at MIT
+ * Many libraries (manipulate video, etc)
+ * Strictly typed, very flat API. OpenGL-like (setup(), draw())
+ * Primitive drawing very similar to canvas
+ * Tons of samples on processing.org
+
+Processing.js:
+
+ * JR ported Processing to Processing.js
+ * Isn't a large part of processing its main library? Yes but only the 2D drawing bits are supported.
+ * How do you achieve the synchronization in the Youtube video at http://ejohn.org/apps/hero/ ? Youtube API gives constant callback
+
+= Tuesday =
+
+== Mobile Web Development (9 - 12) ==
+
+Intro:
+
+ * Tons of love for Apple (long eulogies for the iPhone)
+ * All about context specific mobile sites
+ * Uses his own product (leaflets) as the example of how to develop for mobile
+
+Implementation:
+
+ * Split CSS into multiple files so that it can be reused (overhead of multiple CSS files is negligible?)
+ * Case study of using CSS3 to make small icons
+
+ * CSS3 iPhone transforms run natively, turned into probably CoreAnimation calls on the device. Much faster than writing Javascript.
+  * The idea is to set a CSS class or id on an element which has a -webkit-transition.
+ * Mentioned SproutCore... mischaracterized it by suggesting that you don't write JS, but instead Ruby (!?)
+ * Talked about Cappuccino too, no real verdict given
+
+ * Multitouch on iPhone
+  * 2.0 allows to keep tab bar positioned in the bottom of iPhone apps (because of extra callbacks)
+
+Ads on Mobile:
+
+ * Lots of ad providers, with iPhone specific ad solutions
+ * Unsolved question: where to put ads?
+
+Verdict: Overall I learned nothing new in this talk. It was a rehash of web development with too much iPhone fanboyism. Also it turns out I wasn't supposed to attend this session since I didn't sign up for the workshop part of the conference :)

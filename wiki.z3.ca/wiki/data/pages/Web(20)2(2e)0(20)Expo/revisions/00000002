@@ -1,0 +1,16 @@
+= Tuesday =
+
+== Web Development (9 - 12) ==
+
+Intro:
+
+ * Tons of love for Apple (long eulogies for the iPhone)
+ * All about context specific mobile sites
+ * Uses his own product (leaflets) as the example of how to develop for mobile
+
+Implementation:
+
+ * Split CSS into multiple files so that it can be reused (overhead of multiple CSS files is negligible?)
+ * Case study of using CSS3 to make small icons
+
+ * CSS3 transforms run natively, turned into probably CoreAnimation calls on the device

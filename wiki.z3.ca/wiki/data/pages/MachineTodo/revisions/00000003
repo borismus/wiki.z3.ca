@@ -1,0 +1,10 @@
+Some things that need to be done over the lan go here.
+
+= Wiki =
+
+ * Add pim functionality with EventCalendar macro
+
+= Lan =
+ * Export a shared scripts directory for commonly used scripts
+----
+CategoryMachine

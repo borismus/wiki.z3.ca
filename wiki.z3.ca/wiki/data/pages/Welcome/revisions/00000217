@@ -1,0 +1,15 @@
+## page was renamed from FrontPage
+##language:en
+
+||<tablestyle="float: right; text-align: center; border-style: hidden"> http://imagegen.last.fm/minimalLightRecent/recenttracks/4/miraage.gif ||
+
+Welcome to the personal web site of Boris Smus. If you want to know about me, see my [wiki:Boris about me] page. This page is wiki-based, using the MoinMoin engine. Read more about why it in WikiAsPim article. In the meantime, please check out various sections of this site, listed in the navbar. Also hosted here is a [http://gallery.z3.ca gallery] with pictures of friends and family, as well as [http://stats.z3.ca/awstats/awstats.pl?config=z3.ca site statistics]. 
+
+= del.icio.us bookmarks =
+
+These are my most recently tagged bookmarks:
+
+{{{#!raw
+<script type="text/javascript" src="http://del.icio.us/feeds/js/miraage?tags;count=7"></script>
+<noscript><a href="http://del.icio.us/miraage">my del.icio.us</a></noscript>
+}}}

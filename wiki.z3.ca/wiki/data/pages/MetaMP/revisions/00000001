@@ -1,0 +1,28 @@
+MetaPD is a metadata client for MPD - a temporary measure that allows the user to store additional data.
+
+= Configuration =
+
+MetaPD stores configuration files in ~/.metapd or /etc/metapd.conf.
+
+= Tag Tracks =
+
+Specify tag data manually,
+
+{{{
+./metapd tag <path to track> <tag1> [<tag2> ...]
+}}}
+
+or extract tag data from last.fm. If no path is specified, the entire database is populated from last.fm. Otherwise, only the contents of the directory is.
+
+{{{
+./metapd tag [<path>]
+}}}
+
+
+= Rate Tracks =
+
+{{{
+./metapd rate 
+}}}
+
+= Play songs based on Tag/Ratings =

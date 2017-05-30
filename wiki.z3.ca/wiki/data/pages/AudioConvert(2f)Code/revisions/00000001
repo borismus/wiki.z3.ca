@@ -1,0 +1,100 @@
+{{{!python
+#!/usr/bin/python
+# I convert to and from various audio file formats depending on extension of
+# file names specified on command line
+# TODO: support giving just ext as second arg, without file name. In that
+# case, convert to file of same name.
+
+
+import sys, os
+
+usage = "%s [src.ext1] [dst.ext2]" %sys.argv[0] 
+
+############
+# DECODERS ###################################
+# convert format specified in key to raw wav #
+##############################################
+decoders = {}
+decoders['wav'] = "cp %s %s"
+decoders['ogg'] = "oggdec %s -o %s"
+decoders['mpc'] = "mppdec %s %s"
+decoders['wma'] = "mplayer %s -ao pcm:file=%s"
+decoders['mp3'] = "mplayer %s -ao pcm:file=%s"
+
+############
+# ENCODERS ###################################
+# convert raw wav to format specified in key #
+##############################################
+encoders = {}
+encoders['wav'] = "cp %s %s"
+encoders['mp3'] = "lame %s %s"
+encoders['ogg'] = "oggenc %s -o %s"
+encoders['mpc'] = "mppenc %s %s"
+
+tmp = "temp.wav"
+
+def parse_args():
+    if len(sys.argv) != 3:
+	print usage
+	sys.exit(1)
+
+    src = sys.argv[1]
+    dst = sys.argv[2]
+
+    if not get_ext(src) in decoders:
+	error("I don't know how to convert from %s extensions" %src)
+	sys.exit(1)
+
+    if not get_ext(dst) in encoders:
+	error("I don't know how to convert to %s extensions" %dst_ext)
+	sys.exit(1)
+
+    if only_ext_specified(dst):
+	info("You didn't specify a name for extension %s" %
+		get_ext(dst))
+	dst = "%s.%s" %(get_name(src), get_ext(dst))
+	info("Using name %s" %dst)
+
+    return src, dst
+
+def get_ext(filename):
+    return filename.split('.')[-1]
+
+def get_name(filename):
+    s = filename.split('.')
+    s.pop()
+    return ".".join(s)
+
+def only_ext_specified(filename):
+    return len(filename.split(".")) <= 1
+
+def error(string):
+    print "[E] %s." %(string)
+
+def info(string):
+    print "[I] %s." %(string)
+
+def decode(src):
+    "decodes src to dst"
+    info("Decoding %s to %s" %(src, tmp))
+    call = decoders[get_ext(src)] % (`src`, tmp)
+    os.system(call)
+
+def encode(dst):
+    "encodes tmp to dst"
+    info("Encoding %s to %s" %(tmp, dst))
+    call = encoders[get_ext(dst)] % (tmp, '"`basename %s`"' % `dst`)
+    os.system(call)
+
+def delete_tmp():
+    "deletes temp wav file"
+    info ("Deleting temporary %s file" % tmp)
+    os.system("rm %s" % tmp)
+
+if __name__ == '__main__': 
+    (src, dst) = parse_args()
+    decode(src)
+    encode(dst)
+    delete_tmp()
+
+}}}

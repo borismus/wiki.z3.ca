@@ -1,0 +1,78 @@
+I've decided to revamp the Fun Run UBC club's website. 
+
+= Administrativa =
+
+  1. Register runubc.com
+
+= Website =
+
+The Fun Run Website currently has a little bit of information about the club, a small photo gallery, some exec bios, a message board and a running schedule.
+
+= Jog Log =
+
+A medium-sized running group could greatly benefit from a collaborative web based jog logging software. 
+
+== Use Cases ==
+
+Actors: Runner (Organizer)
+Classes: Shoe, Track, Event, Runner, Result
+
+A user wants to start using the system
+ * Registration
+ * Login
+ * Logout
+
+A runner wants to be able to quickly input his run results. He can do this by setting his default shoes and tracks.
+ * Easily input results
+
+A runner wants to keep track of his workouts. He can record his runs.
+ * Manage results
+
+A runner wants to share his favorite routes with his friends. He can 'share' them.
+ * Manage tracks
+
+A race organizer wants to organize a run and invite his friends. He can create an event and 'share' it. 
+ * Manage events
+ * Manage tracks
+
+A runner wants to know when to switch his running shoes. He can ask to be notified when his shoe has travelled a certain distance.
+ * Manage shoes
+
+A runner with a GPS device wants to upload his route. He can do this by importing a track from a GPX file.
+ * GPX track import
+
+== Foo ==
+
+There are two run scenarios: a personal workout on a personal track, or a mass run at an event. It's possible to create an event for each personal run.
+
+== Urls ==
+
+  * runubc.com/log/: login or splash
+
+    * runner/: list of runners
+      * runner_id/: runner info
+
+      * shoes/: shoes of runner
+      * results/: results of runner
+      * events/: events of runner
+      * tracks/: tracks of runner
+
+    * result/
+      * result_id: result details
+      * add: add result form
+      * remove: remove result
+
+    * shoe/
+      * shoe_id: shoe info
+      * add: add shoe form
+      * remove: remove a shoe
+
+    * track/
+      * track_id: track info
+      * add: add a track form
+      * remove: remove a track
+    
+    * event/
+      * event_id: event info
+      * add: add event form
+      * remove: remove event form

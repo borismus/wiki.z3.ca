@@ -1,0 +1,106 @@
+<!doctype html>
+<head>
+  <title>TankHerding | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>TankHerding</h1>
+    </header>
+
+    <section id="articles">
+      <p>This is the homepage of my CPSC 426 project at UBC.</p>
+
+<p>= Abstract =</p>
+
+<p>The goal of this project was to create a system in which teams of autonomous tanks interact with one another and their environment on a finite 3d terrain. Interaction with the environment is handled by a simple force-based physical model. Tank behavior is controlled by a decision making algorithm which outputs what sort of modification the tank should make to its current state. Concepts of flocking also play a role, since tanks have "perception", which restricts their knowledge of the world to the things they can see.</p>
+
+<p>= Rules =</p>
+
+<p>In this simple simulation, the only independant parameters that tanks have are a thrust vector (applied force), and whether or not the tank fires a bullet. Thus, tanks do not have a rotating turret, as the name might suggest. They can only fire in their direction of movement. Tanks also have perception, which includes their line of sight, defined by a conic field of view, and a proximity detector (for things like collision avoidance), defined by a radius.</p>
+
+<p>= Features =</p>
+
+<p>Given the limited time, and unlimited possibilities, I was often unable to implement the features I wanted to implement. </p>
+
+<p>== Done ==</p>
+
+<ul>
+<li>Physical force engine with true gravity. Using forward euler for integration.</li>
+<li>Oriented bounding boxes / spherical bounding boxes for collision detection</li>
+<li>Tank perception
+<ul>
+<li>Restricts search area to proximate targets only</li>
+<li>Front field of view cone</li>
+</ul></li>
+<li>Varied tank behaviors:
+<ul>
+<li>Seek a target</li>
+<li>Orient towards a target</li>
+<li>Avoid obstacles (and other tanks)</li>
+<li>Many more (see paper on steering behaviors)</li>
+</ul></li>
+<li>Discrete heightmap loader from pgm greyscales</li>
+<li>Wavefront obj loader</li>
+<li>Player controlled tanks</li>
+<li>Easy addition of foreign objects</li>
+</ul>
+
+<p>== TODO ==</p>
+
+<ul>
+<li>Implement real friction (currently using "drag coefficient", similar to damped spring motion)</li>
+<li>Embed a scripting language for AI implementation and clean up design of Behavior class</li>
+<li>Implement collision detection with oriented bounding boxes</li>
+<li>Take into account lack of visibility through terrain (currently conic fov sees tanks through the terrain!)</li>
+<li>Fix error reporting and logging</li>
+<li>Interpolate normals in 2D for a less jagged terrain look and a smoother tank motion</li>
+</ul>
+
+<p>= Deliverables =</p>
+
+<p>The bzipped tarball: <img src="herding.tar.bz2"/></p>
+
+<p>== Videos ==</p>
+
+<p>Note: some of the tanks in these videos are not autonomous. Often the red tank is being controlled by a human. </p>
+
+<p>Some <img src="jumps.mp4"/> to illustrate the physics engine.</p>
+
+<p>An illustration of the red tank's <img src="perception.mp4"/>, in which blue tanks turn white if they are visible through the field of view, and magenta if they are ''visible'' through proximity. </p>
+
+<p>Demonstration of position seeking <img src="behavior.mp4"/> of multiple tanks, and their ability to avoid <img src="colliding.mp4"/> with one another. Collision results in termination of both tanks.</p>
+
+<p>An attempt at some sort of <img src="battle.mp4"/> sequence. Yes, the AI is horrible. Sorry - not enough time.</p>
+
+<p>= References =</p>
+
+<ol>
+<li>[<a href="http://www.red3d.com/cwr/boids/">http://www.red3d.com/cwr/boids/</a> Boids - Craig W. Reynolds]</li>
+<li>[<a href="http://www.red3d.com/cwr/steer/">http://www.red3d.com/cwr/steer/</a> Steering Behaviors For Autonomous Characters - Craig W. Reynolds]
+<h2> 3. Vehicles: Experiments in Synthetic Psychology, Valentino Braitenberg</h2></li>
+</ol>
+
+<p>CategoryProject</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-12-03 12:20:59<br/>
+      Modified on 2006-04-26 20:40:25<br/>
+      Generated on 2017-05-30 16:20:38.339193<br/>
+    </footer>
+
+  </div>
+</body>

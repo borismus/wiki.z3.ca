@@ -1,0 +1,6 @@
+## page was renamed from FrontPage
+##language:en
+#acl -All:write
+#acl +All:read
+
+Welcome to the old page of a certain Boris. It isn't really updated anymore, except for some [[Guitar|guitar tabs]]. If you really care, try his new site at http://www.borismus.com.

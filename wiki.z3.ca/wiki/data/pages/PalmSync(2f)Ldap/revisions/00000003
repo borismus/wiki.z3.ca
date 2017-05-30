@@ -1,0 +1,14 @@
+{{{#!python
+
+#!/bin/bash
+
+ADDRESS=/home/boris/.jpilot/AddressDB.pdb 
+DN="dc=z3,dc=ca"
+EXPORT_FILE=/tmp/contact.ldif
+PASS=fire04
+
+/home/boris/bin/pdb2ldif --pdb=$ADDRESS --$DN &> $EXPORT_FILE
+
+ldapmodify -x -D "cn=Manager,dc=z3,dc=ca" -c -f $EXPORT_FILE -w $PASS
+ldapadd -x -D "cn=Manager,dc=z3,dc=ca" -c -f $EXPORT_FILE -w $PASS
+}}}

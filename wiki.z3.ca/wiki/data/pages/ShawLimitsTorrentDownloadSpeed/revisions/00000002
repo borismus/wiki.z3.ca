@@ -1,0 +1,29 @@
+= Problem =
+
+I like to download. That's why I'm willing to dish out a bunch of green to shaw so that my household can download things quickly. But lately torrents have been downloading at a snail's pace. 
+
+So I went to investigate. I had a number of theories as to why torrents were downloading so slowly. When all of them were disproven, I had only one left: '''those pesky buggers at Shaw Cable are limiting rates on the default BitTorrent ports!'''. 
+
+= Solution =
+
+Here's what I did to fix the problem. I use the default BitTorrent client that comes with most Linux distributions, and I use [http://www.shorewall.net/ shorewall], a high-level tool for configuring Netfilter.
+
+Instead of the usual 6881:6999 port range, I'm now using 7070:7100:
+
+''Create wrapper around client (~/bin/btc)''
+{{{
+#!/bin/bash
+btlaunchmanycurses.py \
+    --minport 7070 \
+    --maxport 7100 \
+    $@
+}}}
+
+''Open port range in firewall (/etc/shorewall/rules)''
+{{{
+ACCEPT          net             fw              tcp     7070:7100
+}}}
+
+And that's how my download rates jumped from 20KB/s to 400KB/s. Up yours, Shaw!
+----
+CategoryMisc

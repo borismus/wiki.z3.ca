@@ -1,0 +1,20 @@
+= Classes =
+
+User
+ * auth stuff
+
+Route
+ * distance
+ * (eventually integrate with google maps)
+
+Shoe
+ * (eventually integrate through some shoe retailer)
+
+Workout
+ * route
+ * time
+ * shoe
+
+= Summary =
+
+Graphical forms

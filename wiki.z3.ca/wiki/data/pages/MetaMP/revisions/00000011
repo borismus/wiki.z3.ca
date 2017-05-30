@@ -1,0 +1,56 @@
+## page was renamed from MetaPD
+MetaMP is a metadata client for MPD - a temporary measure that allows the user to store additional data... Who knows when MPD v2 will be released? I've released version 0.1, attachment:MetaMP-0.1.tar.gz. Send bugs/suggestions to my email.
+
+[[TableOfContents]]
+
+= Configuration =
+
+MetaMP stores configuration files in ~/.metamp or /etc/metamp.conf. This configuration file specifies where metamp should store it's database.
+
+{{{
+[conf]
+# where to store the metadata
+db: /media/music/.mpdmeta
+# automatically start playing
+auto_play: yes
+# log level
+log_level: ERROR
+# lastfm username
+username: foo
+
+}}}
+                            
+
+= Database =
+
+MetaMP stores it's database in a sqlite3 database.
+
+== Tables ==
+
+|| File || Rating || Tags ||
+|| some/path/in/mpddb || 0-10 || CSV list (in popularity order) ||
+
+= Usage =
+
+{{{
+ autotag:
+        automatically tag files using last.fm as tag database
+        %prog autotag --path="pop"
+ 
+ tag:   mark files with tag data
+        %prog tag --path='metallica/enter sandman.mp3' \
+                  --tags='metal,heavy metal,rock'
+ 
+ rate:  mark files with rating
+        %prog rate --path='metallica/enter sandman.mp3' \
+                   --rating=9
+ 
+ play:  playback based on metadata
+        %prog play --rating=">5" OR
+        %prog play --tags="indie,canadian" <-- playback canadian indie
+ 
+ recent:
+        play recently heard tracks (last.fm users only)
+        %prog recent
+
+}}}

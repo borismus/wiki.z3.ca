@@ -1,0 +1,30 @@
+This is the homepage of my CPSC 426 project at UBC.
+
+= Abstract =
+
+The goal of this project was to create a system in which teams of autonomous tanks interact with one another and their environment on a finite 3d terrain. Interaction with the environment is handled by a simple force-based physical model. Tank behavior is controlled by a decision making algorithm which outputs what sort of modification the tank should make to its current state. Concepts of flocking also play a role, since tanks have "perception", which restricts their knowledge of the world to the things they can see.
+
+= Rules =
+
+In this simple simulation, the only independant parameters that tanks have are a thrust vector (applied force), and whether or not the tank fires a bullet. Thus, tanks do not have a rotating turret, as the name might suggest. They can only fire in their direction of movement. Tanks also have perception, which includes their line of sight, defined by a conic field of view, and a proximity detector (for things like collision avoidance), defined by a radius.
+
+= Features =
+
+Given the limited time, and unlimited possibilities, I was often unable to implement the features I wanted to implement. 
+
+== Done ==
+
+
+
+== TODO ==
+
+= Deliverables =
+
+Some jumps: attachment:jumps.mp4
+The bzipped tarball: attachment:tankherd.tar.bz2
+
+
+= References =
+
+ 1. [http://www.red3d.com/cwr/boids/ Boids - Craig W. Reynolds ]
+ 2. [http://www.red3d.com/cwr/steer/ Steering Behaviors For Autonomous Characters - Craig W. Reynolds]

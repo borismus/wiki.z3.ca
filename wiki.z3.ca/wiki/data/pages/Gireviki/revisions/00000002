@@ -1,0 +1,7 @@
+= Idea =
+
+To create a web portal for kettlebell lifters. Lets users record their workout easily and view other people's workout schedules. Lets people collaborate to describe exercises in wiki-style format. Also keeps track of personal records and logs that visually.
+
+= Implementation =
+
+To be built as a django powered web application. Business model: live by ads.

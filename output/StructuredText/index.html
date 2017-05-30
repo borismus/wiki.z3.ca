@@ -1,0 +1,95 @@
+<!doctype html>
+<head>
+  <title>StructuredText | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>StructuredText</h1>
+    </header>
+
+    <section id="articles">
+      <h2>language:en</h2>
+
+<p>Structured text is text that uses indentation and simple
+symbology to indicate the structure of a document. For the next generation of structured text, see 
+MoinMoin:ReStructuredText and 
+[<a href="http://dev.zope.org/Members/jim/StructuredTextWiki/StructuredTextNG">http://dev.zope.org/Members/jim/StructuredTextWiki/StructuredTextNG</a> here].</p>
+
+<p>A structured string consists of a sequence of paragraphs separated by
+one or more blank lines.  Each paragraph has a level which is defined
+as the minimum indentation of the paragraph.  A paragraph is a
+sub-paragraph of another paragraph if the other paragraph is the last
+preceding paragraph that has a lower level.</p>
+
+<p>Special symbology is used to indicate special constructs:</p>
+
+<ul>
+<li><p>A single-line paragraph whose immediately succeeding paragraphs are lower level is treated as a header.</p></li>
+<li><p>A paragraph that begins with a '-', '*', or 'o' is treated as an unordered list (bullet) element.</p></li>
+<li><p>A paragraph that begins with a sequence of digits followed by a white-space character is treated as an ordered list element.</p></li>
+<li><p>A paragraph that begins with a sequence of sequences, where each sequence is a sequence of digits or a sequence of letters followed by a period, is treated as an ordered list element.</p></li>
+<li><p>A paragraph with a first line that contains some text, followed by some white-space and '--' is treated as a descriptive list element. The leading text is treated as the element title.</p></li>
+<li><p>Sub-paragraphs of a paragraph that ends in the word 'example' or the word 'examples', or '::' is treated as example code and is output as is.</p></li>
+<li><p>Text enclosed single quotes (with white-space to the left of the first quote and whitespace or puctuation to the right of the second quote) is treated as example code.</p></li>
+<li><p>Text surrounded by '<em>' characters (with white-space to the left of the first '</em>' and whitespace or puctuation to the right of the second '*') is emphasized.</p></li>
+<li><p>Text surrounded by '<strong>' characters (with white-space to the left of the first '</strong>' and whitespace or puctuation to the right of the second '**') is made strong.</p></li>
+<li><p>Text surrounded by '_' underscore characters (with whitespace to the left and whitespace or punctuation to the right) is made underlined.</p></li>
+<li><p>Text encloded by double quotes followed by a colon, a URL, and concluded by punctuation plus white space, <em>or</em> just white space, is treated as a hyper link. For example:</p>
+
+<p>"Zope":<a href="http://www.zope.org/">http://www.zope.org/</a> is ...</p>
+
+<p>Is interpreted as '<a href="<a href="http://www.zope.org/">http://www.zope.org/</a>">Zope</a> is ....'</p>
+
+<p>'''Note:''' This works for relative as well as absolute URLs.</p></li>
+<li><p>Text enclosed by double quotes followed by a comma, one or more spaces, an absolute URL and concluded by punctuation plus white space, or just white space, is treated as a hyper link. For example: </p>
+
+<p>"mail me", mailto:amos@digicool.com.</p>
+
+<p>Is interpreted as '<a href="mailto:amos@digicool.com">mail me</a>.' </p></li>
+<li><p>Text enclosed in brackets which consists only of letters, digits, underscores and dashes is treated as hyper links within the document. For example:</p>
+
+<p>As demonstrated by Smith [12] this technique is quite effective.</p>
+
+<p>Is interpreted as '... by Smith <a href="#12">[12]</a> this ...'. Together with the next rule this allows easy coding of references or end notes.</p></li>
+<li><p>Text enclosed in brackets which is preceded by the start of a line, two periods and a space is treated as a named link. For example:</p>
+
+<p>.. [12] "Effective Techniques" Smith, Joe ... </p>
+
+<p>Is interpreted as '<a name="12">[12]</a> "Effective Techniques" ...'. Together with the previous rule this allows easy coding of references or end notes. </p></li>
+<li><p>A paragraph that has blocks of text enclosed in '||' is treated as a table. The text blocks correspond to table cells and table rows are denoted by newlines. By default the cells are center aligned. A cell can span more than one column by preceding a block of text with an equivalent number of cell separators '||'. Newlines and '|' cannot be a part of the cell text. For example:
+{{{
+|||| <strong>Ingredients</strong> ||
+|| <em>Name</em> || <em>Amount</em> ||
+||Spam||10||
+||Eggs||3||
+}}}</p>
+
+<p>renders like this:
+|||| <strong>Ingredients</strong> ||
+|| <em>Name</em> || <em>Amount</em> ||
+||Spam||10||
+||Eggs||3||</p></li>
+</ul>
+
+    </section>
+
+    <footer>
+      Created on 2004-12-29 10:40:08<br/>
+      Modified on 2004-12-29 10:40:08<br/>
+      Generated on 2017-05-30 16:20:38.324643<br/>
+    </footer>
+
+  </div>
+</body>

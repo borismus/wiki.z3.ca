@@ -1,0 +1,178 @@
+Shows how to insert an event in the wiki pages.
+[[TableOfContents]]
+
+= How to insert an event =
+ * The event field format should be YYYY[/-]MM[/-]DD for start date and end date, and H``H:MM for time format, and quoted string by ['"=] for title.
+  * Date format example: 2005/10/20, 2005-10-20
+  * Time format example: 08:00, 17:00
+  * Title format example: {{{'''title''', ''title'', "title", = title =, == title ==, ...}}} , but 'title' won't work.
+ * You should use {{{eventcal}}} parser to insert one and only one event (i.e., '''one eventcal parsing block per event'''). Then, the parser and macro retrieve the event records from the sub-pages to make a monthly view of the event calendar.
+ * In the parsing block of {{{eventcal}}}, it pops out first two date formatted text (startdate and enddate), two time formatted text (starttime, endtime), and quoted or heading titie. It ignores further occurrence of the targeted string.
+  * start date/time should precede end date/time in the occurrence.
+  * the order of the fields (date, time, title) does not matter
+  * Examples:
+  {{{
+{ { {#!eventcal
+  * 2005/10/20 blah blah... (startdate)
+  * 2005/10/23 blah blah... (enddate)
+  * '''Title''' blah blah (title)
+  * ''Title'' (ignored)
+  * 12:00 (starttime)
+  * 2005/10/30 (ignored)
+  * 12:00 (endtime)
+  * 17:00 (ignored)
+} } } }}}
+
+ {{{#!eventcal
+  * 2005/10/20 blah blah... (startdate)
+  * 2005/10/23 blah blah... (enddate)
+  * '''Title''' blah blah (title)
+  * ''Title'' (ignored)
+  * 12:00 (starttime)
+  * 2005/10/30 (ignored)
+  * 12:00 (endtime)
+  * 17:00 (ignored)
+}}}
+
+= Samples =
+
+== Quoted Title ==
+{{{
+{ { {#!eventcal
+Let's get a meeting for '''Weekly Report''' -- Boss
+ what about 2005/10/15? -- ''Seungik Lee''
+  OK. Please don't miss it. -- Boss
+} } }
+}}}
+
+{{{#!eventcal
+Let's get a meeting for '''Weekly Report''' -- Boss
+ what about 2005/10/15? -- ''Seungik Lee''
+  OK. Please don't miss it. -- Boss
+}}}
+
+== Heading Title ==
+{{{
+{ { {#!eventcal
+=== Event Calendar Development ===
+ * Duration: 2005/10/20 ~ 2005/10/27
+ * It was very hard! 
+ * FYI, today's 2005/10/28
+} } }
+}}}
+
+{{{#!eventcal
+=== Event Calendar Development ===
+ * Duration: 2005/10/20 ~ 2005/10/27
+ * It was very hard! 
+ * FYI, today's 2005/10/28
+}}}
+
+
+== Double Quote Title & Field Order ==
+{{{
+{ { {#!eventcal
+On 2005/10/10 20:00~22:00, we have "3rd Project meeting". Please don't miss it.
+} } }
+}}}
+
+{{{#!eventcal
+On 2005/10/10 20:00~22:00, we have "3rd Project meeting". Please don't miss it.
+}}}
+
+== Date Format ==
+{{{
+{ { {#!eventcal
+'''My Business Trip'''
+ From 2005-10-02 to 2005/10/07. See you later~
+} } }
+}}}
+
+{{{#!eventcal
+'''My Business Trip'''
+ From 2005-10-02 to 2005/10/07. See you later~
+}}}
+
+== No Title ==
+{{{
+{ { {#!eventcal
+ Please come to my office on 2005-10-10. Thanks.
+} } }
+}}}
+
+{{{#!eventcal
+ Please come to my office on 2005-10-10. Thanks.
+}}}
+
+
+== Parsing Error 1: Time fields ==
+{{{
+{ { {#!eventcal
+The ''Surprise event'' will be held from 2005/10/10 20:00 to 2005/10/12 (''no end time'')
+} } }
+}}}
+
+{{{#!eventcal
+The ''Surprise event'' will be held from 2005/10/10 20:00 to 2005/10/12 (''no end time'')
+}}}
+
+== Parsing Error 2: Date format ==
+{{{
+{ { {#!eventcal
+Our "5th Wedding Anniversary" is on 2005/11/31 !! (''do we have 31st Nov.?'')
+} } }
+}}}
+
+{{{#!eventcal
+Our "5th Wedding Anniversary" is on 2005/11/31 !! (''do we have 31st Nov.?'')
+}}}
+
+== Parsing Error 3: Date format ==
+{{{
+{ { {#!eventcal
+ * Carl, let's go for a movie 2005/10/3 (''date format should be YYYY/MM/DD or YYYY-MM-DD'')
+  * OK. What time?
+  * Good~ '''See Titanic'''
+} } }
+}}}
+{{{#!eventcal
+ * Carl, let's go for a movie 2005/10/3 (''date format should be YYYY/MM/DD or YYYY-MM-DD'')
+  * OK. What time?
+  * Good~ '''See Titanic'''
+}}}
+
+== Parsing Error 4: Time format ==
+{{{
+{ { {#!eventcal
+''My English class'' is 20:00~22:63 on 2005/12/25 !! (''do we have 22:63?'')
+} } }
+}}}
+{{{#!eventcal
+''My English class'' is 20:00~22:63 on 2005/12/25 !! (''do we have 22:63?'')
+}}}
+
+== Parsing Error 5: Time format ==
+{{{
+{ { {#!eventcal
+You can submit 'Homework #2' from 9:00 ~ 18:00, 2005/10/17 (''time format should be H``H:MM'')
+} } }
+}}}
+{{{#!eventcal
+You can submit 'Homework #2' from 9:00 ~ 18:00, 2005/10/17 (''time format should be H``H:MM'')
+}}}
+
+== Parsing Error 6: Order of date/time fields ==
+{{{
+{ { {#!eventcal
+'''Order of the fields'''
+The end date (2005/10/20) cannot precede the start date (2005/10/15) in the order of occurrence in the parsing block.
+} } }
+}}}
+
+{{{#!eventcal
+'''Order of the fields'''
+The end date (2005/10/20) cannot precede the start date (2005/10/15) in the order of occurrence in the parsing block.
+}}}
+
+----
+ [[PageComment]]

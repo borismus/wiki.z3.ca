@@ -1,0 +1,22 @@
+The iPhone does not currently work with the Nike+ kit, but there's really no good technical reason for this! At launch, Apple's main reason for enabling it only for the Nano was the lack of display in the case of the shuffle and the abundance of moving parts in the case of the classic.
+
+But what if Apple doesn't let iPhone owners use the Nike+ kit? Something must be done!
+
+= How it works =
+
+The foot pod transmits a 'hello world I am <ID>' in very short bursts (less than 0.0001 second per broadcast) on one of 80 available channels every time the user takes a step. This active signal can travel as far as 40-60ft.
+
+The foot pod was designed to activate a simple piezoelectric sensor to monitor how long your weight is on the foot (the faster you run, the shorter amount of time spent on one foot).
+
+= What must be done =
+
+ 1. The iPhone must be made to accept the Nike+ kit instead of reporting that it's incompatible.
+ 2. The iPod connector dongle, which supposedly communicates to the iPhone via serial, has to be reverse engineered. (How does one do that? :) )
+ 3. A GUI has to be written so that the user can see his live pace.
+ 4. Some sort of syncing functionality (via internet, preferably) would be nice.
+
+
+= References =
+
+ * http://www.sparkfun.com/commerce/present.php?p=Nike_iPod-Internals
+ * http://www.cs.washington.edu/research/systems/privacy.html

@@ -1,0 +1,41 @@
+http://www.njop.org/jsAlephbet/ltr14.gif
+
+Zayin is the best machine ever. For two reasons:
+
+ 1. It's packed with the newest and best hardware on my lan.
+ 2. It's also hebrew swear word.
+ 3. It's the center of the world.
+ 4. It's the seventh letter of the hebrew alphabet.
+ 5. I have a really big Zayin.
+
+Zayin was created to replace ["Aleph"]'s function. All hail Zayin!
+
+== External Services ==
+
+The important part of an nmap scan:
+{{{
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+}}}
+
+=== Processes ===
+
+  * vsftpd serves ftp.
+  * openssh serves ssh.
+  * postfix serves smtp.
+  * bind serves domain.
+  * apache2 serves http.
+  * bitlbee 
+  * screen multiplexes between:
+    * bash - for pretty much everything
+    * irssi - for irc and im
+    * mutt - for email
+    * slrn - for news
+    * snownews - for RSS aggregation
+
+----
+CategoryMachine

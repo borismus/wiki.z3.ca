@@ -1,0 +1,60 @@
+## page was renamed from FrontPage
+##language:en
+
+= Welcome =
+
+I'm ["Boris"], of `z3.ca`. Welcome to my wikified home page. True, wikis are usually collaborative, but they have many other WikiBenefits.
+
+= Lists =
+
+  * BooksToRead are books that I ought to read pretty soon. The good ones graduate to GoodBooks.
+  * MoviesToSee are the movies that I was recommended by a like-minded movie fan. My favorites end up in GoodMovies.
+  * GamesToPlay are the gems of the video game world that should be checked out sometime. The best of the best are truly GoodGames.
+  * MusicToHear and GoodMusic... you get the idea.
+
+= Finished Projects =
+
+  * ["ArcadeTank"] was my first game ever. I keep it here for nostalgic purposes only.
+  * ["Sponge"] is a wacky and very experimental pong variant played in a wireframe sphere. 
+  * TankHerding was a CPSC 426 project that I particularily enjoyed, which simulates the behavior of tanks, loosely based on [http://www.red3d.com/cwr/boids/ flocking].
+  * ["Alienation"] was a most ambitious role playing game that was played in the browser. I lost all the source code in a series of fatal keystrokes.
+  * SongBook is an attempt to aggregate guitar chords and lyrics in chordpro format and publish them into a LaTeX book, for camping.
+
+= Active Projects =
+
+  * WikiSync aims to synchronizing MoinMoin instances with my PalmOS, via a [http://www.coldsync.org coldsync] conduit.
+  * GeoGames is a pseudo-startup for research about using new GPS and Internet-enabled mobile technology for gaming.
+  * MachineBackup is an attempt to streamline DVD backups of a small local network.
+  * AudioConvert is a python script that allows converting to/from arbitrary audio formats.
+  * ["Freelance"] is not yet a web-based space trading game.
+
+= Lego =
+
+  * CardDealer is a lego card dealer implementable using a standard Lego Mindstorms 2.0 set. It works rather well.
+  * DrinkMixer is a sort of virtual bartender that can concoct cocktails.
+  * BrickOs is my page dedicated to the great open source firmware for RCX.
+  * ["Legopedia"] is an attempt to catalog some LEGO idioms that have greatly helped Technic builders. 
+
+= Tools =
+
+  * IonWm is my favorite window manager. It includes many innovative features and unlimited configurability.
+  * GnuScreen is an essential application for multiplexing terminals.
+  * ["Lyx"] is a WYSIWYG LaTeX editor.
+  * ["Vim"] is the best editor ever.
+  * GentooLinux is my favorite distribution. I often contribute ebuilds, although none have yet made it into Portage, as far as I know.
+
+= Life, the Universe and Everything =
+
+  * DreamLog is where I write about dreams that I sometimes manage to recall.
+  * MicrosoftInterview is an anecdote about how my first interview at M$ went.
+  * DreamGadget is about my quest for the ideal mobile gadget.
+  * FrontCrawl for tips about how to properly swim.
+  * ["Guitar"] is my guitar resource, filled with excellent chords and lyrics.
+
+= Links =
+
+  * Network graphs of `z3.ca`, in a [http://stats.z3.ca/cacti/graph_view.php?action=preview cacti] report
+  * Web statistics by [http://stats.z3.ca/ awstats] of various vhosts on z3.ca
+  * A gallery of friends and family, powered by [http://gallery.z3.ca/ gallery]
+  * View my online bookmarks at [http://del.icio.us/miraage del.icio.us] and my musical tastes at [http://www.last.fm/user/miraage last.fm].
+  

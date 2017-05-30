@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+MEDIA_PATH="/media/downloads"
+BTPD_PATH="/home/p2p/.btpd/"
+TORRENT_PATH=$@
+DOWNLOAD_PATH=$MEDIA_PATH/`basename "$TORRENT_PATH" .torrent`
+btcli -d $BTPD_PATH add -d "$DOWNLOAD_PATH" "$TORRENT_PATH" && echo "Torrent added"

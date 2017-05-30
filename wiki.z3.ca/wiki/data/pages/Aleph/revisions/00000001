@@ -1,0 +1,20 @@
+Aleph does everything external on z3.ca. Many demons run on it. It is invincible. 
+
+== Hardware ==
+
+View the HTML output of `lshw`: http://z3.ca/aleph.html
+
+== External Services ==
+
+{{{
+21/tcp   open  ftp      vsftp
+22/tcp   open  ssh      openssh
+25/tcp   open  smtp     postfix
+53/tcp   open  domain   bind
+80/tcp   open  http     apache
+}}}
+
+== Internal Services ==
+
+None of your business!
+

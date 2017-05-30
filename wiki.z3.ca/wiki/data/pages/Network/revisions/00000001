@@ -1,0 +1,28 @@
+The z3 network consists of zayin, the machine directly connected to the internet, and a number of workstations. All workstations run Gentoo Linux. 
+
+= Firewall =
+
+Zayin is a firewall (shorewall on iptables). It only allows ftp, ssh, dns and http traffic inside.
+
+= File server =
+
+Zayin is a file server. It hosts all of the home directories and exports them via NFS. It also hosts a lot of movies, music and other data.  
+
+The existing hard drives are hdc: 120G, sda: 200G and sdb: 250G. Currently, a striped LVM virtual group exists on top of all three drives. 
+
+== Improvements ==
+
+Zayin's striped vg is very volatile, since the failure of one drive would cause the loss of '''all''' data! Ideally, zayin would have a different setup.
+
+=== Raid ===
+
+Four 250G SATA drives could form a hardware RAID 5 array. That's three extra hard drives ($400) and a RAID controller ($400). Resulting array size would be 750G.
+
+Or four 250G SATA drives could form a software RAID 1+0 array. RAID 5 is not safe to implement in software, since upon one drive's failure, it is reasonably likely that another drive will fail during the recovery process. The resulting array size would be 500G.
+
+= Workstations =
+
+||Bet|| athlon-xp 1700+ ||
+||Daled|| pentium3 600 ||
+||Hey|| xbox ||
+||Chet || amd64 3200+|| 

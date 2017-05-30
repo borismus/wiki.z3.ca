@@ -1,0 +1,13 @@
+This is the home of a script generates playlists based on user's desires using last.fm metadata.
+
+= Uses =
+
+ * Listen to recently heard music.
+ * Listen to music of a certain genre - implementation may be tricky since mpd only knows how to find tag data based on song/artist.
+ * Listen to music similar to a song or artist.
+
+{{{
+./metapd -recent <user>
+./metapd -genre <genre>
+./metapd -similar <artist>:<track>
+}}}

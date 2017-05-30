@@ -1,0 +1,9 @@
+MPD Stat(istic)s is a statistics client for MPD. It also supports rating songs.
+
+= Features =
+
+ * Logs song plays
+ * Generates "most popular" playlists given a date range
+ * Allows song ratings
+----
+CategoryProject

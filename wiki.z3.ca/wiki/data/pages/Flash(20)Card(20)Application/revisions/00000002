@@ -1,0 +1,16 @@
+#acl -All:read
+
+= Names =
+
+ * memomem.com
+ * stickystudy.com
+ * flashprep.com
+
+= What is it =
+
+ 1. Web application to manage flash cards (GAE)
+ 2. iPhone client to study
+
+= Implementation =
+
+Need a good design for the iPhone client. Also need a flexible and strict protocol for iPhone <--> webapp interaction.

@@ -1,0 +1,21 @@
+= GPS MMORPG =
+
+An interesting project that I may undertake is this: to take concepts from existing multiplayer games and apply them to create a WorldOverlay. This would create a new genre of game - a hybridization between a computer game and the real world.
+
+== Implementation ==
+
+The actual game would work like this: there is be a community of players hauling their Unit around. As a player moves, the software on his Unit reacts and informs the regional server. Meanwhile, the regional server also keeps busy, reporting status changes to it's clients. There is also a master server, which determines which regional server the player belongs to. It will be necessary to formalize how exactly the master server distributes players to regional servers (when will this happen? what happens at a region boundary?)
+
+== Sample Session ==
+
+You turn on your Unit and launch the game client. You authenticate with the master server, and it distributes you to your regional server. Now you go somewhere. Your new GPS position is sent to the server. The server sends you back whatever state corresponds to your position (Can we use a stateless protocol?). That's it! The skeleton is now in place :)
+
+= Comparison with Existing Games =
+
+Today's massively multiplayer role playing games are a well-established genre. Of all the MMORPGs out there, I have only played AsheronsCall and A Tale in the Desert.  But to my knowledge, these games are a very good sample of them. Of course, modern, graphically stunning MMORPGs borrow heavily from old MUDs, MUSHes, MUCKs and MOOs, which were text-based.
+
+== Changes to Combat ==
+
+In a typical massively multiplayer role playing game, combat is turn based. 
+
+= Social Issues =

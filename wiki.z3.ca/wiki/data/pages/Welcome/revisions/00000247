@@ -1,0 +1,15 @@
+## page was renamed from FrontPage
+##language:en
+#acl -All:write
+#acl +All:read
+This is the home page of a certain Boris.
+
+There's not too much to do here, but if you're really bored, you might
+
+ * try reading his useless [[javascript:void(0);/*1219724985553*/|blog]], or
+ * look at some of his [[javascript:void(0);/*1219725023777*/|photos]], or
+ * play along to some [[javascript:void(0);/*1219725148096*/|guitar tabs]] hosted on this site, or
+ * look at some [[javascript:void(0);/*1219725243566*/|software]] Boris wrote
+ * look at some toy [[javascript:void(0);/*1219725308723*/|robotics projects]] he tried to make
+ * go through [[javascript:void(0);/*1219725405402*/|WTF material]]
+ * [[About|contact]] said Boris

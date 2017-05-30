@@ -1,0 +1,14 @@
+## page was renamed from GuitarRepertoire
+
+I like to play guitar. But since all of my tabs are online, I'm forced to play near a computer, which sucks. So I decided to create a hard-copy song book that I can refer to if I need to.
+
+= Song Book =
+
+I've written a python [attachment:songbook.py script] to query this wiki for all of it's guitar tabs, convert them to latex and combine them in a nice song book. I use the gtx2tex utility, which converts chordpro files to latex. It also uses the gchord macro. After I have pdf, I print it as a two-sided booklet. It was a pleasure to use moinmoin's [ref xmlrpc interface] to query this wiki.
+
+Now I'm trying to convert these tabs to chordpro format so that they can be integrated in my songbook. 
+
+[[Navigation(children)]]
+
+----
+CategoryMusic CategoryProject

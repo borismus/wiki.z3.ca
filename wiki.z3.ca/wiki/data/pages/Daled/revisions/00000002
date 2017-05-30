@@ -1,0 +1,11 @@
+My father's second laptop. It runs Windows 2000.
+
+My Hebrew professor at UBC insisted that the hebrew letter 'daled' is actually anglicized as 'dalet'. He even detracted half a mark on one of our first quizzes. Just to please him, I made a special entry in my local zone definition:
+
+{{{
+dalet           A       10.160.0.4
+daled           CNAME   dalet.local.lan.
+}}}
+
+----
+CategoryMachine

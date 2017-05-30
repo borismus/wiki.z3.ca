@@ -1,0 +1,87 @@
+<!doctype html>
+<head>
+  <title>OrigamiSoftware | wiki.z3.ca</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+
+  <style>
+body {
+  font-family: monospace;
+}
+  </style>
+</head>
+<body>
+  <!-- Render errors if they are generated! -->
+  <div id="main">
+    <header>
+      <h1>OrigamiSoftware</h1>
+    </header>
+
+    <section id="articles">
+      <p>Origami is awesome, I've been doing it for many years. Now that I've exhausted the models in my books (including the latest: Origami Design Secrets) I've run out of models to make! So, thought I, why not see what the internet has to offer.</p>
+
+<p>= State of the Art =</p>
+
+<p>I have come to expect a lot from modern technology. So naturally, in my search on the internet, I was seeking a nice central database of models in some beautiful, open format. This format would be read by a nice multiplatform application would generate consistently laid-out diagrams that are easy to follow. I also expected there to be editors for this format, so that designers could easily input their creations, step by step.</p>
+
+<p>Unfortunately, no such thing seems to exist. I could be wrong (please?), but the closest I came to finding some sort of Origami-specific software was at Robert J. Lang's website, with his [<a href="http://www.langorigami.com/science/origamisim/origamisim.php4">http://www.langorigami.com/science/origamisim/origamisim.php4</a> Origami Simulation] project. I don't have a Mac, so I had no chance to play with it. From what I understand, the focus of Robert Lang's Origami Simulation is more of a proof of concept, not really designed to help the modeller or folder.</p>
+
+<p>There's a clear shortage of Origami-related software, so something must be done, because there's a lot of potential for coolness. Also, considering the surprisingly large size of the Origami community (judging by the activeness of the Origami@MIT mailing list), and their technical prowess (they can use a mailing list), I'm surprised modern modellers have so few tools at their disposal</p>
+
+<p>= Proposal =</p>
+
+<p>I propose a software based origami modelling environment that creates a standard paradigm for origami models. This would serve the following purposes:</p>
+
+<ol>
+<li><p>Aid the folder in</p>
+
+<ol>
+<li>Searching for models (much easier with a common format)</li>
+<li>Generating consistent, well formatted instructions</li>
+<li>More advanced functions like visualizing intermediate steps of the model's construction according to user preferences</li>
+</ol></li>
+<li><p>Aid the modeller in creating new models</p></li>
+<li>Lots more potential applications
+<ol>
+<li>3D Renderings of final model? </li>
+<li>Automatically generated crease diagrams?</li>
+<li>...</li>
+</ol></li>
+</ol>
+
+<p>I use terms ''folder'' to refer to the one who folds an origami model, and ''modeller'' to one who invents and diagrams the model. </p>
+
+<p>Simulating paper is probably hard. Many standard origami folds would conceivably be very difficult to convey to a computer through any interface. However, even the most complex fold should be fairly simple to express mathematically. For this reason, I think that the first thing to determine is a high level description of the file format (let's call it {{{.ori}}}) in which to store origami models. Once that's done, we would need various software to manipulate this format in various ways.</p>
+
+<p>The main question: is it ''really'' true that even the most complex fold can be easily expressed in a mathematical model? :)</p>
+
+<p>From the software end of things, I think a LaTeX-like system would ideal. What I mean by this is a suite of applications that would convert {{{.ori}}} source to various formats (analogy: pdflatex), for the folder's viewing pleasure. Then, there might be a set of applications that would help the modeller create {{{.ori}}} files in some convenient fasion (analogy: LyX). </p>
+
+<p>== ORI Format ==</p>
+
+<p>A conceptual overview of how the {{{.ori}}} format describes a model. Before proceeding, it's necessary to decide whether the {{{.ori}}} format describes the final model or the steps towards that model, or both? Still thinking on this one.</p>
+
+<p>== Viewers ==</p>
+
+<p>Does it make sense to view the {{{ori}}} format directly, or should the LaTeX paradigm be followed here as well? Still thinking.</p>
+
+<p>== Editors ==</p>
+
+<p>Robert Lang's Origami Simulation seems like a good place to start.</p>
+
+<hr />
+
+<p>CategoryProject</p>
+
+    </section>
+
+    <footer>
+      Created on 2005-03-19 17:02:25<br/>
+      Modified on 2006-07-10 15:53:54<br/>
+      Generated on 2017-05-30 16:20:38.215277<br/>
+    </footer>
+
+  </div>
+</body>

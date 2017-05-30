@@ -1,0 +1,35 @@
+I must now turn ["Aleph"] into a media server. The plan is to take the 120GB Seagate Barracuda from ["Bet"] and a new 120GB Samsung Spinpoint and put them into aleph. 
+
+= Partition Structure =
+
+I will try to use LVM2 to pool the 240GB into possibly one huge partition. Refer to [http://www.gentoo.org/doc/en/lvm2.xml]. LVM2 is convenient to use because it allows dynamic resizing of partitions. So the sizes in the following chart are made up and arbitrary.
+
+{{{
+/dev/hda1   Home     30GB
+/dev/hda2   Portage  10GB
+/dev/hda3   Media    200GB
+}}}
+
+= Procedure =
+
+ * read and understand lvm2
+
+ * put samsung in bet
+
+ * put wd into bet
+
+ * format seagate for lvm2
+
+ * copy home directories on wd to samsung
+
+ * format wd to become bet's hard drive
+
+ * copy bet system files to wd
+
+ * copy bet media to samsung
+
+ * format seagate for lvm2
+
+ * put samsung and seagate into aleph
+
+ * get both hard drives working with lvm2

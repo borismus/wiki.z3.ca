@@ -1,0 +1,24 @@
+
+== Building a Visualization Language (9 - 10) ==
+
+John Resig (Firebug, jQuery) presents a talk on Processing.js, his port of Processing to Canvas.
+
+Canvas element:
+
+ * JR hasn't tried much in terms of overlaying multiple canvases on top of one another
+ * Review (just a raster, not scalable graphics)
+ * Canvases can consume other canvases, images and videos (FF 3.1)
+
+Processing:
+ 
+ * Visualization language in Java, for 2D and 3D. Built by people at MIT
+ * Many libraries (manipulate video, etc)
+ * Strictly typed, very flat API. OpenGL-like (setup(), draw())
+ * Primitive drawing very similar to canvas
+ * Tons of samples on processing.org
+
+Processing.js:
+
+ * JR ported Processing to Processing.js
+ * Isn't a large part of processing its main library? Yes but only the 2D drawing bits are supported.
+ * How do you achieve the synchronization in the Youtube video at http://ejohn.org/apps/hero/ ? Youtube API gives constant callback

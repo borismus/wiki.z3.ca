@@ -1,0 +1,15 @@
+## page was renamed from FrontPage
+##language:en
+#acl -All:write
+#acl +All:read
+This is the home page of a certain Boris.
+
+There's not too much to do here, but if you're really bored, you might
+
+ * try reading his useless [[http://borismus.com|blog]], or
+ * look at some of his [[http://gallery.z3.ca/v/boris/|photos]], or
+ * play along to some [[Guitar|guitar tabs]] hosted on this site, or
+ * look at some [[Software|software]] Boris wrote
+ * look at some toy [[Robotics|robotics projects]] he tried to make
+ * go through [[WTF|WTF material]]
+ * [[About|contact]] said Boris

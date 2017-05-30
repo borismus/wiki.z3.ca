@@ -1,0 +1,20 @@
+## page was renamed from FrontPage
+##language:en
+
+= Welcome =
+
+I'm ["Boris"], of `z3.ca`. Welcome to my wikified home page. Wikis are usually collaborative, but they have many other [wiki:PimWiki benefits]. 
+
+I write stuff about my active or finished [wiki:CategoryProject projects], [wiki:CategoryIdea ideas] for projects, [wiki:CategoryLife life], the universe and everything, and [wiki:CategoryGame games]. I also have a small repository of ["Guitar"] chords. 
+
+I've made some cool stuff with a mindstorms set, including this [wiki:CardDealer card dealer] and this [wiki:DrinkMixer drink mixer]. I also started a [wiki:Legopedia lego encyclopedia] in an attempt to catalogue some common LEGO ''design patterns''. 
+
+I managed to write some games. My most ambitious project was a web-based rpg called ["Alienation"]. It's offline now, and I lost all the source code in a series of fatal keystroke. I also wrote a really simple arcade game with [wiki:Tank tanks], and an experimental [wiki:Sponge pong] variant played in a sphere. More recently, I wrote a pretty nifty [http://www.red3d.com/cwr/boids/ herding] tank battle [wiki:TankHerding simulator]. I want to continue these 3d projects and experiment with Conway's Life [wiki:3dAutomaton in 3D].
+
+Thanks to [http://flickr.com/photos/traveller2020/ traveller2020]'s HDR photography for the above logo, and to [http://robertschumann.co.uk/ Robert Schumann] for the wiki theme.
+
+= Links =
+
+ * [http://stats.z3.ca/cacti/graph_view.php?action=preview Cacti] report on z3.ca
+ * [http://stats.z3.ca/ Stats] of various vhosts on z3.ca
+ * [http://gallery.z3.ca/ Z3 Gallery]

@@ -1,0 +1,10 @@
+{{{
+<ul>
+ <li><a href="/">Home</a></li>
+ <li><a href="/Robert">About me</a></li>
+ <li><a href="/GuestBook">Guest Book</a></li>
+ <li><a href="/SiteNavigation">Site Navigation</a></li>
+
+ <li><a href="/RecentChanges">Recent Changes</a></li>
+</ul>
+}}}

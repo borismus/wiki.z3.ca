@@ -1,0 +1,80 @@
+## page was renamed from WorldRpg
+## page was renamed from GpsMmorpg
+= A New Genre? =
+
+An interesting project that I may undertake is this: to take concepts from existing multiplayer games and apply them to create a WorldOverlay. This would create a new genre of game - a hybridization between a computer game and the real world.
+
+== Implementation ==
+
+The actual game would work like this: there is be a community of players hauling their Unit around. As a player moves, the software on his Unit reacts and informs the regional server. Meanwhile, the regional server also keeps busy, reporting status changes to it's clients. There is also a master server, which determines which regional server the player belongs to. It will be necessary to formalize how exactly the master server distributes players to regional servers (when will this happen? what happens at a region boundary?)
+
+== Sample Session ==
+
+You turn on your Unit and launch the game client. You authenticate with the master server, and it distributes you to your regional server. Now you go somewhere. Your new GPS position is sent to the server. The server sends you back whatever state corresponds to your position. That's it! The skeleton is now in place :)
+
+= Comparison with Existing Games =
+
+Today's massively multiplayer role playing games are a well-established genre. Of course, modern, graphically stunning MMORPGs borrow heavily from old MUDs, MUSHes, MUCKs and MOOs, which are completely text-based. The text-based path is a more appropriate choice for the mobile platform, since the real world has super realistic graphics already.
+
+Computer games are purely virtual. This new game would involve a mix of physical (players, physical constraints found on the planet) and virtual (monsters, items, whatever else) entities. In this game, you would play your physical self, except you might have virtual items and ''special powers''. The beauty of this setup is that '''we retain the limitlessness of the virtual medium, while capitalizing on the social aspects of reality.'''
+
+Another good thing is that this game type requires almost no world-building (creating the environment) since that part is already done for us :)
+
+== Changes to Combat ==
+
+In a typical massively multiplayer role playing game, combat is turn based. The player can flee at any time by running away. This idea could be extended and made much more interesting. In the proposed hybrid, combat could still be virtual and turn based, but fleeing would be physical: the player would have to escape by outrunning a virtual monster (monsters have speed?) or another physical player.
+
+== Changes to Death ==
+
+In existing multiplayer games, the player dies only to respawn at another location. Since we do not yet have teleportation, it is not possible to move your physical body to some arbitrary spot! It is possible, however, to teleport your virtual body, so that it can be rejoined with the physical body when the physical body reaches it. 
+
+This idea is similar to the death system in Ultima Online: upon death, the character you control becomes a ghost, which must find its way to the temple(?) to rejoin the physical body.
+
+= Social Issues =
+
+The game world is not localized to some specific place. This means that players would be in the same environment as non-players. Imagine a group of adventurers weaving through a group of respectable business-men while fleeing from an virtual grue!
+
+Given it's physical nature, there may be incidents of physical violence, for example, players getting beaten up, and their Units stolen by other players. This would not surprise me, as MMORPGs are typically very competitive. On the other hand, such a risk would provide self-regulating ethical practices. For example, someone is camping a virtual monster spawn, but they might think twice if someone is looking at them threateningly. 
+
+Which reminds me of another problem. Imagine you are a strong 6 foot, 300 lb wrestler that decided to try this new game out. Next thing you know, some dinky, high level dweeb comes up to you and PKs you. Umm, yeah right :) Anyway, I'm not sure how significant a problem this is. But this issue might provide an interesting twist.
+
+= The Virtual World =
+
+== Server Architecture ==
+
+The virtual world is serviced by regional servers. These servers provide the game world for a certain circular region in the world. As the player moves through the world, the main server will redirect him to the appropriate regional server. When the player exits the zone boundary of a regional server, the main server will take over and determine what region he should be in.
+
+=== Regional Server ===
+
+The regional server provides virtual world content, which includes a list of ''what'' and ''where''. Information about the ''what'' is relayed to the player's client when the player is close enough to the ''where''. However, the regional server does not actually know this information. It only knows about areas and it's region of influence. 
+
+The area type at a point dictates what the virtual world is like in that area. For example, an area declared as "school" might be a breeding ground for headless zombies. An area type is a generator for what sort of stuff can occur in the area. Area types should be easy to add. This is a good time to introduce another server: the content server. 
+
+=== Content Server ===
+
+The content server knows about the current state of a region. It is populated by the regional server's random world creation mechanism. After that, objects in the content server start acting according to their programs. The content server communicates with the corresponding regional server, returning appropriate state according to the regional server's request. On the other hand, objects are stored in an object database (ZODB?).
+
+== Areas ==
+
+The virtual world concept borrows ideas from the modern internet-based revolution in collaboration. The idea is that the virtual world is completely player-maintained. This is good because:
+
+  * There is no need for dedicated world builders.
+  * The virtual world is up to date, because players can easily fix errors.
+  * The virtual world is not static - it grows as more players join.
+  * As a player, it's cool to be able to see the world evolve because of your own input.
+
+=== Player or Worldbuilder? ===
+
+The way a player will affect the world is simple: as he travels the real world, he has the ability to notify the regional server the type of location that he is in. This action is called '''area declaration'''. He can also view other such area declarations created by other players, and edit them if they are false or out of date.
+
+Area declarations have some parameters. First, you specify the center of the area (your own position). Next, you specify the area radius. Finally, you must specify what kind of area it actually is. This will be done by selecting the area type from a list of areas available in the region. This allows for region-level moderation of area types: for example, it is possible to ensure that there are no deserts in Vancouver.
+
+The problem with this idea is that players can lie and create false areas where there is no mirroring object in reality. The proposed solution would avert this problem by implementing a 'trust' system. 
+
+=== Trust System ===
+
+A player has a certain amount of trust assigned to him. This determines his ability to create area declarations. As a player declares areas in the region, his areas are subject to moderation from other players. If another player then corrects this player, the offending player loses some trust. Ability to make corrections and area declarations vary proportionally with trust. 
+
+Every uncorrected area declaration increases the submitter's trust. Uncorrected area corrections are valued even higher, and so on. Low trust results in automated penalties to player stats, and in the worst case, suggests a regional ban by the region administration.
+----
+CategoryProject

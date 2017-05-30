@@ -1,0 +1,57 @@
+The z3 network consists of zayin, the machine directly connected to the internet, and a number of workstations.
+
+= Workstations =
+
+||''Aleph''|| Gentoo gateway. Zayin's predecessor. ||
+||Bet|| Gentoo athlon-xp 1700+ tower. ||
+||''Gimel''|| Gentoo laptop. Horribly broken. ||
+||''Daled''|| Gentoo laptop. Horribly broken Pentium 3 600. ||
+||Hey|| Xbox! ||
+||Vav || Dad's windows laptop. ||
+||Zayin || Gentoo gateway. ||
+||Chet|| My Gentoo amd64 3200+ workstation. ||
+||Tet || Former Mac Mini I used for development. ||
+||Yud || Linksys WRT54gs router. ||
+||Kaf || Mac Book Pro laptop. ||
+
+= Firewall =
+
+Zayin is a firewall (shorewall on iptables). It only allows ftp, ssh, smtp, imap, dns and http traffic inside.
+
+= File server =
+
+Zayin is also a file server. It hosts all of the home directories and exports them via NFS and Samba. It also hosts a lot of movies, music and other data.  
+
+The existing hard drives are sda: 320 GB, sdb: 320 GB, sdc: 250 GB, sdd: 200 GB. From these, sda/sdb are mirrored in md1, and 200 GB of sdc is mirrored with sdd in md2. In turn, md1 and md2 are physical volumes in an LVM2 stripe. 
+
+=== Partitions ===
+
+||320G||raid 1||
+||md0||/boot||
+||md1||/||
+||md2||vg||
+
+||200G||raid 1||
+||md3||vg||
+
+||50G||ordinary||
+||sdx1||swap||
+||sdx2||/tmp||
+||sdx3||/var/tmp||
+||sdx4||/usr/portage||
+
+=== Mounts ===
+
+||/||1G||
+||/boot||100M||
+
+||swap||1G||
+||/tmp||15G||
+||/var/tmp||14G||
+||/usr/portage||20G||
+
+||/home||20G||
+||/usr||10G||
+||/var||10G||
+||/opt||2G||
+||/media||400G||

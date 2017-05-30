@@ -1,0 +1,21 @@
+A future project involving a live coding music environment for python. Live coding is a mode of programming in which the developer is able to change a running application on-the-fly. 
+
+= Components =
+
+This project has several distinct parts.
+
+== Audio Synthesis ==
+
+It would be handy to use some existing sound synthesizer for python. TODO: Research this. I imagine some way of 
+
+== Threading ==
+
+Clearly it's important to allow mixing and playing multiple sounds at once.
+
+== Dynamism ==
+
+We have to be able to load (and re-load) a file dynamically on the fly. 
+
+= IDE =
+
+It may be cool to be able to have multiple people work on the same source file in real time. Such systems must already exist.

@@ -1,0 +1,12 @@
+My second major LEGO Mindstorms project, after a long lull of inactivity, is almost complete. This time, I'm trying to create an automated bartender, that would be capable of mixing together various kinds of drinks to create cocktails. More specifically, I want at least 3 mixable ingredients, and a sufficiently high degree 
+of accuracy to create consistently proportioned single shots. In addition, I wanted to only use the pieces provided in my mindstorms set (for reproducibility).
+
+The hardware is tricky. The robot consists of two parts: a base with a turntable and a pouring motor, and a rotator with a mounted triple-arm that holds the beakers. The arms have mechanisms that tilt their corresponding beaker. As the robot rotates, the pouring motor comes in contact with each of the arms in turn. A touch sensor determines if contact has been made. Once contact with the appropriate arm is established, the pouring motor turns on and begins to pour.
+
+The software is even trickier. The difficulty was to determine the volume of liquid that has poured out of thee beaker, simply by calculating the number of rotations of the pourer motor. The software determines the angle at which the beaker must be, taking into account the gear reductions, and from that, uses calculus to determine the amount of volume remaining in the beaker (based on some assumptions).
+
+I also intend to  write desktop software that would allow to specify the proportions of the liquids. 
+
+Pictures, diagrams, code and results to follow shortly.
+----
+CategoryProject CategoryLego

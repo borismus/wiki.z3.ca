@@ -1,0 +1,31 @@
+== Valid event #1 ==
+ start:: 2006-02-28
+ end:: 2006-03-01
+ description:: multi-day event
+
+== Valid event #2 ==
+ start:: 2006-02-28 13:00
+ end:: 2006-03-01 14:00
+ description:: multi-day event with specified time
+
+== Valid event #3 ==
+ start:: 2006-02-28
+ description:: single-day event. enddate will be 2006-02-28 automatically.
+
+== Valid event #4 ==
+ start:: 2006-02-28 13:00
+ end:: 14:00
+ description:: single-day event with specified time. enddate will be 2006-02-28 automatically.
+
+== Valid event #5 ==
+ start:: 2006-02-28 13:00
+ end:: 2006-03-01
+ description:: single-day event with specified time. endtime will be 13:00 automatically.
+
+== Invalid event #1 ==
+ start:: 2006-02-28 
+ end:: 2006-03-01 13:00
+ description:: start time should be specified
+
+----
+CategoryEventCalendar

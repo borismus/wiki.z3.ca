@@ -1,0 +1,10 @@
+= GPS Meets Internet =
+
+There is a lot of untapped potential in combining GPS and the Internet. Projects like [http://www.geocaching.com geocaching] have inspired me with an idea of a "world overlay". This would work very much like a virtual world, except instead of controlling a virtual character, the user would play himself, and his position in the real world would be sent to the server.
+
+This idea could be taken in many interesting directions:
+  * GpsMmorpg - a world overlay MMORPG.
+
+== Requirements ==
+
+For such a project to be realistic, we would need widespread access to portable devices with a sufficiently precise positioning system and Internet accessibility. Currently, there is no affordable device and wireless internet plan that would fulfill these requirements. However, I predict that within 5 years, such technology will be widespread, and wireless internet will be fully accessible in all major cities. Already some local companies here in Canada, such as [http://fido.ca fido] have unlimited GPRS plans for just $50 CAD/month. As far as the the positioning system is concerned, the GPS service is free worldwide, and leading manufacturers of GPS recievers such as Garmin boast 3-5m accuracy. I'll refer to this Position/Internet device as a "Unit".

@@ -1,0 +1,25 @@
+== widget: a CMS-like theme ==
+
+
+This page, and subpages, is used by the default theme of this site.  It allows the theme of this wiki to include elements from the wiki itself, which in turn allows each page to have its own menu, say, or its own sidebar.
+
+In the theme definition, there is a function called `extraObject(d, location)`.  For this page, location is `sidemenu`.  In the middle of the python script defining the theme (take a look at file [attachment:Notes/widget.tar.gz `widget.py`]) is a call to the function `extraObject(d, sidemenu)`.  This causes the script to look on the wiki page `/site/sidemnu` for an ordered dictionary like the one found below.  Each dictionary key on this page is a regular expression which is matched against the page the theme is currently putting together, and the value is either an attachment or a subpage of this one (see below for more on this).  So if a visitor asks for page !SomeOtherWikiPage, the theme knows that the "extraObject" it needs to pull into the theme is called !MenuPageNotYetCreated, and that file is inserted into the page.
+
+ SomeOtherWikiPage:: MenuPageNotYetCreated
+ .*:: CategoryDefault
+
+The function `extraObject` then looks in one of three places for the object, in the following order:
+ 1. It looks for any preformatted text on page /site/sidemenu/!MenuPageNotYetCreated and inserts only the preformatted bit into the page at that point.
+ 1. If there is no preformatted text, it uses the page /site/sidemenu/!MenuPageNotYetCreated as it is rendered by !MoinMoin.
+ 1. If there is no page called /site/sidemenu/!MenuPageNotYetCreated, it looks for an attachment called !MenuPageNotYetCreated attached to page /site/sidemenu.
+It then inserts that HTML directly into the theme at the point where `extraObject` is called.
+
+So on this page the rules above say that for all pages except !SomeOtherWikiPage, use the subpage ["/default"] as a menu.
+
+This allows you to have, for example, a donate button on some pages of your site, or perhaps it allows you to have context-dependent menus.
+
+=== Subpages: ===
+[[Navigation(children)]]
+
+=== Attachments: ===
+[[AttachList]]

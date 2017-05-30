@@ -1,0 +1,38 @@
+http://www.njop.org/jsAlephbet/ltr7.gif
+
+Aleph does everything external on z3.ca. Many useful daemons run on it. Aleph sits quietly in an enclosure in MyOtherRoom. 
+
+== Hardware ==
+
+Aleph has an old 350mhz AMD K6-2 processor. It has 160mb of generic PC-133 SDRAM.
+
+== External Services ==
+
+The important part of an nmap scan:
+{{{
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+}}}
+
+=== Processes ===
+
+  * VerySecureFtp serves ftp.
+  * OpenSsh serves ssh.
+  * PostFix serves smtp.
+  * BindDns serves domain.
+  * ApacheHttp serves http.
+  * GnuScreen multiplexes terminals.
+
+=== Screen ===
+
+My screen session is constantly running here, containing instances of mutt, irssi and snownews.
+
+== Internal Services ==
+
+None of your business!
+----
+CategoryMachine

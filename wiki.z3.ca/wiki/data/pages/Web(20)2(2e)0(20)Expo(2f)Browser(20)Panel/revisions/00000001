@@ -1,0 +1,54 @@
+
+= Browser Panel 11-12 =
+
+HTML5: the spec is still in draft. what is implemented, what isn't?
+
+ * Mozilla: canvas, offline support, web workers (javascript runs in background threads, no memory sharing, allows to exploit multi-core parallel hardware)
+ * Google: WebKit supports a bunch of HTML5, gears transformed into offline support, UI specs are exciting (custom scrollbars, etc). Google plans to extends WebKit
+ * Microsoft: the spec isn't ready yet... ? taking their time because of the immaturity of the HTML5 draft. basically waiting for others to implement it first, and then look at their code :)
+
+To Microsoft: why don't you implement canvas? cause of silverlight?
+
+ * Not suggesting that you use silverlight instead of vector graphics ever.
+ * Planned for the future
+ 
+To Google: what's the focus of Chrome?
+
+ * To increase reliability of web applications, and make life of web dev easier
+ * Down the road to support HTML5
+ 
+Audience question: how dead is SVG?
+
+ * Mozilla: SVG isn't dead. Mozilla implements it. Mocked ACID3 test. Wants to see harmony between Canvas and SVG
+ * MS: Yeah.
+ * Google: SVG isn't used that much.
+ 
+AQ: Debugging tools?
+
+ * Mozilla: Firebug is only the beginning
+ * MS: Try IE8 beta 2 - it's good
+ * Google: chrome has two debugging tools: V8 Debugger and WebKit inspector. WebKit nightlies++
+ 
+AQ: Browser as an OS? When/if primary way desktop apps are made will be for the browser?
+
+ * Google: browser != OS, but can foresee something like camera interfacing directly with picasa
+ * Mozilla: browsers have already invaded desktop app realms. 
+
+AQ: Cross browser development sucks. How to fix?
+
+ * MS: trying to tackle the problem by creating a large test suite and contributing to W3C. also providing compat mode.
+
+AQ: Will chrome ever use the data that they have on you? Will this be exposed to developers?
+
+ * Already does. Used in the Omni Box
+ * Unlikely to be exposed to developers for privacy reasons
+
+AQ: Browser addons. Will you support it?
+
+ * Google: will support them, but working on getting them stable first
+ * Mozilla: working on isolation techniques
+ * IE: addons have existed for a while. difficult to write, since they must be COM objects
+
+AQ: Browser geolocation stuff? User scripts?
+
+ * MS: Privacy concerns for both questions. But otherwise, very excited about it.

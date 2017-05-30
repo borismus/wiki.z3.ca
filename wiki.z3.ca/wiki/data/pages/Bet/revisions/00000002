@@ -1,0 +1,17 @@
+http://www.njop.org/jsAlephbet/ltr6.gif
+
+Bet fulfills my need to do everyday tasks such as browsing the web, downloading stuff from binary newsgroups via NewzBin and more. I also use it as my development machine. Bet sits '''loudly''' near my ComputerDesk in MyRoom. 
+
+== Hardware ==
+
+Bet has a 1700+ AMD Athlon-XP processor with a palomino core. It has 512mb of Samsung DDR333 RAM and 256mb of generic DDR266 RAM. All this on an lame ASUS A7A266 motherboard with an old ALi chipset. 
+
+For a long time, Bet was giving me grief. It was horribly unstable for as long as I can remember. Recently I decided to get down to the source of the problem or get a new machine. First I suspected the RAM. memtest86 ran successfully. Next I attributed the problem to overheating and replaced the default heatsink with a gargantuan 35CFM beast, still to no avail. 
+
+Then I read the motherboard documentation :)
+
+Turns out my BIOS version didn't support 1700+. So I reflashed the bios to the latest version. Bet was stable, but the fan was far too loud. So I replaced my ["Vantec Aeroflow"] with a huge (but super quiet!) ["Zalman CNPS7000A-CU"]. 
+
+Now I'm happy!
+----
+CategoryMachine

@@ -1,0 +1,53 @@
+= Intro =
+
+Due to my inexperience with commercial content management systems and
+commercial software analysis in general, I decided that I would confine
+my research to open source CMS's. I tried checking out a couple commercial
+CMS's, such as http://www.fatwire.com/, but found it very difficult to get
+any technical information about it. Furthermore, I narrowed it down to Java-based CMS's, 
+since there is already a lot of literature comparing popular CMS's like Drupal, Joomla and Plone.
+
+In open source CMS's, popularity is critical. The larger the user-base,
+the larger the developer-base, the easier it is for the developer to get
+support. So popularity is a real criteria in deciding between open
+source CMS's.
+
+Unfortunately, Java-based CMS's historically have been much less popular than alternatives (typically PHP, deployable on LAMP-like configurations)
+
+Several articles, though dating back to 2005, confirm this viewpoint.
+ 1. http://www.indicthreads.com/blogs/161/Java_PHP_CMS_Comparison.html
+ 2. http://www.theserverside.com/news/thread.tss?thread_id=33163
+
+Anyway, I basically went through the Java CMS's in this [http://en.wikipedia.org/wiki/List_of_cms#Free_and_open_source_software list of CMS's from wikipedia]. The ones that looked promising, I wrote about in some detail. Others I put in the same pool.
+
+= Java-based CMS Roundup =
+
+== Alfresco ==
+
+ * Dev site: http://dev.alfresco.com/
+ * Demo site: http://hosted4.alfresco.com/alfresco/faces/jsp/login.jsp (Username: boris@z3.ca, Password: FTtc0mPB)
+
+There are forums which seem active: http://forums.alfresco.com/, as well as a wiki, which doubles as documentation for the project. Community wise, Alfresco seems to have a big one, and there's even people writing extensions for it, who discuss development issues on [http://forums.alfresco.com/viewforum.php?f=12 this forum].
+
+== Magnolia ==
+
+ * Dev site: http://documentation.magnolia.info/docs/en/developer.html
+ * Demo site: http://www.magnolia.info/en/about-magnolia/demo.html
+
+Magnolia provides [http://documentation.magnolia.info/docs/en/administrator/deployment/ documented integration] for websphere, tomcat and jboss, something that I wasn't able to find for other CMS's. I'm not sure how similar java application servers are, but I suppose they are probably different enough for this kind of documentation to be an asset.
+
+Unfortunately, developer docs are still being rewritten, so all one has to go by (reliably) is the API. But from the old documentation, it looks like JSP is the preferred method of doing dynamic pages. The idea is that Magnolia supports a special kind of user called a "Templater", whose role is to create templates (ie. write JSP snippets) which can be referenced by the administrator of the CMS and attached to various pages.
+
+Overall, this looks like a really promising solution, and should be investigated deeper.
+
+== OpenCMS ==
+
+OpenCMS provides a really ugly website with documentation that is frustrating to deal with. I found no documentation about how to write modules or any obvious avenues of getting support. They have no live demo. 
+
+Let me quote [an article http://www.cmswire.com/cms/cms-reviews/cms-review-opencms-60-000814.php] from last year: "Probably the number one problem we faced was the lack of good documentation. Our developers faced a steep initial learning curve when extending the system with new functionality. At the time of our implementation, the only book available on the market was written for version 5.0, which is quite different from current 6.0."
+
+I couldn't really investigate deep enough to give a real verdict on this one... but based on it's relatively high popularity, it probably has some merit, as confirmed by [http://www.cmswatch.com/Feature/152-OpenCms-6 this article]
+                       
+== Others ==
+
+[http://lenya.apache.org/ Apache Lenya] looks pretty raw and alpha-quality. The [http://lenya.zones.apache.org:8888/index.html demo] was basically empty. [http://www.cyclone3.org/get-cyclone3/demo Cyclone3] seems too closely tied to Mozilla XUL. I could not connect to [http://www.jahia.org/ Jahia's] [http://demo.jahia.org/ demo].

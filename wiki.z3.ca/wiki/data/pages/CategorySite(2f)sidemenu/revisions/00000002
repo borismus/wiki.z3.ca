@@ -1,0 +1,6 @@
+#acl All:
+
+ .*:: default
+
+[[Navigation(children)]]
+[[AttachList]]

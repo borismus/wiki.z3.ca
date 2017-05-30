@@ -1,0 +1,15 @@
+After implementing a pretty crappy solution outlined in this page's history, I realized that svn is not a good way to manage my personal code and documents. Thus I'm looking for a better backup strategy.
+
+= What to backup =
+
+  * Config files on all machines (/etc directory)
+  * MoinMoin data (wiki.z3.ca)
+  * Gallery (gallery.z3.ca)
+
+= How to backup =
+
+What I want is some way to designate a file or directory as one that needs to be backed up. I also want an ability to designate certain files or directories as critical. Any change to these critical files (and directories, optionally recursively) would cause them to be backed up during the next iteration. The backup machine would run regular backups and back up the necessary data on DVD. 
+
+Plan: take a look at [http://dar.linux.free.fr/ dar]. 
+----
+CategoryProject

@@ -1,0 +1,29 @@
+= Idea =
+
+[http://en.wikipedia.org/wiki/Mush Mush]es are cool because of
+"...the ability, by default, of any player to extend the world by creating new rooms or objects and specifying their behavior in the MUSH's internal scripting language."
+
+[http://en.wikipedia.org/wiki/Wiki Wiki]s are cool because
+"a wiki enables documents to be written collectively (co-authoring) in a simple markup language using a web browser. "
+
+So why not combine the two? Why not create a system where Mush-like objects are created through the web?
+
+= Implementation =
+
+The entire system should be written in python and deployed with Apache + mod_python. 
+
+The game itself should be scripted using python (probably some sandboxed version thereof). A wiki url would map to a python class. This class would have the benefit of inheriting from a large number of predefined classes, such as one that defines an Exit, a Room, a Mob, etc.
+
+Inheritance is not the best way to go here - prefer to use pluggable classes, [http://www.twistedmatrix.com twisted] style.
+
+= Interface = 
+
+A uri maps to a class, whose source code is editable through either a web-based form, or some sort of an upload form (or maybe WebDAV? - i know nothing about this).
+
+= Links =
+
+Having done a bit of googling, I only found one similar project:
+
+http://abstract-productions.net/game/
+----
+CategoryGame CategoryIdea

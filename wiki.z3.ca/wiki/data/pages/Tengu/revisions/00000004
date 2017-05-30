@@ -1,0 +1,16 @@
+attachment:tengu.jpg
+
+Tengu ('''T'''iling '''eng'''ine '''u''') is a tiling engine written in J2ME for the BlackBerry platform. No implementation details here, just a very high level overview of the design.
+
+= Goals & Principles =
+
+ * KeepItSimpleStupid philosophy
+ * Use ModelViewController paradigm so that view is independant of model
+ * End up with a very general tiled game engine that allows 3d, isometric and traditional renders.
+
+= Model =
+
+AbstractTile class is an abstract representation of a tile. This object has an array of exits to other tiles. The model is composed of these objects, linked to one another. AbstractTile also tracks what (single) object is inside it. To keep things very simple, a tile can only have *one* object on it at a given time.
+
+----
+CategoryIdea
