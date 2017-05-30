@@ -7,7 +7,7 @@ import re
 import shutil
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_ROOT = os.path.join(THIS_DIR, 'output')
+OUTPUT_ROOT = os.path.join(THIS_DIR, 'docs')
 
 class MoinArticle(object):
 
