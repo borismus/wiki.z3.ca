@@ -159,7 +159,7 @@ def DeletePath(path):
 
 if __name__ == '__main__':
   # Clean up the output directory.
-  DeletePath(OUTPUT_ROOT)
+  #DeletePath(OUTPUT_ROOT)
 
   root = 'wiki.z3.ca/wiki/data/pages/'
   page_paths = GetAllPages(root)
