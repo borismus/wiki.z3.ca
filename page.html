@@ -1,33 +1,8 @@
-<!doctype html>
-<head>
-  <title>{{ slug }} | wiki.z3.ca</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
-  <meta name="description" content="">
+{% extends "base.html" %}
 
-  <style>
-body {
-  font-family: monospace;
-}
-  </style>
-</head>
-<body>
-  <!-- Render errors if they are generated! -->
-  <div id="main">
-    <header>
-      <h1>{{ slug }}</h1>
-    </header>
+{% block content %}
 
-    <section id="articles">
-      {{ content }}
-    </section>
+<h1>{{ slug }}</h1>
+{{ content }}
 
-    <footer>
-      Created on {{date_created}}<br/>
-      Modified on {{date_modified}}<br/>
-      Generated on {{date_now}}<br/>
-    </footer>
-
-  </div>
-</body>
+{% endblock %}

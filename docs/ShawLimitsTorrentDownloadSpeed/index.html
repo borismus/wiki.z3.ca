@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>ShawLimitsTorrentDownloadSpeed | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,12 +16,13 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>ShawLimitsTorrentDownloadSpeed</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <p>= Problem =</p>
+    
+
+<h1>ShawLimitsTorrentDownloadSpeed</h1>
+<p>= Problem =</p>
 
 <p>I like to download. That's why I'm willing to dish out a bunch of green to shaw so that my household can download things quickly. But lately torrents have been downloading at a snail's pace. </p>
 
@@ -32,33 +34,39 @@ body {
 
 <p>Instead of the usual 6881:6999 port range, I'm now using 7070:7100:</p>
 
-<p>''Create wrapper around client (~/bin/btc)''
-{{{</p>
+<p>''Create wrapper around client (~/bin/btc)''</p>
 
-<h1>!/bin/bash</h1>
-
-<p>btlaunchmanycurses.py \
+<pre>
+#!/bin/bash
+btlaunchmanycurses.py \
     --minport 7070 \
     --maxport 7100 \
     $@
-}}}</p>
+</pre>
 
-<p>''Open port range in firewall (/etc/shorewall/rules)''
-{{{
+<p>''Open port range in firewall (/etc/shorewall/rules)''</p>
+
+<pre>
 ACCEPT          net             fw              tcp     7070:7100
-}}}</p>
+</pre>
 
 <h2>And that's how my download rates jumped from 20KB/s to 400KB/s. Up yours, Shaw!</h2>
 
 <p>CategoryMisc</p>
 
+
+
     </section>
 
     <footer>
+      
       Created on 2007-04-01 19:23:14<br/>
+      
+      
       Modified on 2007-04-01 19:24:32<br/>
-      Generated on 2017-05-30 16:20:38.277969<br/>
+      
+      Generated on 2017-05-31 10:58:15.388028<br/>
     </footer>
-
   </div>
 </body>
+</html>

@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>MediaServer | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,22 +16,23 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>MediaServer</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <p>I must now turn ["Aleph"] into a media server. The plan is to take the 120GB Seagate Barracuda from ["Bet"] and a new 120GB Samsung Spinpoint and put them into aleph. </p>
+    
+
+<h1>MediaServer</h1>
+<p>I must now turn ["Aleph"] into a media server. The plan is to take the 120GB Seagate Barracuda from ["Bet"] and a new 120GB Samsung Spinpoint and put them into aleph. </p>
 
 <p>= Partition Structure =</p>
 
 <p>I will try to use LVM2 to pool the 240GB into possibly one huge partition. Refer to [<a href="http://www.gentoo.org/doc/en/lvm2.xml].">http://www.gentoo.org/doc/en/lvm2.xml].</a> LVM2 is convenient to use because it allows dynamic resizing of partitions. So the sizes in the following chart are made up and arbitrary.</p>
 
-<p>{{{
+<pre>
 /dev/hda1   Home     30GB
 /dev/hda2   Portage  10GB
 /dev/hda3   Media    200GB
-}}}</p>
+</pre>
 
 <p>= Procedure =</p>
 
@@ -48,13 +50,19 @@ body {
 <li><p>get both hard drives working with lvm2</p></li>
 </ul>
 
+
+
     </section>
 
     <footer>
+      
       Created on 2004-12-26 21:42:50<br/>
+      
+      
       Modified on 2006-06-14 16:35:27<br/>
-      Generated on 2017-05-30 16:20:38.159433<br/>
+      
+      Generated on 2017-05-31 10:58:15.151424<br/>
     </footer>
-
   </div>
 </body>
+</html>

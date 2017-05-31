@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>MetaMP | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,12 +16,13 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>MetaMP</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <h2>page was renamed from MetaPD</h2>
+    
+
+<h1>MetaMP</h1>
+<h2>page was renamed from MetaPD</h2>
 
 <p>MetaMP is a metadata client for MPD. It's a work in progress, but I would really appreciate it if you could try it and let me know what you think. Send bugs/suggestions/comments/hatemail to boris at this domain.</p>
 
@@ -33,7 +35,7 @@ body {
 <p>= Todo =</p>
 
 <p>Playing:
- * Allow filtering based on multiple tags {{{metamp play -t punk,pop}}}</p>
+ * Allow filtering based on multiple tags <pre>metamp play -t punk,pop</pre></p>
 
 <p>= 0.1.1 =</p>
 
@@ -44,7 +46,7 @@ body {
  * If song tag is not found, fall back to artist tag</p>
 
 <p>Tagging:
- * Use {{{metamp autotag -p /}}} to tag the entire music database.</p>
+ * Use <pre>metamp autotag -p /</pre> to tag the entire music database.</p>
 
 <p>Bugs:
  * makii's issue with localization</p>
@@ -53,26 +55,18 @@ body {
 
 <p>MetaMP stores configuration files in ~/.metamp or /etc/metamp.conf. This configuration file specifies where metamp should store it's database.</p>
 
-<p>{{{
-[conf]</p>
+<pre>
+[conf]
+# where to store the metadata
+db: /media/music/.mpdmeta
+# automatically start playing
+auto_play: yes
+# log level
+log_level: ERROR
+# lastfm username
+username: foo
 
-<h1>where to store the metadata</h1>
-
-<p>db: /media/music/.mpdmeta</p>
-
-<h1>automatically start playing</h1>
-
-<p>auto_play: yes</p>
-
-<h1>log level</h1>
-
-<p>log_level: ERROR</p>
-
-<h1>lastfm username</h1>
-
-<p>username: foo</p>
-
-<p>}}}</p>
+</pre>
 
 <p>= Database =</p>
 
@@ -85,28 +79,28 @@ body {
 
 <p>= Usage =</p>
 
-<p>{{{
+<pre>
  autotag:
         automatically tag files using last.fm as tag database
-        %prog autotag --path="pop"</p>
+        %prog autotag --path="pop"
 
-<p>tag:   mark files with tag data
+ tag:   mark files with tag data
         %prog tag --path='metallica/enter sandman.mp3' \
-                  --tags='metal,heavy metal,rock'</p>
+                  --tags='metal,heavy metal,rock'
 
-<p>rate:  mark files with rating
+ rate:  mark files with rating
         %prog rate --path='metallica/enter sandman.mp3' \
-                   --rating=9</p>
+                   --rating=9
 
-<p>play:  playback based on metadata
+ play:  playback based on metadata
         %prog play --rating=">5" OR
-        %prog play --tags="indie,canadian" &lt;-- playback canadian indie</p>
+        %prog play --tags="indie,canadian" <-- playback canadian indie
 
-<p>recent:
+ recent:
         play recently heard tracks (last.fm users only)
-        %prog recent</p>
+        %prog recent
 
-<p>}}}</p>
+</pre>
 
 <p>= Older Versions =</p>
 
@@ -114,13 +108,19 @@ body {
 <li><img src="MetaMP"/>-0.1.tar.gz.</li>
 </ul>
 
+
+
     </section>
 
     <footer>
+      
       Created on 2007-01-03 18:06:29<br/>
+      
+      
       Modified on 2007-09-23 21:54:38<br/>
-      Generated on 2017-05-30 16:20:38.163335<br/>
+      
+      Generated on 2017-05-31 10:58:15.159008<br/>
     </footer>
-
   </div>
 </body>
+</html>

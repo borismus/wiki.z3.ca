@@ -5,6 +5,10 @@ import markdown2
 import os
 import re
 import shutil
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_ROOT = os.path.join(THIS_DIR, 'docs')
@@ -77,7 +81,6 @@ def GetMoinContent(page_path, use_current_file=False):
 
 def RenderArticle(moin_article):
   markdown_body = MoinToMarkdown(moin_article.content_moin)
-  #print markdown_body
   # Render the markdown into HTML.
   content = markdown2.markdown(markdown_body)
   # Populate the template with everything.
@@ -108,7 +111,7 @@ def SaveArticle(moin_article, html):
 
 def SaveArticleIndex(articles):
   env = Environment(loader=FileSystemLoader(THIS_DIR))
-  template = env.get_template('index.html')
+  template = env.get_template('list.html')
   template_vars = {}
   template_vars['articles'] = articles
   template_vars['date_now'] = datetime.datetime.now()
@@ -120,18 +123,23 @@ def SaveArticleIndex(articles):
 
 
 def MoinToMarkdown(moin_markup):
-  markdown = moin_markup
+  out = moin_markup
 
   # Replace URLs and attachments with markdown links.
   link = re.compile(r'(http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+)')
-  markdown = link.sub(r'<a href="\1">\1</a>', markdown)
+  out = link.sub(r'<a href="\1">\1</a>', out)
 
   # Replace 'attachment:foo.jpg' with actual imagery.
   attachment = re.compile(r'attachment:([\w.]*)')
-  markdown = attachment.sub(r'<img src="\1"/>', markdown)
+  out = attachment.sub(r'<img src="\1"/>', out)
 
-  # Replace headings with Markdown style headings.
-  return markdown
+  # Replace {{{ and }}} with <pre> and </pre>.
+  out = out.replace('{{{', '<pre>')
+  out = out.replace('}}}', '</pre>')
+
+  # Replace "== foo ==" with "## foo".
+
+  return out
 
 
 def CopyAttachments(from_path, to_path):
@@ -140,8 +148,19 @@ def CopyAttachments(from_path, to_path):
   shutil.copytree(from_path, to_path)
 
 
+def DeletePath(path):
+  """Remove file or directory at path."""
+  if os.path.isfile(path):
+    os.unlink(path)
+  else:
+    shutil.rmtree(path)
+
+
 
 if __name__ == '__main__':
+  # Clean up the output directory.
+  DeletePath(OUTPUT_ROOT)
+
   root = 'wiki.z3.ca/wiki/data/pages/'
   page_paths = GetAllPages(root)
   articles = []

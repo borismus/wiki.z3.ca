@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>PalmSync | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,31 +16,38 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>PalmSync</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <p>= One-touch sync =</p>
+    
+
+<h1>PalmSync</h1>
+<p>= One-touch sync =</p>
 
 <p>To avoid having to press the sync button on your desktop sync tool {evolution, jpilot} or command linee util {pilot-link, coldsync} explicitly, configure udev to automatically do it. With &gt;=jpilot-0.99.8, it is done by appending a <code>RUN</code> directive to the appropriate ttyUSB device:</p>
 
-<p>{{{
+<pre>
 KERNEL=="ttyUSB[0-9]*", NAME="%k", SYMLINK="tts/USB%n", GROUP="tty", MODE="0660"
 RUN="/bin/su - $USER -c '/usr/bin/jpilot -s'"
-}}}</p>
+</pre>
 
 <h2>which executes <code>jpilot -s</code> as soon as the device is created.</h2>
 
 <p>CategoryProject</p>
 
+
+
     </section>
 
     <footer>
+      
       Created on 2006-06-23 15:12:39<br/>
+      
+      
       Modified on 2008-10-23 15:13:05<br/>
-      Generated on 2017-05-30 16:20:38.225432<br/>
+      
+      Generated on 2017-05-31 10:58:15.278911<br/>
     </footer>
-
   </div>
 </body>
+</html>

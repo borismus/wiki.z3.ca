@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>
+This is an archive of wiki.z3.ca, which existed as a MoinMoin wiki while I
+was a UBC undergraduate between 2002 and 2007. I now keep a blog on <a
+  href="http://smus.com">smus.com</a>.
+</p>
+<ul>
+  {% for article in articles %}
+  <li><a href="{{article.slug}}">{{article.slug}}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

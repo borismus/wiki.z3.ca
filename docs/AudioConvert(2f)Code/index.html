@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>AudioConvert(2f)Code | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,132 +16,127 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>AudioConvert(2f)Code</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <p>{{{#!python</p>
+    
 
-<h1>!/usr/bin/python</h1>
+<h1>AudioConvert(2f)Code</h1>
+<pre>#!python
 
-<h1>I convert to and from various audio file formats depending on extension of</h1>
+#!/usr/bin/python
+# I convert to and from various audio file formats depending on extension of
+# file names specified on command line
+# TODO: support giving just ext as second arg, without file name. In that
+# case, convert to file of same name.
 
-<h1>file names specified on command line</h1>
 
-<h1>TODO: support giving just ext as second arg, without file name. In that</h1>
+import sys, os
 
-<h1>case, convert to file of same name.</h1>
+usage = "%s [src.ext1] [dst.ext2]" %sys.argv[0] 
 
-<p>import sys, os</p>
-
-<p>usage = "%s [src.ext1] [dst.ext2]" %sys.argv[0] </p>
-
-<h6>#</h6>
-
-<h1>DECODERS</h1>
-
-<h1>convert format specified in key to raw wav</h1>
-
-<h6>#</h6>
-
-<p>decoders = {}
+############
+# DECODERS ###################################
+# convert format specified in key to raw wav #
+##############################################
+decoders = {}
 decoders['wav'] = "cp %s %s"
 decoders['ogg'] = "oggdec %s -o %s"
 decoders['mpc'] = "mppdec %s %s"
 decoders['wma'] = "mplayer %s -ao pcm:file=%s"
-decoders['mp3'] = "mplayer %s -ao pcm:file=%s"</p>
+decoders['mp3'] = "mplayer %s -ao pcm:file=%s"
 
-<h6>#</h6>
-
-<h1>ENCODERS</h1>
-
-<h1>convert raw wav to format specified in key</h1>
-
-<h6>#</h6>
-
-<p>encoders = {}
+############
+# ENCODERS ###################################
+# convert raw wav to format specified in key #
+##############################################
+encoders = {}
 encoders['wav'] = "cp %s %s"
 encoders['mp3'] = "lame %s %s"
 encoders['ogg'] = "oggenc %s -o %s"
-encoders['mpc'] = "mppenc %s %s"</p>
+encoders['mpc'] = "mppenc %s %s"
 
-<p>tmp = "temp.wav"</p>
+tmp = "temp.wav"
 
-<p>def parse_args():
+def parse_args():
     if len(sys.argv) != 3:
     print usage
-    sys.exit(1)</p>
+    sys.exit(1)
 
-<pre><code>src = sys.argv[1]
-dst = sys.argv[2]
+    src = sys.argv[1]
+    dst = sys.argv[2]
 
-if not get_ext(src) in decoders:
-error("I don't know how to convert from %s extensions" %src)
-sys.exit(1)
+    if not get_ext(src) in decoders:
+    error("I don't know how to convert from %s extensions" %src)
+    sys.exit(1)
 
-if not get_ext(dst) in encoders:
-error("I don't know how to convert to %s extensions" %dst_ext)
-sys.exit(1)
+    if not get_ext(dst) in encoders:
+    error("I don't know how to convert to %s extensions" %dst_ext)
+    sys.exit(1)
 
-if only_ext_specified(dst):
-info("You didn't specify a name for extension %s" %
-    get_ext(dst))
-dst = "%s.%s" %(get_name(src), get_ext(dst))
-info("Using name %s" %dst)
+    if only_ext_specified(dst):
+    info("You didn't specify a name for extension %s" %
+        get_ext(dst))
+    dst = "%s.%s" %(get_name(src), get_ext(dst))
+    info("Using name %s" %dst)
 
-return src, dst
-</code></pre>
+    return src, dst
 
-<p>def get_ext(filename):
-    return filename.split('.')[-1]</p>
+def get_ext(filename):
+    return filename.split('.')[-1]
 
-<p>def get_name(filename):
+def get_name(filename):
     s = filename.split('.')
     s.pop()
-    return ".".join(s)</p>
+    return ".".join(s)
 
-<p>def only<em>ext</em>specified(filename):
-    return len(filename.split(".")) &lt;= 1</p>
+def only_ext_specified(filename):
+    return len(filename.split(".")) <= 1
 
-<p>def error(string):
-    print "[E] %s." %(string)</p>
+def error(string):
+    print "[E] %s." %(string)
 
-<p>def info(string):
-    print "[I] %s." %(string)</p>
+def info(string):
+    print "[I] %s." %(string)
 
-<p>def decode(src):
+def decode(src):
     "decodes src to dst"
     info("Decoding %s to %s" %(src, tmp))
-    call = decoders[get_ext(src)] % (<code>src</code>, tmp)
-    os.system(call)</p>
+    call = decoders[get_ext(src)] % (`src`, tmp)
+    os.system(call)
 
-<p>def encode(dst):
+def encode(dst):
     "encodes tmp to dst"
     info("Encoding %s to %s" %(tmp, dst))
-    call = encoders[get_ext(dst)] % (tmp, '"<code>basename %s</code>"' % <code>dst</code>)
-    os.system(call)</p>
+    call = encoders[get_ext(dst)] % (tmp, '"`basename %s`"' % `dst`)
+    os.system(call)
 
-<p>def delete_tmp():
+def delete_tmp():
     "deletes temp wav file"
     info ("Deleting temporary %s file" % tmp)
-    os.system("rm %s" % tmp)</p>
+    os.system("rm %s" % tmp)
 
-<p>if <strong>name</strong> == '<strong>main</strong>': 
-    (src, dst) = parse<em>args()
+if __name__ == '__main__': 
+    (src, dst) = parse_args()
     decode(src)
     encode(dst)
-    delete</em>tmp()</p>
+    delete_tmp()
 
-<p>}}}</p>
+</pre>
+
+
 
     </section>
 
     <footer>
+      
       Created on 2006-07-10 22:26:27<br/>
+      
+      
       Modified on 2006-07-10 22:26:41<br/>
-      Generated on 2017-05-30 16:20:37.208172<br/>
+      
+      Generated on 2017-05-31 10:58:13.574950<br/>
     </footer>
-
   </div>
 </body>
+</html>

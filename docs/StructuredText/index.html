@@ -1,6 +1,7 @@
 <!doctype html>
+<html>
 <head>
-  <title>StructuredText | wiki.z3.ca</title>
+  <title>wiki.z3.ca</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
@@ -15,12 +16,13 @@ body {
 <body>
   <!-- Render errors if they are generated! -->
   <div id="main">
-    <header>
-      <h1>StructuredText</h1>
-    </header>
+    <header>wiki.z3.ca</header>
 
     <section id="articles">
-      <h2>language:en</h2>
+    
+
+<h1>StructuredText</h1>
+<h2>language:en</h2>
 
 <p>Structured text is text that uses indentation and simple
 symbology to indicate the structure of a document. For the next generation of structured text, see 
@@ -68,13 +70,14 @@ preceding paragraph that has a lower level.</p>
 <p>.. [12] "Effective Techniques" Smith, Joe ... </p>
 
 <p>Is interpreted as '<a name="12">[12]</a> "Effective Techniques" ...'. Together with the previous rule this allows easy coding of references or end notes. </p></li>
-<li><p>A paragraph that has blocks of text enclosed in '||' is treated as a table. The text blocks correspond to table cells and table rows are denoted by newlines. By default the cells are center aligned. A cell can span more than one column by preceding a block of text with an equivalent number of cell separators '||'. Newlines and '|' cannot be a part of the cell text. For example:
-{{{
-|||| <strong>Ingredients</strong> ||
-|| <em>Name</em> || <em>Amount</em> ||
+<li><p>A paragraph that has blocks of text enclosed in '||' is treated as a table. The text blocks correspond to table cells and table rows are denoted by newlines. By default the cells are center aligned. A cell can span more than one column by preceding a block of text with an equivalent number of cell separators '||'. Newlines and '|' cannot be a part of the cell text. For example:</p>
+
+<pre>
+|||| **Ingredients** ||
+|| *Name* || *Amount* ||
 ||Spam||10||
 ||Eggs||3||
-}}}</p>
+</pre>
 
 <p>renders like this:
 |||| <strong>Ingredients</strong> ||
@@ -83,13 +86,19 @@ preceding paragraph that has a lower level.</p>
 ||Eggs||3||</p></li>
 </ul>
 
+
+
     </section>
 
     <footer>
+      
       Created on 2004-12-29 10:40:08<br/>
+      
+      
       Modified on 2004-12-29 10:40:08<br/>
-      Generated on 2017-05-30 16:20:38.324643<br/>
+      
+      Generated on 2017-05-31 10:58:15.482918<br/>
     </footer>
-
   </div>
 </body>
+</html>
