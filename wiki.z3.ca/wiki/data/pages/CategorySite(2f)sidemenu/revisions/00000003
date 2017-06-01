@@ -1,9 +1,0 @@
-#acl All:
-
- .*:: default
-
-=== Subpages: ===
-[[Navigation(children)]]
-
-=== Attachments: ===
-[[AttachList]]
